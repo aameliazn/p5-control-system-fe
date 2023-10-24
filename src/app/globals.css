@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 :root {
+  --main-color: #73d802;
+  --second-color: #4c8e06;
+  --third-color: #A7D397;
+  --basic-color: #000002;
+  --font-color: #fff;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -16,12 +21,10 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+*{
+  scroll-behavior: smooth;
+}
+
+.costum-width{
+  width: -webkit-fill-available;
 }

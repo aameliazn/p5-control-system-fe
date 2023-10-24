@@ -14,5 +14,9 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  /** @type {import('rippleui').Config} */
+	rippleui: {
+		removeThemes: ["dark"],
+	},
+  plugins: [require("rippleui")],
 }
