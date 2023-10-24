@@ -1,13 +1,25 @@
 "use client";
 import React, { useState } from "react";
 import { Col, Row } from "antd";
+import Image from "next/image";
+import Style from "./dashboard.module.css";
+import starWhite from "../../../public/star-white.png";
+import starYellow from "../../../public/star-yellow.png";
+import { AiOutlineDelete } from "react-icons/ai";
 
 export default function dataClass() {
-  const [isClicked, setIsClicked] = useState(false);
+  // data icon star
+  const [isClicked, setIsClicked] = useState(starWhite);
 
+  // data icon star
   const handleClick = () => {
-    setIsClicked(!isClicked);
+    if (isClicked == starWhite) {
+      setIsClicked(starYellow);
+    } else {
+      setIsClicked(starWhite);
+    }
   };
+
   return (
     <>
       <div className="mt-10">
@@ -15,171 +27,103 @@ export default function dataClass() {
           <b>Data Kelas</b>
         </p>
         <Row>
-          <Col span={12}>
+          <Col span={8}>
             <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-              <p className="text-l">
+              <h1 className="text-xl">
                 <b>PPLG XII 1</b>
-              </p>
+              </h1>
               <div className="flex">
-                <div>p</div>
-                <div>p</div>
-                <div>p</div>
+                <div>
+                  <button className={Style.button1}>
+                    <Image
+                      src={isClicked}
+                      onClick={handleClick}
+                      alt="Star"
+                      width={23}
+                      height={23}
+                    />
+                  </button>
+                </div>
+                <div className="ml-2">
+                  <button className={Style.button1}>
+                    <AiOutlineDelete size={27} />
+                  </button>
+                </div>
               </div>
             </div>
           </Col>
-          <Col span={12}>
+          <Col span={8}>
             <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-              <p className="text-l">
+              <h1 className="text-xl">
                 <b>PPLG XII 2</b>
-              </p>
+              </h1>
               <div className="flex">
-                <div>p</div>
-                <div>p</div>
-                <div>p</div>
+                <div>
+                  <button className={Style.button1}>
+                    <Image
+                      src={isClicked}
+                      onClick={handleClick}
+                      alt="Star"
+                      width={23}
+                      height={23}
+                    />
+                  </button>
+                </div>
+                <div className="ml-2">
+                  <button className={Style.button1}>
+                    <AiOutlineDelete size={27} />
+                  </button>
+                </div>
               </div>
             </div>
           </Col>
-          <Col span={12}>
+          <Col span={8}>
             <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-              <p className="text-l">
+              <h1 className="text-xl">
                 <b>PPLG XII 3</b>
-              </p>
+              </h1>
               <div className="flex">
-                <div>p</div>
-                <div>p</div>
-                <div>p</div>
+                <div>
+                  <button className={Style.button1}>
+                    <Image
+                      src={isClicked}
+                      onClick={handleClick}
+                      alt="Star"
+                      width={23}
+                      height={23}
+                    />
+                  </button>
+                </div>
+                <div className="ml-2">
+                  <button className={Style.button1}>
+                    <AiOutlineDelete size={27} />
+                  </button>
+                </div>
               </div>
             </div>
           </Col>
-          <Col span={12}>
+          <Col span={8}>
             <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-              <p className="text-l">
+              <h1 className="text-xl">
                 <b>PPLG XII 4</b>
-              </p>
+              </h1>
               <div className="flex">
-                <div>p</div>
-                <div>p</div>
-                <div>p</div>
-              </div>
-            </div>
-          </Col>
-          <Col span={12}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-              <p className="text-l">
-                <b>PPLG XII 4</b>
-              </p>
-              <div className="flex">
-                <div>p</div>
-                <div>p</div>
-                <div>p</div>
-              </div>
-            </div>
-          </Col>
-          <Col span={12}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-              <p className="text-l">
-                <b>PPLG XII 4</b>
-              </p>
-              <div className="flex">
-                <div>p</div>
-                <div>p</div>
-                <div>p</div>
-              </div>
-            </div>
-          </Col>
-          <Col span={12}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-              <p className="text-l">
-                <b>PPLG XII 4</b>
-              </p>
-              <div className="flex">
-                <div>p</div>
-                <div>p</div>
-                <div>p</div>
-              </div>
-            </div>
-          </Col>
-          <Col span={12}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-              <p className="text-l">
-                <b>PPLG XII 4</b>
-              </p>
-              <div className="flex">
-                <div>p</div>
-                <div>p</div>
-                <div>p</div>
-              </div>
-            </div>
-          </Col>
-          <Col span={12}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-              <p className="text-l">
-                <b>PPLG XII 4</b>
-              </p>
-              <div className="flex">
-                <div>p</div>
-                <div>p</div>
-                <div>p</div>
-              </div>
-            </div>
-          </Col>
-          <Col span={12}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-              <p className="text-l">
-                <b>PPLG XII 4</b>
-              </p>
-              <div className="flex">
-                <div>p</div>
-                <div>p</div>
-                <div>p</div>
-              </div>
-            </div>
-          </Col>
-          <Col span={12}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-              <p className="text-l">
-                <b>PPLG XII 4</b>
-              </p>
-              <div className="flex">
-                <div>p</div>
-                <div>p</div>
-                <div>p</div>
-              </div>
-            </div>
-          </Col>
-          <Col span={12}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-              <p className="text-l">
-                <b>PPLG XII 4</b>
-              </p>
-              <div className="flex">
-                <div>p</div>
-                <div>p</div>
-                <div>p</div>
-              </div>
-            </div>
-          </Col>
-          <Col span={12}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-              <p className="text-l">
-                <b>PPLG XII 4</b>
-              </p>
-              <div className="flex">
-                <div>p</div>
-                <div>p</div>
-                <div>p</div>
-              </div>
-            </div>
-          </Col>
-          <Col span={12}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-              <p className="text-l">
-                <b>PPLG XII 4</b>
-              </p>
-              <div className="flex">
-                <div>p</div>
-                <div>p</div>
-                <div>p</div>
+                <div>
+                  <button className={Style.button1}>
+                    <Image
+                      src={isClicked}
+                      onClick={handleClick}
+                      alt="Star"
+                      width={23}
+                      height={23}
+                    />
+                  </button>
+                </div>
+                <div className="ml-2">
+                  <button className={Style.button1}>
+                    <AiOutlineDelete size={27} />
+                  </button>
+                </div>
               </div>
             </div>
           </Col>
