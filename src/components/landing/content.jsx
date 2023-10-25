@@ -136,7 +136,7 @@ export default function content() {
       </section>
       <section>
         <div className={Style.imgsak}>
-          <img src="./sakura.png" alt="" />
+          <img src="./Sakura.png" alt="" />
         </div>
         <h1 className={Style.title}>Galeri</h1>
         <div class="flex min-h-screen flex-wrap content-center justify-center p-9">
