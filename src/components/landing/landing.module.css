@@ -312,7 +312,7 @@
 }
 
 .h1:hover .spantext:nth-child(2) {
-  margin-left: 30px;
+  margin-left: 5px;
 }
 
 .h1:hover .spantext {
