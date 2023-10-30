@@ -35,8 +35,8 @@ export default function dataClass() {
         </p>
         <Row>
           <Col span={6}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 1</b>
               </h1>
               <div className="flex">
@@ -60,8 +60,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 2</b>
               </h1>
               <div className="flex">
@@ -85,8 +85,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 3</b>
               </h1>
               <div className="flex">
@@ -110,8 +110,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 4</b>
               </h1>
               <div className="flex">
@@ -135,8 +135,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 1</b>
               </h1>
               <div className="flex">
@@ -160,8 +160,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 2</b>
               </h1>
               <div className="flex">
@@ -185,8 +185,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 3</b>
               </h1>
               <div className="flex">
@@ -210,8 +210,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 4</b>
               </h1>
               <div className="flex">
@@ -235,8 +235,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 1</b>
               </h1>
               <div className="flex">
@@ -260,8 +260,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 2</b>
               </h1>
               <div className="flex">
@@ -285,8 +285,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 3</b>
               </h1>
               <div className="flex">
@@ -310,8 +310,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 4</b>
               </h1>
               <div className="flex">
@@ -335,8 +335,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 1</b>
               </h1>
               <div className="flex">
@@ -360,8 +360,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 2</b>
               </h1>
               <div className="flex">
@@ -385,8 +385,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 3</b>
               </h1>
               <div className="flex">
@@ -410,8 +410,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 4</b>
               </h1>
               <div className="flex">
@@ -435,8 +435,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 1</b>
               </h1>
               <div className="flex">
@@ -460,8 +460,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 2</b>
               </h1>
               <div className="flex">
@@ -485,8 +485,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 3</b>
               </h1>
               <div className="flex">
@@ -510,8 +510,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 4</b>
               </h1>
               <div className="flex">
@@ -535,8 +535,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 1</b>
               </h1>
               <div className="flex">
@@ -560,8 +560,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 2</b>
               </h1>
               <div className="flex">
@@ -585,8 +585,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 3</b>
               </h1>
               <div className="flex">
@@ -610,8 +610,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 4</b>
               </h1>
               <div className="flex">
@@ -635,8 +635,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 1</b>
               </h1>
               <div className="flex">
@@ -660,8 +660,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 2</b>
               </h1>
               <div className="flex">
@@ -685,8 +685,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 3</b>
               </h1>
               <div className="flex">
@@ -710,8 +710,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 4</b>
               </h1>
               <div className="flex">
@@ -735,8 +735,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 1</b>
               </h1>
               <div className="flex">
@@ -760,8 +760,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 2</b>
               </h1>
               <div className="flex">
@@ -785,8 +785,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 3</b>
               </h1>
               <div className="flex">
@@ -810,8 +810,8 @@ export default function dataClass() {
             </div>
           </Col>
           <Col span={6}>
-            <div className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
-              <h1 className="text-xl" onClick={handleClick2}>
+            <div onClick={handleClick2} className="flex  flex-row justify-between max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 shadow hover:bg-gray-100">
+              <h1 className="text-xl">
                 <b>PPLG XII 4</b>
               </h1>
               <div className="flex">
