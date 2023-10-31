@@ -51,6 +51,11 @@ export default function fetchData() {
       scroll={{
         y: 380,
       }}
+      title={() => (
+        <div style={{ textAlign: "center", fontWeight: "700" }}>
+          Data Siswa
+        </div>
+      )}
       className={Style.tableAnt}
     />
 

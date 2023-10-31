@@ -1,12 +1,11 @@
 import React from "react";
 import Layout from "@/components/layouts";
-import Index from "@/components/kebersihan-diri/index";
-
+import DataKelasKebersihan from "@/components/data-kelas-kebersihan";
 export default function page() {
   return (
     <>
       <Layout>
-        <div><Index/></div>
+        <DataKelasKebersihan />
       </Layout>
     </>
   );
