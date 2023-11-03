@@ -10,7 +10,7 @@ export default function fetchKelas() {
   const router = useRouter();
 
   useEffect(() => {
-    axios.get(" http://localhost:2000/siswa").then((response) => {
+    axios.get("http://localhost:2000/siswa").then((response) => {
       setSiswa(response.data);
     });
   }, []);
@@ -19,6 +19,12 @@ export default function fetchKelas() {
     router.push(`/kebersihan-diri-siswa/1`);
   };
   const columns = [
+    {
+      title: "id",
+      dataIndex: "id",
+      rowScope: "row",
+      width: 10,
+    },
     {
       title: "Nama",
       dataIndex: "nama",

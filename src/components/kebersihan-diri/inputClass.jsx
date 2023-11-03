@@ -11,6 +11,7 @@ export default function inputClass() {
         kegiatan,
       });
       console.log("kegiatan berhasil disimpan", response.data);
+      window.location.reload();
     } catch (error) {
       console.error("gagal menyimpan kegiatan:", error);
     }

@@ -46,7 +46,7 @@ export default function dataClass() {
 
     const handleClick2 = () => {
       router.push("/data-kelas-materi/[id]")
-    };
+    };  
   
   return ( 
     <>
