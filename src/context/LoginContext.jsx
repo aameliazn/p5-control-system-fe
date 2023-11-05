@@ -24,7 +24,7 @@ export default function LoginContext({ children }) {
 
 export const useLogin = () => {
   const context = useContext(ContextLogin);
-  if (context == undefined) {
+  if (context === undefined) {
     throw new Error(`useLogin must be use within a Network Performance`);
   }
   return context;

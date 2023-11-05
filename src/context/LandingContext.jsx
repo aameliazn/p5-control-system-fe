@@ -17,13 +17,13 @@ export default function LandingContext({ children }) {
   };
 
   return (
-    <ContextLanding.Provider>{children}</ContextLanding.Provider>
+    <ContextLanding.Provider value={state}>{children}</ContextLanding.Provider>
   );
 }
 
 export const useLanding = () => {
   const context = useContext(ContextLanding);
-  if (context == undefined) {
+  if (context === undefined) {
     throw new Error(`useLanding must be use within a Network Performance`);
   }
   return context;
