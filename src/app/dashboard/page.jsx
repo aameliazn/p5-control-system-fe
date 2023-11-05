@@ -1,12 +1,15 @@
 import React from "react";
 import Layout from "@/components/layouts";
 import Dashboard from "@/components/dashboard";
+import ContextDashboardProvider from "@/context/DashboardContext";
 
 export default function page() {
   return (
     <>
       <Layout>
-        <Dashboard />
+        <ContextDashboardProvider>
+          <Dashboard />
+        </ContextDashboardProvider>
       </Layout>
     </>
   );
