@@ -489,7 +489,7 @@ export default function sidebar({ children }) {
             </label>
           </div>
 
-          <div className="my-4">{children}</div>
+          <div className="mr-10 mt-4">{children}</div>
         </div>
       </div>
     </>
