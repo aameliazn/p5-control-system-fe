@@ -1,15 +1,11 @@
 import React from "react";
 import Layout from "@/components/layouts";
-import Materi from "@/components/materi";
+import DataKelasKebersihan from "@/components/data-kelas-kebersihan";
 export default function page() {
   return (
     <>
       <Layout>
-        Materi
-        <div>
-        <Materi/>
-        </div>
-        
+        <DataKelasKebersihan />
       </Layout>
     </>
   );

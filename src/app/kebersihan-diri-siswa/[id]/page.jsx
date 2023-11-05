@@ -1,15 +1,12 @@
 import React from "react";
 import Layout from "@/components/layouts";
-import Materi from "@/components/materi";
+import Index from "@/components/kebersihan-diri-siswa";
+
 export default function page() {
   return (
     <>
       <Layout>
-        Materi
-        <div>
-        <Materi/>
-        </div>
-        
+        <Index />
       </Layout>
     </>
   );
