@@ -1,11 +1,12 @@
 import React from "react";
 import Layout from "@/components/layouts";
+import Index from "@/components/budidaya-tanaman";
 
 export default function page() {
   return (
     <>
       <Layout>
-        <p>ini budidaya tanaman</p>
+       <Index/>
       </Layout>
     </>
   );

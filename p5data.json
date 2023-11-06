@@ -186,11 +186,6 @@
       "id": 12,
       "kelas": "TJKT XII-2",
       "date_time": "2023-10-28 20:00:00"
-    },
-    {
-      "id": 13,
-      "kelas": "PPLG XII-1",
-      "date_time": "2023-10-28 21:00:00"
     }
   ],
   "materi": [
@@ -229,12 +224,126 @@
       "kondisi": "makan makan sendiri",
       "skor": "60",
       "id": 5
+    },
+    {
+      "kegiatan": "im feeling good like I should",
+      "id": 6
     }
   ],
   "ruangan": [
     {
       "id": 1,
       "ruangan": "ruangan dua"
+    },
+    {
+      "ruangan": "RPS Lantai 1",
+      "id": 2
+    },
+    {
+      "ruangan": "Pajajaran",
+      "id": 3
+    }
+  ],
+  "pemilahan": [
+    {
+      "id": 1,
+      "bruto": "23,0",
+      "neto": "2.33"
+    },
+    {
+      "id": 2,
+      "bruto": "18,5",
+      "neto": "1.87"
+    },
+    {
+      "id": 3,
+      "bruto": "30,2",
+      "neto": "3.01"
+    },
+    {
+      "id": 4,
+      "bruto": "15,8",
+      "neto": "1.60"
+    },
+    {
+      "id": 5,
+      "bruto": "21,4",
+      "neto": "2.17"
+    },
+    {
+      "id": 6,
+      "bruto": "27,9",
+      "neto": "2.78"
+    },
+    {
+      "id": 7,
+      "bruto": "14,3",
+      "neto": "1.42"
+    },
+    {
+      "id": 8,
+      "bruto": "33,7",
+      "neto": "3.37"
+    },
+    {
+      "id": 9,
+      "bruto": "19,2",
+      "neto": "1.92"
+    },
+    {
+      "id": 10,
+      "bruto": "25,6",
+      "neto": "2.59"
+    },
+    {
+      "id": 11,
+      "bruto": "12,7",
+      "neto": "1.24"
+    },
+    {
+      "id": 12,
+      "bruto": "28,4",
+      "neto": "2.85"
+    },
+    {
+      "id": 13,
+      "bruto": "17,1",
+      "neto": "1.69"
+    },
+    {
+      "id": 14,
+      "bruto": "22,9",
+      "neto": "2.28"
+    },
+    {
+      "id": 15,
+      "bruto": "20,8",
+      "neto": "2.06"
+    },
+    {
+      "id": 16,
+      "bruto": "13,4",
+      "neto": "1.36"
+    },
+    {
+      "id": 17,
+      "bruto": "31,5",
+      "neto": "3.12"
+    },
+    {
+      "id": 18,
+      "bruto": "16,6",
+      "neto": "1.65"
+    },
+    {
+      "id": 19,
+      "bruto": "26,1",
+      "neto": "2.62"
+    },
+    {
+      "id": 20,
+      "bruto": "24,3",
+      "neto": "2.44"
     }
   ]
 }

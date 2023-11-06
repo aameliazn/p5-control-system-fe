@@ -25,7 +25,7 @@ export default function inputClass() {
     <>
       <div class="-mx-3 md:flex mb-6">
         <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
+          <label class="block  tracking-wide text-grey-darker text-xs font-bold mb-2">
             Kegiatan
           </label>
           <input
@@ -36,7 +36,7 @@ export default function inputClass() {
           />
         </div>
         <div class="md:w-1/2 px-3">
-          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
+          <label class="block  tracking-wide text-grey-darker text-xs font-bold mb-2">
             Skor
           </label>
           <input
@@ -49,7 +49,7 @@ export default function inputClass() {
       </div>
       <div class="-mx-3 md:flex mb-6">
         <div class="md:w-full px-3">
-          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
+          <label class="block  tracking-wide text-grey-darker text-xs font-bold mb-2">
             Kondisi
           </label>
           <input

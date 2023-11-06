@@ -52,8 +52,8 @@ export default function fetchData() {
         y: 380,
       }}
       title={() => (
-        <div style={{ textAlign: "center", fontWeight: "700" }}>
-          Data Siswa
+        <div style={{ textAlign: "left", fontWeight: "700", gap: '10px', display: "flex" }}>
+          Data Siswa <a style={{ fontWeight: '700', fontSize: '25px'}} ><AiOutlineDownload/></a>
         </div>
       )}
       className={Style.tableAnt}
