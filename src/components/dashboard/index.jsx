@@ -1,11 +1,22 @@
+"use client";
 import React from "react";
-import InputClass from "./inputClass";
+import { HomeFilled } from "@ant-design/icons";
 import DataClass from "./dataClass";
+import Breadcrumb from "../layouts/breadcrumb";
+import InputClass from "./inputClass";
+import { useDashboard } from "@/context/DashboardContext";
 
 export default function index() {
+  const { visible } = useDashboard();
   return (
     <>
-      <InputClass />
+      <Breadcrumb
+        breadcrumbs={[
+          { label: <HomeFilled />, url: "/" },
+          { label: "Dashboard ", url: "/dashboard" },
+        ]}
+      />
+      {visible && <InputClass />}
       <DataClass />
     </>
   );

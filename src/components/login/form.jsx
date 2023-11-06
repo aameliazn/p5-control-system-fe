@@ -20,10 +20,12 @@ export default function form() {
     axios
       .post(`/api/v1/auth/login`, e)
       .then((res) => {
-        setTokenUser(res?.data);
-        setDataUser(res?.data);
-        axios.defaults.headers.common["Authorization"] = `Bearer ${res?.data}`;
-        router.push("/dashboard");
+        // setTokenUser(res?.data);
+        // setDataUser(res?.data);
+        // axios.defaults.headers.common["Authorization"] = `Bearer ${res?.data}`;
+        // router.push("/dashboard");
+        e.preventDefault()
+        console.log(res)
       })
       .catch((err) => {
         console.log(err);
