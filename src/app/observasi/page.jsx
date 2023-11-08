@@ -1,11 +1,12 @@
 import React from "react";
 import Layout from "@/components/layouts";
+import Index from "@/components/observasi"
 
 export default function page() {
   return (
     <>
       <Layout>
-        <p>ini observasi lingkungan</p>
+       <Index/>
       </Layout>
     </>
   );

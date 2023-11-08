@@ -4,7 +4,7 @@ import Style from './style.module.css'
 import { useRouter } from 'next/navigation'
 import { Table } from 'antd'
 import axios from 'axios'
-
+import {AiOutlineDownload } from 'react-icons/ai'
 
 
 export default function fetchData() {
@@ -52,8 +52,8 @@ export default function fetchData() {
         y: 380,
       }}
       title={() => (
-        <div style={{ textAlign: "center", fontWeight: "700" }}>
-          Data Siswa
+        <div style={{ textAlign: "left", fontWeight: "700", gap: '10px', display: "flex" }}>
+          Data Siswa <a style={{ fontWeight: '700', fontSize: '25px'}} ><AiOutlineDownload/></a>
         </div>
       )}
       className={Style.tableAnt}

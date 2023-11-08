@@ -23,9 +23,9 @@ export default function inputClass() {
   };
   return (
     <>
-      <div ClassName="-mx-3 md:flex mb-6">
-        <div ClassName="md:w-1/2 px-3 mb-6 md:mb-0">
-          <label ClassName="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
+      <div className="-mx-3 md:flex mb-6">
+        <div className="md:w-1/2 px-3 mb-6 md:mb-0">
+          <label className="block tracking-wide text-grey-darker text-xs font-bold mb-2">
             Kegiatan
           </label>
           <input
@@ -35,8 +35,8 @@ export default function inputClass() {
             type="text"
           />
         </div>
-        <div ClassName="md:w-1/2 px-3">
-          <label ClassName="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
+        <div className="md:w-1/2 px-3">
+          <label className="block tracking-wide text-grey-darker text-xs font-bold mb-2">
             Skor
           </label>
           <input
@@ -47,9 +47,9 @@ export default function inputClass() {
           />
         </div>
       </div>
-      <div ClassName="-mx-3 md:flex mb-6">
-        <div ClassName="md:w-full px-3">
-          <label ClassName="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
+      <div className="mx-3 md:flex mb-6">
+        <div className="md:w-full px-3">
+          <label className="block tracking-wide text-grey-darker text-xs font-bold mb-2">
             Kondisi
           </label>
           <input

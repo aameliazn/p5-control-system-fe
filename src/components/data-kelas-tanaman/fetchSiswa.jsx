@@ -1,23 +1,39 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Style from "./style.module.css";
-import { useRouter } from "next/navigation";
-import { Table } from "antd";
-import axios from "axios";
 
-export default function fetchKelas() {
+import React, { useState, useEffect } from "react";
+import Style from "./style.module.css";
+import { Table } from "antd";
+import { useRouter } from "next/navigation";
+import axios from "axios";
+import { AiOutlineDownload } from "react-icons/ai";
+import XLSX from 'xlsx';
+
+
+export default function fetchSiswa() {
   const [siswa, setSiswa] = useState([]);
   const router = useRouter();
 
   useEffect(() => {
     axios.get("http://localhost:2000/siswa").then((response) => {
       setSiswa(response.data);
+      exportXLSX();
     });
   }, []);
 
   const pushRoute = () => {
-    router.push(`/kebersihan-diri-siswa/1`);
+    router.push(`/budidaya-tanaman-check/[id]`);
   };
+
+  //export xlsx
+  const exportXLSX = () => {
+    if (siswa.length > 0) {
+      const ws = XLSX.utils.json_to_sheet(siswa);
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, 'Data siswa');
+      XLSX.writeFile(wb, 'data_siswa.xlsx');
+    }
+  };
+
   const columns = [
     {
       title: "id",
@@ -31,7 +47,7 @@ export default function fetchKelas() {
       width: 50,
     },
     {
-      title: "Checklist",
+      title: "Minggu",
       dataIndex: "data",
       width: 50,
     },
@@ -49,7 +65,6 @@ export default function fetchKelas() {
       ),
     },
   ];
-
   return (
     <>
       <Table
@@ -62,8 +77,21 @@ export default function fetchKelas() {
           y: 380,
         }}
         title={() => (
-          <div style={{ textAlign: "left", fontWeight: "700", gap: '10px', display: "flex" }}>
-            Data Siswa <a style={{ fontWeight: '700', fontSize: '25px'}} ><AiOutlineDownload/></a>
+          <div
+            style={{
+              textAlign: "left",
+              fontWeight: "700",
+              gap: "10px",
+              display: "flex",
+            }}
+          >
+            Data Siswa{" "}
+            <button
+              onClick={exportXLSX}
+              style={{ fontWeight: "700", fontSize: "25px" }}
+            >
+              <AiOutlineDownload />
+            </button>
           </div>
         )}
         className={Style.tableAnt}
