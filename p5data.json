@@ -136,58 +136,7 @@
       "deskripsi": "Siswa yang bersemangat dalam kegiatan sosial."
     }
   ],
-  "kelas": [
-    {
-      "id": 1,
-      "kelas": "PPLG XII-1",
-      "date_time": "2023-10-28 09:00:00"
-    },
-    {
-      "id": 3,
-      "kelas": "DKV XII-1",
-      "date_time": "2023-10-28 11:00:00"
-    },
-    {
-      "id": 5,
-      "kelas": "PPLG XII-1",
-      "date_time": "2023-10-28 13:00:00"
-    },
-    {
-      "id": 6,
-      "kelas": "PPLG XII-2",
-      "date_time": "2023-10-28 14:00:00"
-    },
-    {
-      "id": 7,
-      "kelas": "DKV XII-1",
-      "date_time": "2023-10-28 15:00:00"
-    },
-    {
-      "id": 8,
-      "kelas": "TJKT XII-2",
-      "date_time": "2023-10-28 16:00:00"
-    },
-    {
-      "id": 9,
-      "kelas": "PPLG XII-1",
-      "date_time": "2023-10-28 17:00:00"
-    },
-    {
-      "id": 10,
-      "kelas": "PPLG XII-2",
-      "date_time": "2023-10-28 18:00:00"
-    },
-    {
-      "id": 11,
-      "kelas": "DKV XII-1",
-      "date_time": "2023-10-28 19:00:00"
-    },
-    {
-      "id": 12,
-      "kelas": "TJKT XII-2",
-      "date_time": "2023-10-28 20:00:00"
-    }
-  ],
+  "kelas": [],
   "materi": [
     {
       "id": 1,
@@ -348,32 +297,44 @@
   ],
   "pertanyaan": [
     {
-      "id": 1,
-      "pertanyaan": "kamu makan apa"
+      "pertanyaan": "test",
+      "id": 1
     },
     {
-      "pertanyaan": "dia yang aku suka",
-      "id": 3
-    },
-    {
-      "pertanyaan": "apa iya",
-      "id": 4
-    },
-    {
-      "pertanyaan": "kamu ngapain aja",
-      "id": 5
-    },
-    {
-      "pertanyaan": "kamu nanya",
-      "id": 6
-    },
-    {
-      "pertanyaan": "kamu bertanya tanya",
-      "id": 7
+      "pertanyaan": "",
+      "id": 2
     },
     {
       "pertanyaan": "test",
+      "id": 3
+    },
+    {
+      "pertanyaan": "test",
+      "id": 4
+    },
+    {
+      "pertanyaan": "test",
+      "id": 5
+    },
+    {
+      "pertanyaan": "test",
+      "id": 6
+    },
+    {
+      "pertanyaan": "test",
+      "id": 7
+    },
+     {
+      "pertanyaan": "test",
       "id": 8
+    },
+     {
+      "pertanyaan": "test",
+      "id": 9
+    },
+     {
+      "pertanyaan": "test",
+      "id": 10
     }
   ]
 }

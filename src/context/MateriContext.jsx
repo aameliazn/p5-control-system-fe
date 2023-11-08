@@ -10,6 +10,7 @@ export default function MateriContext({ req, res, children }) {
   const [uploadedFile, setUploadedFile] = useState([]);
   const [kelas, setKelas] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [xlsxData, setXlsxData] = useState(null);
 
   // if (req.method === "DELETE") {
   //   const itemId = parseInt(req.query.id, 10);
@@ -72,6 +73,17 @@ export default function MateriContext({ req, res, children }) {
     }
   };
 
+  //fatching endpoint xlsx
+  useEffect(() => {
+    const endpointXlsx = '';
+    axios.get(endpointXlsx, {responseType: 'arrayBuffer'})
+    .then((response) => {
+      const data = response.data;
+      setXlsxData(data);
+    }) .catch((e) => {
+      console.error('gagal export xlsx',  e);
+    })
+  })
   const state = {
     visible,
     setVisible,

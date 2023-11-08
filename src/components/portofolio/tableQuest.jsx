@@ -17,7 +17,7 @@ export default function tableQuest() {
   //delete
   const handleDelete = async (itemId) => {
     try {
-      await axios.delete(`http:localhost:2000/pertanyaan/${itemId}`);
+      await axios.delete(`http://localhost:2000/pertanyaan/${itemId}`);
       setTable(table.filter((item) => item.id !== itemId));
     } catch (e) {
       console.error("gagal menghapus pertanyaan", e);
