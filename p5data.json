@@ -345,5 +345,35 @@
       "bruto": "24,3",
       "neto": "2.44"
     }
+  ],
+  "pertanyaan": [
+    {
+      "id": 1,
+      "pertanyaan": "kamu makan apa"
+    },
+    {
+      "pertanyaan": "dia yang aku suka",
+      "id": 3
+    },
+    {
+      "pertanyaan": "apa iya",
+      "id": 4
+    },
+    {
+      "pertanyaan": "kamu ngapain aja",
+      "id": 5
+    },
+    {
+      "pertanyaan": "kamu nanya",
+      "id": 6
+    },
+    {
+      "pertanyaan": "kamu bertanya tanya",
+      "id": 7
+    },
+    {
+      "pertanyaan": "test",
+      "id": 8
+    }
   ]
 }

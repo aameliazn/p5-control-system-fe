@@ -11,7 +11,7 @@ export default function inputRuangan() {
       const response = await axios.post("http://localhost:2000/ruangan", {
         ruangan,
       });
-      console.log("kegiatan berhasil ditambahkan", response.data);
+      console.log("ruangan berhasil ditambahkan", response.data);
       window.location.reload();
     } catch (error) {
       console.error("gagal menambah data", error);
