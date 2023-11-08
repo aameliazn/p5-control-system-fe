@@ -136,7 +136,83 @@
       "deskripsi": "Siswa yang bersemangat dalam kegiatan sosial."
     }
   ],
-  "kelas": [],
+  "kelas": [
+    {
+      "id": 1,
+      "kelas": "PPLG XII-1",
+      "date_time": "2023-10-28 09:00:00"
+    },
+    {
+      "id": 2,
+      "kelas": "PPLG XII-2",
+      "date_time": "2023-10-28 10:00:00"
+    },
+    {
+      "id": 3,
+      "kelas": "DKV XII-1",
+      "date_time": "2023-10-28 11:00:00"
+    },
+    {
+      "id": 4,
+      "kelas": "TJKT XII-2",
+      "date_time": "2023-10-28 12:00:00"
+    },
+    {
+      "id": 5,
+      "kelas": "PPLG XII-1",
+      "date_time": "2023-10-28 13:00:00"
+    },
+    {
+      "id": 6,
+      "kelas": "PPLG XII-2",
+      "date_time": "2023-10-28 14:00:00"
+    },
+    {
+      "id": 7,
+      "kelas": "DKV XII-1",
+      "date_time": "2023-10-28 15:00:00"
+    },
+    {
+      "id": 8,
+      "kelas": "TJKT XII-2",
+      "date_time": "2023-10-28 16:00:00"
+    },
+    {
+      "id": 9,
+      "kelas": "PPLG XII-1",
+      "date_time": "2023-10-28 17:00:00"
+    },
+    {
+      "id": 10,
+      "kelas": "PPLG XII-2",
+      "date_time": "2023-10-28 18:00:00"
+    },
+    {
+      "id": 11,
+      "kelas": "DKV XII-1",
+      "date_time": "2023-10-28 19:00:00"
+    },
+    {
+      "id": 12,
+      "kelas": "TJKT XII-2",
+      "date_time": "2023-10-28 20:00:00"
+    },
+    {
+      "id": 13,
+      "kelas": "PPLG XII-1",
+      "date_time": "2023-10-28 21:00:00"
+    },
+    {
+      "id": 14,
+      "kelas": "PPLG XII-2",
+      "date_time": "2023-10-28 22:00:00"
+    },
+    {
+      "id": 15,
+      "kelas": "DKV XII-1",
+      "date_time": "2023-10-28 23:00:00"
+    }
+  ],
   "materi": [
     {
       "id": 1,
@@ -301,10 +377,6 @@
       "id": 1
     },
     {
-      "pertanyaan": "",
-      "id": 2
-    },
-    {
       "pertanyaan": "test",
       "id": 3
     },
@@ -324,15 +396,15 @@
       "pertanyaan": "test",
       "id": 7
     },
-     {
+    {
       "pertanyaan": "test",
       "id": 8
     },
-     {
+    {
       "pertanyaan": "test",
       "id": 9
     },
-     {
+    {
       "pertanyaan": "test",
       "id": 10
     }
