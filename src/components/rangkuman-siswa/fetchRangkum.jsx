@@ -10,14 +10,14 @@ export default function fetchRangkum() {
             
             <div className='items-center justify-center flex'>
             <div
-            class={Style.cardwarpper}
+            className={Style.cardwarpper}
 
             >
-                <div class="w-full">
-                    <h4 class=" max-w-full text-xl font-bold text-white md:w-[64%] md:text-3xl md:leading-[42px] lg:w-[46%] xl:w-[85%] 2xl:w-[75%] 3xl:w-[52%]">
+                <div className="w-full">
+                    <h4 className=" max-w-full text-xl font-bold text-white md:w-[64%] md:text-3xl md:leading-[42px] lg:w-[46%] xl:w-[85%] 2xl:w-[75%] 3xl:w-[52%]">
                     Rangkuman materi
                     </h4>
-                    <div class="flex items-center justify-between gap-4 sm:justify-start 2xl:gap-10">
+                    <div className="flex items-center justify-between gap-4 sm:justify-start 2xl:gap-10">
                     <button className={Style.button}>
                     <AiOutlineDownload size={30} />
                     </button>

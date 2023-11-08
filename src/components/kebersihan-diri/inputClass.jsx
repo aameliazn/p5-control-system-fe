@@ -24,13 +24,13 @@ export default function inputClass() {
           <p className="text-xl inline mr-3">
             <b>Input Kegiatan</b>
           </p>
-          <p class="text-xs text-gray-500 dark:text-gray-500 inline">
+          <p className="text-xs text-gray-500 dark:text-gray-500 inline">
             XLSX (Max 200mb)
           </p>
         </div>
         <input
           type="text"
-          class="max-w-sm w-full lg:max-w-full input-file mt-3"
+          className="max-w-sm w-full lg:max-w-full input-file mt-3"
           value={kegiatan}
           onChange={(e) => setKegiatan(e.target.value)}
         />

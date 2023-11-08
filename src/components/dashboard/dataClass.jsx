@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import { Col, Row, Typography } from "antd";
 import React, { useState } from "react";
 import Style from "./dashboard.module.css";
 import { useRouter } from "next/navigation";
+import { Col, Row, Typography } from "antd";
 import { AiOutlineDelete } from "react-icons/ai";
 import starWhite from "../../../public/star-white.png";
 import starYellow from "../../../public/star-yellow.png";
@@ -59,7 +59,11 @@ export default function dataClass() {
                 style={{ borderBottom: "3px solid green" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
-                <Title level={5} onClick={(e) => handleClick2(e, 0)}>
+                <Title
+                  level={5}
+                  onClick={(e) => handleClick2(e, 0)}
+                  style={{ cursor: "pointer" }}
+                >
                   PPLG XII 1
                 </Title>
                 <div className="flex">
@@ -89,7 +93,11 @@ export default function dataClass() {
                 style={{ borderBottom: "3px solid green" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
-                <Title level={5} onClick={(e) => handleClick2(e, 1)}>
+                <Title
+                  level={5}
+                  onClick={(e) => handleClick2(e, 1)}
+                  style={{ cursor: "pointer" }}
+                >
                   PPLG XII 1
                 </Title>
                 <div className="flex">
@@ -119,7 +127,11 @@ export default function dataClass() {
                 style={{ borderBottom: "3px solid green" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
-                <Title level={5} onClick={(e) => handleClick2(e, 2)}>
+                <Title
+                  level={5}
+                  onClick={(e) => handleClick2(e, 2)}
+                  style={{ cursor: "pointer" }}
+                >
                   PPLG XII 1
                 </Title>
                 <div className="flex">
@@ -149,7 +161,11 @@ export default function dataClass() {
                 style={{ borderBottom: "3px solid green" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
-                <Title level={5} onClick={(e) => handleClick2(e, 3)}>
+                <Title
+                  level={5}
+                  onClick={(e) => handleClick2(e, 3)}
+                  style={{ cursor: "pointer" }}
+                >
                   PPLG XII 1
                 </Title>
                 <div className="flex">
@@ -179,7 +195,11 @@ export default function dataClass() {
                 style={{ borderBottom: "3px solid darkblue" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
-                <Title level={5} onClick={(e) => handleClick2(e, 0)}>
+                <Title
+                  level={5}
+                  onClick={(e) => handleClick2(e, 0)}
+                  style={{ cursor: "pointer" }}
+                >
                   PPLG XII 1
                 </Title>
                 <div className="flex">
@@ -209,7 +229,11 @@ export default function dataClass() {
                 style={{ borderBottom: "3px solid darkblue" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
-                <Title level={5} onClick={(e) => handleClick2(e, 1)}>
+                <Title
+                  level={5}
+                  onClick={(e) => handleClick2(e, 1)}
+                  style={{ cursor: "pointer" }}
+                >
                   PPLG XII 1
                 </Title>
                 <div className="flex">
@@ -239,7 +263,11 @@ export default function dataClass() {
                 style={{ borderBottom: "3px solid darkblue" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
-                <Title level={5} onClick={(e) => handleClick2(e, 2)}>
+                <Title
+                  level={5}
+                  onClick={(e) => handleClick2(e, 2)}
+                  style={{ cursor: "pointer" }}
+                >
                   PPLG XII 1
                 </Title>
                 <div className="flex">
@@ -269,7 +297,11 @@ export default function dataClass() {
                 style={{ borderBottom: "3px solid darkblue" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
-                <Title level={5} onClick={(e) => handleClick2(e, 3)}>
+                <Title
+                  level={5}
+                  onClick={(e) => handleClick2(e, 3)}
+                  style={{ cursor: "pointer" }}
+                >
                   PPLG XII 1
                 </Title>
                 <div className="flex">
@@ -299,7 +331,11 @@ export default function dataClass() {
                 style={{ borderBottom: "3px solid crimson" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
-                <Title level={5} onClick={(e) => handleClick2(e, 0)}>
+                <Title
+                  level={5}
+                  onClick={(e) => handleClick2(e, 0)}
+                  style={{ cursor: "pointer" }}
+                >
                   PPLG XII 1
                 </Title>
                 <div className="flex">
@@ -329,7 +365,11 @@ export default function dataClass() {
                 style={{ borderBottom: "3px solid crimson" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
-                <Title level={5} onClick={(e) => handleClick2(e, 1)}>
+                <Title
+                  level={5}
+                  onClick={(e) => handleClick2(e, 1)}
+                  style={{ cursor: "pointer" }}
+                >
                   PPLG XII 1
                 </Title>
                 <div className="flex">
@@ -359,7 +399,11 @@ export default function dataClass() {
                 style={{ borderBottom: "3px solid crimson" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
-                <Title level={5} onClick={(e) => handleClick2(e, 2)}>
+                <Title
+                  level={5}
+                  onClick={(e) => handleClick2(e, 2)}
+                  style={{ cursor: "pointer" }}
+                >
                   PPLG XII 1
                 </Title>
                 <div className="flex">
@@ -389,7 +433,11 @@ export default function dataClass() {
                 style={{ borderBottom: "3px solid crimson" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
-                <Title level={5} onClick={(e) => handleClick2(e, 3)}>
+                <Title
+                  level={5}
+                  onClick={(e) => handleClick2(e, 3)}
+                  style={{ cursor: "pointer" }}
+                >
                   PPLG XII 1
                 </Title>
                 <div className="flex">

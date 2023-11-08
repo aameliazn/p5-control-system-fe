@@ -94,7 +94,12 @@ export default function sidebar({ children }) {
                         className="menu-toggle"
                       />
                       <label
-                        className="menu-item justify-between"
+                        className={`justify-between menu-item ${
+                          pathname == "/kebersihan-sekolah" ||
+                          pathname == "/kebersihan-diri"
+                            ? "menu-item-disabled"
+                            : ""
+                        }`}
                         htmlFor="menu-1"
                       >
                         <div className="flex gap-2">
@@ -131,7 +136,14 @@ export default function sidebar({ children }) {
                         </span>
                       </label>
 
-                      <div className="menu-item-collapse">
+                      <div
+                        className={`${
+                          pathname == "/kebersihan-sekolah" ||
+                          pathname == "/kebersihan-diri"
+                            ? "menu-active"
+                            : "menu-item-collapse"
+                        }`}
+                      >
                         <div className="min-h-0">
                           {/* <label className="menu-item menu-item-disabled ml-6">
                             Change Email
@@ -448,7 +460,7 @@ export default function sidebar({ children }) {
 
                     <div className="flex flex-col">
                       <span>Sandra Marx</span>
-                      <span class="text-xs font-normal text-content2">
+                      <span className="text-xs font-normal text-content2">
                         sandra
                       </span>
                     </div>

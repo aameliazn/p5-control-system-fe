@@ -1,5 +1,6 @@
 import "./globals.css";
 import axios from "axios";
+import { ConfigProvider } from "antd";
 import { Inter } from "next/font/google";
 import LoginProvider from "@/context/LoginContext";
 
@@ -16,7 +17,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <LoginProvider>{children}</LoginProvider>
+        <ConfigProvider theme={{ token: {colorPrimary: '#15803d'} }}>
+          <LoginProvider>{children}</LoginProvider>
+        </ConfigProvider>
       </body>
     </html>
   );

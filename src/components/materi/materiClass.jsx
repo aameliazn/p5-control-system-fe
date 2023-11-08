@@ -1,67 +1,175 @@
-'use client'
+import React from "react";
+import { useMateri } from "@/context/MateriContext";
+import { Col, Row, Typography, Card, Pagination } from "antd";
+import {
+  EyeOutlined,
+  DownloadOutlined,
+  DeleteOutlined,
+} from "@ant-design/icons";
 
-import React, {useState, useEffect} from "react";
-import Style from "./materi.module.css";
-import { AiOutlineDownload } from "react-icons/ai";
-import { AiFillEye } from "react-icons/ai";
-import axios from "axios";
+const { Meta } = Card;
+const { Title } = Typography;
+
+const dummyData = [
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
+  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
+];
 
 export default function materi() {
-  const [uploadedFile, setAploadedFile] = useState([]);
+  const { visible, setVisible, handleDeletePDF, currentPage, setCurrentPage } =
+    useMateri();
 
-  
-    //get data pdf
-    useEffect(() => {
-      axios.get(' http://localhost:2000/materi')
-      .then((response) => {
-        setAploadedFile(response.data);
-      })
-      .catch((error) => {
-        console.error('error mengambil data', error);
-      });
-    }, []);
+  const itemsPerPage = 4;
 
-  //delete data pdf
-  const handleDeletePDF = (fileId) => {
-    axios.delete(`http://localhost:2000/${fileId}`)
-    .then(() => {
-      console.log('PDF berhasil dihapus');
-      const UpdatePDF = uploadedFile.filter((file) => file.id !== fileId);
-      setAploadedFile(UpdatePDF);
-    })
-    .catch((err) => {
-      console.error('error hapus file', err);
-    });
+  const handleChangePage = (page) => {
+    setCurrentPage(page);
   };
+
   return (
     <>
-      <div className="max-w-sm w-full lg:max-w-full p-6 mt-4 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-        <div className="flex flex-wrap gap-2 justify-around">
-
-         
-   <div  class={Style.cardMateri}>
-   <img class="w-full" src="./example.jpeg" alt="" />
-   <div class="px-3 py-2">
-     <div class="font-bold text-xl mt-3 mb-2 text-center">
-       wadadabang
-     </div>
-     <div className={Style.btnf}>
-       <div>
-         <button class={Style.button}>
-           <AiOutlineDownload size={30} />
-         </button>
-       </div>
-       <div>
-         <button class={Style.button1} onClick={() =>  handleDeletePDF(file.id)}>
-           <AiFillEye size={30} />
-         </button>
-       </div>
-     </div>
-   </div>
- </div>
-        
-
+      <div className="mt-5">
+        <div className="flex flex-row justify-between">
+          <Title level={3}>Materi</Title>
+          <button
+            className={
+              "btn border-2 border-solid text-green-700 border-green-700 w-1/6 hover:bg-emerald-700 hover:border-emerald-700 hover:text-stone-50"
+            }
+            onClick={() => {
+              setVisible(!visible);
+            }}
+          >
+            Tambah Materi
+          </button>
         </div>
+        <Row
+          gutter={{
+            xs: 8,
+            sm: 16,
+            md: 24,
+            lg: 32,
+          }}
+        >
+          {dummyData
+            .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+            .map((item, index) => (
+              <Col key={index} className="gutter-row" span={6}>
+                <div style={{ padding: "8px 0" }}>
+                  <Card
+                    style={{
+                      width: 270,
+                      height: 222.5,
+                      borderBottom: "3px solid green",
+                    }}
+                    cover={
+                      <div style={{ width: "100%", height: "110px" }}>
+                        <img
+                          alt="image"
+                          src={item?.imageUrl}
+                          style={{
+                            objectFit: "cover",
+                            width: "100%",
+                            height: "100%",
+                          }}
+                        />
+                      </div>
+                    }
+                    actions={[
+                      <EyeOutlined key="eye" />,
+                      <DownloadOutlined key="download" />,
+                      <DeleteOutlined key="delete" />,
+                    ]}
+                  >
+                    <Meta title={item?.title} style={{ textAlign: "center" }} />
+                  </Card>
+                </div>
+              </Col>
+            ))}
+        </Row>
+        <Pagination
+          current={currentPage}
+          total={dummyData?.length}
+          showTotal={(total, range) =>
+            `${range[0]}-${range[1]} of ${total} items`
+          }
+          pageSize={itemsPerPage}
+          showSizeChanger={false}
+          onChange={handleChangePage}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            margin: "20px 0",
+          }}
+        />
       </div>
     </>
   );

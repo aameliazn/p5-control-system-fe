@@ -55,15 +55,15 @@ export default function dataSiswa() {
         <div className={Style.cardWrapper}>
           {kelas.map((kelas) => (
             <div key={kelas.id} className={Style.column}>
-              <div class={Style.dataSiswa}>
+              <div className={Style.dataSiswa}>
                 <p
                   onClick={handleClick2}
-                  class="cursor-pointer font-medium sm:text-lg"
+                  className="cursor-pointer font-medium sm:text-lg"
                 >
                   {kelas.kelas}
                 </p>
 
-                <span class="ml-auto text-lg font-medium text-blue-600 hidden sm:block">
+                <span className="ml-auto text-lg font-medium text-blue-600 hidden sm:block">
                   <div className="flex flex-wrap gap-2">
                     <button className={Style.button2}>
                       <Image

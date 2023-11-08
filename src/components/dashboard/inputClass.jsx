@@ -8,7 +8,7 @@ const { Dragger } = Upload;
 
 const props = {
   name: "file",
-  multiple: true,
+  multiple: false,
   action: "https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188",
   onChange(info) {
     const { status } = info.file;
@@ -36,6 +36,7 @@ const CollectionCreateForm = ({ onCreate, onCancel }) => {
       okText="Tambah"
       cancelText="Batal"
       okType="default"
+      zIndex={999}
       onCancel={onCancel}
       onOk={() => {
         form
@@ -69,10 +70,12 @@ const CollectionCreateForm = ({ onCreate, onCancel }) => {
 
 export default function inputClass() {
   const { visible, setVisible } = useDashboard();
+
   const onCreate = (values) => {
     console.log("Received values of form: ", values);
     setVisible(false);
   };
+  
   return (
     <>
       <div>

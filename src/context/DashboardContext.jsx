@@ -11,7 +11,11 @@ export default function DashboardContext({ children }) {
     setVisible,
   };
 
-  return <ContextDashboard.Provider value={state}>{children}</ContextDashboard.Provider>;
+  return (
+    <ContextDashboard.Provider value={state}>
+      {children}
+    </ContextDashboard.Provider>
+  );
 }
 
 export const useDashboard = () => {

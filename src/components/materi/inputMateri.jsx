@@ -1,53 +1,95 @@
-'use client'
+"use client";
+import React from "react";
+import { Form, Modal, message, Upload } from "antd";
+import { InboxOutlined } from "@ant-design/icons";
+import { useMateri } from "@/context/MateriContext";
 
-import React, {useState} from 'react'
-import axios from 'axios'
+const { Dragger } = Upload;
+
+const props = {
+  name: "file",
+  multiple: false,
+  action: "http://localhost:2000/materi",
+  onDrop(e) {
+    console.log("Dropped files", e.dataTransfer.files);
+  },
+};
+
+const CollectionCreateForm = ({ onCreate, onCancel }) => {
+  const [form] = Form.useForm();
+  const { visible, setSelectedFile } = useMateri();
+  return (
+    <Modal
+      open={visible}
+      title="Tambah Materi"
+      okText="Tambah"
+      cancelText="Batal"
+      okType="default"
+      zIndex={999}
+      onCancel={onCancel}
+      onOk={() => {
+        form
+          .validateFields()
+          .then((values) => {
+            form.resetFields();
+            onCreate(values);
+          })
+          .catch((info) => {
+            console.log("Validate Failed:", info);
+          });
+      }}
+    >
+      <Form form={form} layout="vertical" name="form_in_modal">
+        <Dragger
+          {...props}
+          onChange={(info) => {
+            const { status } = info.file;
+            setSelectedFile(info.file);
+            if (status !== "uploading") {
+              console.log(info.file, info.fileList);
+            }
+            if (status === "done") {
+              message.success(`${info.file.name} file uploaded successfully.`);
+            } else if (status === "error") {
+              message.error(`${info.file.name} file upload failed.`);
+            }
+          }}
+        >
+          <p className="ant-upload-drag-icon">
+            <InboxOutlined />
+          </p>
+          <p className="ant-upload-text">
+            Click or drag file to this area to upload
+          </p>
+          <p className="ant-upload-hint">
+            Support for a single or bulk upload. Strictly prohibited from
+            uploading company data or other banned files.
+          </p>
+        </Dragger>
+      </Form>
+    </Modal>
+  );
+};
 
 export default function inputMateri() {
-  const [selectedFile, setSelectedFile] = useState(null);
-  
+  const { visible, setVisible } = useMateri();
 
-
-  //handle post pdf
-  const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
-  }
-
-  const handleFilePDF = () => {
-    const formData = new FormData();
-    formData.append('file', selectedFile);
-
-
-    //post data pdf
-    axios.post(' http://localhost:2000/materi', formData)
-    .then((response) => {
-      console.log('File sudah ter aploud', response.data);
-    })
-    .catch((err) => {
-      console.error('error aploud file', err);
-    });
+  const onCreate = (values) => {
+    console.log("Received values of form: ", values);
+    setVisible(false);
   };
+
   return (
-   <>
-     <div className="max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-        <div>
-          <p className="text-xl inline mr-3">
-            <b>Input Materi</b>
-          </p>
-          <p class="text-xs text-gray-500 dark:text-gray-500 inline">
-            XLSX (Max 200mb)
-          </p>
-        </div>
-        <input
-          class="max-w-sm w-full lg:max-w-full input-file mt-3"
-          type="file"
-          accept='.pdf'
-          onChange={handleFileChange}
+    <>
+      <div>
+        <CollectionCreateForm
+          open={visible}
+          onCreate={onCreate}
+          onCancel={() => {
+            setVisible(false);
+          }}
         />
-        <div className="flex justify-end mt-2">
-          <button onClick={handleFilePDF} className="btn btn-primary w-1/6">Upload PDF</button>
-        </div>
       </div>
-   </>
-  )
+    </>
+  );
 }
