@@ -1,12 +1,15 @@
 import React from "react";
 import Layout from "@/components/layouts";
-import Index from "@/components/kebersihan-diri/index";
+import KebersihanDiri from "@/components/kebersihan-diri";
+import KebersihanDiriProvider from "@/context/KebersihanDiriContext";
 
 export default function page() {
   return (
     <>
       <Layout>
-        <div><Index/></div>
+        <KebersihanDiriProvider>
+          <KebersihanDiri />
+        </KebersihanDiriProvider>
       </Layout>
     </>
   );

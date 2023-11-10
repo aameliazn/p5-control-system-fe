@@ -1,89 +1,52 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import Style from "./style.module.css";
-import Image from "next/image";
-import starWhite from "../../../public/star-white.png";
-import starYellow from "../../../public/star-yellow.png";
+import React from "react";
 import { useRouter } from "next/navigation";
-import { AiOutlineDelete } from "react-icons/ai";
-import axios from "axios";
+import { Typography, Row, Col } from "antd";
+import { useKebersihanDiri } from "@/context/KebersihanDiriContext";
+
+const { Title } = Typography;
 
 export default function dataSiswa() {
   const router = useRouter();
-  const [kelas, useKelas] = useState([]);
-  const [isClicked, setIsClicked] = useState(starWhite);
+  const { kelas } = useKebersihanDiri();
 
-  // data icon star
-  const handleClick = () => {
-    if (isClicked == starWhite) {
-      setIsClicked(starYellow);
-    } else {
-      setIsClicked(starWhite);
-    }
+  const handleClick2 = (e, index) => {
+    router.push(`/data-kelas-kebersihan/${index}`);
   };
 
-  //data fatching
-  useEffect(() => {
-    axios
-      .get("http://localhost:2000/kelas")
-      .then((response) => {
-        useKelas(response.data);
-      })
-      .catch((error) => {
-        console.error("error mengambil data", error);
-      });
-  }, []);
-
-  //untuk delete
-
-  const handleDelete = async (itemId) => {
-    try {
-      await axios.delete(`http://localhost:2000/kelas/${itemId}`);
-      useKelas(kelas.filter((item) => item.id !== itemId));
-    } catch (error) {
-      console.error("error menghapus data", error);
-    }
-  };
-
-  const handleClick2 = () => {
-    router.push("/data-kelas-kebersihan/[id]");
-  };
   return (
     <>
-      <div className="max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg mt-4 shadow hover:bg-gray-100">
-        <div className="font-bold text-lg">Data Siswa</div>
-        <div className={Style.cardWrapper}>
-          {kelas.map((kelas) => (
-            <div key={kelas.id} className={Style.column}>
-              <div className={Style.dataSiswa}>
-                <p
-                  onClick={handleClick2}
-                  className="cursor-pointer font-medium sm:text-lg"
-                >
-                  {kelas.kelas}
-                </p>
-
-                <span className="ml-auto text-lg font-medium text-blue-600 hidden sm:block">
-                  <div className="flex flex-wrap gap-2">
-                    <button className={Style.button2}>
-                      <Image
-                        src={isClicked}
-                        onClick={handleClick}
-                        alt="Star"
-                        width={23}
-                        height={23}
-                      />
-                    </button>
-                    <button onClick={() => handleDelete(kelas.id)}>
-                      <AiOutlineDelete color={"red"} size={27} />
-                    </button>
-                  </div>
-                </span>
-              </div>
-            </div>
-          ))}
+      <div className="mt-5">
+        <div className="flex flex-row justify-between">
+          <Title level={3}>Data Kelas</Title>
         </div>
       </div>
+      <Row
+        gutter={{
+          xs: 8,
+          sm: 16,
+          md: 24,
+          lg: 32,
+        }}
+      >
+        {kelas.map((item, index) => (
+          <Col key={index} className="gutter-row" span={6}>
+            <div style={{ padding: "8px 0" }}>
+              <div
+                style={{ borderBottom: "3px solid green" }}
+                className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
+              >
+                <Title
+                  level={5}
+                  onClick={(e) => handleClick2(e, index)}
+                  style={{ cursor: "pointer" }}
+                >
+                  {item?.kelas}
+                </Title>
+              </div>
+            </div>
+          </Col>
+        ))}
+      </Row>
     </>
   );
 }
