@@ -9,6 +9,7 @@ import { useMateri } from "@/context/MateriContext";
 
 export default function index() {
   const { visible } = useMateri();
+  
   return (
     <>
       <Breadcrumb

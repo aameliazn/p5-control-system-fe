@@ -192,7 +192,7 @@ export default function dataClass() {
           <Col className="gutter-row" span={6}>
             <div style={{ padding: "8px 0" }}>
               <div
-                style={{ borderBottom: "3px solid darkblue" }}
+                style={{ borderBottom: "3px solid green" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
                 <Title
@@ -226,7 +226,7 @@ export default function dataClass() {
           <Col className="gutter-row" span={6}>
             <div style={{ padding: "8px 0" }}>
               <div
-                style={{ borderBottom: "3px solid darkblue" }}
+                style={{ borderBottom: "3px solid green" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
                 <Title
@@ -260,7 +260,7 @@ export default function dataClass() {
           <Col className="gutter-row" span={6}>
             <div style={{ padding: "8px 0" }}>
               <div
-                style={{ borderBottom: "3px solid darkblue" }}
+                style={{ borderBottom: "3px solid green" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
                 <Title
@@ -294,7 +294,7 @@ export default function dataClass() {
           <Col className="gutter-row" span={6}>
             <div style={{ padding: "8px 0" }}>
               <div
-                style={{ borderBottom: "3px solid darkblue" }}
+                style={{ borderBottom: "3px solid green" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
                 <Title
@@ -328,7 +328,7 @@ export default function dataClass() {
           <Col className="gutter-row" span={6}>
             <div style={{ padding: "8px 0" }}>
               <div
-                style={{ borderBottom: "3px solid crimson" }}
+                style={{ borderBottom: "3px solid green" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
                 <Title
@@ -362,7 +362,7 @@ export default function dataClass() {
           <Col className="gutter-row" span={6}>
             <div style={{ padding: "8px 0" }}>
               <div
-                style={{ borderBottom: "3px solid crimson" }}
+                style={{ borderBottom: "3px solid green" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
                 <Title
@@ -396,7 +396,7 @@ export default function dataClass() {
           <Col className="gutter-row" span={6}>
             <div style={{ padding: "8px 0" }}>
               <div
-                style={{ borderBottom: "3px solid crimson" }}
+                style={{ borderBottom: "3px solid green" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
                 <Title
@@ -430,7 +430,7 @@ export default function dataClass() {
           <Col className="gutter-row" span={6}>
             <div style={{ padding: "8px 0" }}>
               <div
-                style={{ borderBottom: "3px solid crimson" }}
+                style={{ borderBottom: "3px solid green" }}
                 className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
               >
                 <Title
