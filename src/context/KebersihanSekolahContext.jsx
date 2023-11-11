@@ -1,57 +1,41 @@
-'use client'
-
-import React, {createContext, useContext, useEffect, useState} from 'react'
-import axios from 'axios'
-import {notification} from 'antd'
-import { useRouter } from 'next/navigation'
-import starWhite from '../../public/star-white.png'
-import starYellow from '../../public/star-yellow.png'
+"use client";
+import axios from "axios";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+} from "react";
 
 const ContextKebersihanSekolah = createContext(null);
 
-export default function KebersihanSekolahContext({children}) {
-  const [kegiatan, setKegiatan] = useState("");
-  const [kondisi, setKondisi] = useState("");
-  const [skor, setSkor] = useState("");
-  const router = useRouter();
-  const [kelas, useKelas] = useState([]);
-  const [isClicked, setIsClicked] = useState(starWhite);
+export default function KebersihanSekolahContext({ children }) {
+  const [visible, setVisible] = useState(false);
+  const [table, setTable] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchText, setSearchText] = useState("");
+  const [searchedColumn, setSearchedColumn] = useState("");
+  const [kelas, setKelas] = useState([]);
 
-     // data icon star
-     const handleClick = () => {
-      if (isClicked == starWhite) {
-        setIsClicked(starYellow);
-      } else {
-        setIsClicked(starWhite);
-      }
-    };
-    
-  
-  //get data kelas
-  useEffect(() => {
-    axios.get("http://localhost:2000/kelas").then((response) => {
-      useKelas(response.data);
-    }).catch((error) => {
-      console.error("gagal mengambil data", error);
-    });
-  }, []);
+  const searchInput = useRef(null);
 
-  //delete data kelas
-  const handleDelete = async (itemId) => {
-    try{
-      await axios.delete(`http://localhost:2000/kelas/${itemId}`);
-      useKelas(kelas.filter((item) => item.id !== itemId));
-    } catch (error) {
-      console.error("error menghapus data", error);
-    }
-  };
+  const itemsPerPage = 5;
 
-  const handleClick2 = () => {
-    router.push("/data-kelas-sekolah/[id]");
-  };
+  const [pagination, setPagination] = useState({
+    total: table?.length,
+    showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} items`,
+    current: currentPage,
+    pageSize: itemsPerPage,
+    showSizeChanger: false,
+    position: ["bottomCenter"],
+  });
 
-  //post data
-  const handleForm = async () => {
+  const handleForm = async (values) => {
+    const kegiatan = values?.kegiatan;
+    const kondisi = values?.kondisi;
+    const skor = values?.skor;
+
     try {
       const response = await axios.post("http://localhost:2000/kegiatan", {
         kegiatan,
@@ -59,38 +43,69 @@ export default function KebersihanSekolahContext({children}) {
         skor,
       });
       console.log("Input berhasil ditambahkan", response.data);
-      notification.success({
-        message: "Input ber  hasil",
-        description: "Data telah berhasil ditambahkan.",
-        type: "success",
-      })
       window.location.reload();
     } catch (error) {
-      notification.error({
-        message: "Gagal menyimpan",
-        description: "Terjadi kesalahan saat menyimpan data.",
-        type: "error",
-      });
       console.error("gagal menyimpan data", error);
     }
   };
 
+  useEffect(() => {
+    axios.get("http://localhost:2000/kegiatan").then((response) => {
+      setTable(response.data);
+    });
+  }, []);
 
-  
-const state = {
-  kegiatan,
-  kondisi,
-  skor,
-  setKegiatan,
-  setKondisi,
-  setSkor,
-  handleForm,
-  kelas,
-  handleDelete,
-  handleClick2,
-  isClicked,
-  handleClick
-}
+  const handleDelete = async (itemId) => {
+    try {
+      await axios.delete(` http://localhost:2000/kegiatan/${itemId}`);
+      setTable(table.filter((item) => item.id !== itemId));
+    } catch (error) {
+      console.error("error menghapus data", error);
+    }
+  };
+
+  const handleDeleteClass = async (itemId) => {
+    try {
+      await axios.delete(`http://localhost:2000/kelas/${itemId}`);
+      setKelas(kelas.filter((item) => item.id !== itemId));
+    } catch (error) {
+      console.error("error menghapus data", error);
+    }
+  };
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:2000/kelas")
+      .then((response) => {
+        setKelas(response.data);
+      })
+      .catch((error) => {
+        console.error("gagal mengambil data", error);
+      });
+  }, []);
+
+  const state = {
+    visible,
+    setVisible,
+    handleForm,
+    table,
+    setTable,
+    handleDelete,
+    currentPage,
+    setCurrentPage,
+    searchText,
+    setSearchText,
+    searchedColumn,
+    setSearchedColumn,
+    searchInput,
+    pagination,
+    setPagination,
+    itemsPerPage,
+    kelas,
+    setKelas,
+    handleDeleteClass,
+  };
+
   return (
     <ContextKebersihanSekolah.Provider value={state}>
       {children}
@@ -102,8 +117,8 @@ export const useKebersihanSekolah = () => {
   const context = useContext(ContextKebersihanSekolah);
   if (context === undefined) {
     throw new Error(
-      'useKebersihanSekolah must be use within a Network Performance'
+      `useKebersihanSekolah must be use within a Network Performance`
     );
   }
-  return context; 
+  return context;
 };

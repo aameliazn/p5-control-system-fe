@@ -1,47 +1,52 @@
-'use client'
+import React from "react";
+import { useRouter } from "next/navigation";
+import { Typography, Row, Col } from "antd";
+import { useKebersihanSekolah } from "@/context/KebersihanSekolahContext";
 
-import React from 'react'
-import Style from './style.module.css'
-import Image from 'next/image'
-import { AiOutlineDelete } from "react-icons/ai"
-import { useKebersihanSekolah } from '@/context/KebersihanSekolahContext'
+const { Title } = Typography;
 
 export default function dataClass() {
-  const {kelas, handleDelete, handleClick, handleClick2, isClicked} = useKebersihanSekolah();
-  
+  const router = useRouter();
+  const { kelas } = useKebersihanSekolah();
+
+  const handleClick2 = (e, index) => {
+    router.push(`/data-kelas-sekolah/${index}`);
+  };
+
   return (
     <>
-     <div className={Style.cardWrapper}>
-          {kelas.map((kelas) => (
-            <div key={kelas.id} className={Style.column}>
-              <div className={Style.dataSiswa}>
-                <p
-                  onClick={handleClick2}
-                  className="cursor-pointer font-medium sm:text-lg"
+      <div className="mt-5">
+        <div className="flex flex-row justify-between">
+          <Title level={3}>Data Kelas</Title>
+        </div>
+      </div>
+      <Row
+        gutter={{
+          xs: 8,
+          sm: 16,
+          md: 24,
+          lg: 32,
+        }}
+      >
+        {kelas.map((item, index) => (
+          <Col key={index} className="gutter-row" span={6}>
+            <div style={{ padding: "8px 0" }}>
+              <div
+                style={{ borderBottom: "3px solid green" }}
+                className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
+              >
+                <Title
+                  level={5}
+                  onClick={(e) => handleClick2(e, index)}
+                  style={{ cursor: "pointer" }}
                 >
-                  {kelas.kelas}
-                </p>
-
-                <span className="ml-auto text-lg font-medium text-blue-600 hidden sm:block">
-                  <div className="flex flex-wrap gap-2">
-                    <button className={Style.button2}>
-                      <Image
-                        src={isClicked}
-                        onClick={handleClick}
-                        alt="Star"
-                        width={23}
-                        height={23}
-                      />
-                    </button>
-                    <button onClick={() => handleDelete(kelas.id)}>
-                      <AiOutlineDelete color={"red"} size={27} />
-                    </button>
-                  </div>
-                </span>
+                  {item?.kelas}
+                </Title>
               </div>
             </div>
-          ))}
-        </div>
+          </Col>
+        ))}
+      </Row>
     </>
-    )
+  );
 }

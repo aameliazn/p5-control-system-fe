@@ -1,84 +1,65 @@
 "use client";
-import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
-import {notification} from 'antd';
-import { useRouter } from "next/navigation";
-import { AiOutlineDelete } from "react-icons/ai";
-import starWhite from "../../public/star-white.png";
-import starYellow from "../../public/star-yellow.png";
-
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+} from "react";
 
 const ContextKebersihanDiri = createContext(null);
 
 export default function KebersihanDiriContext({ children }) {
+  const [visible, setVisible] = useState(false);
   const [kegiatan, setKegiatan] = useState("");
   const [kegiatanTable, setKegiatanTable] = useState([]);
-  const router = useRouter();
-  const [kelas,   useKelas] = useState([]);
-  const [isClicked, setIsClicked] = useState(starWhite);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchText, setSearchText] = useState("");
+  const [searchedColumn, setSearchedColumn] = useState("");
+  const [kelas, useKelas] = useState([]);
 
-  
-  // data icon star
-  const handleClick = () => {
-    if (isClicked == starWhite) {
-      setIsClicked(starYellow);
-    } else {
-      setIsClicked(starWhite);
+  const searchInput = useRef(null);
+
+  const itemsPerPage = 5;
+
+  const [pagination, setPagination] = useState({
+    total: kegiatanTable?.length,
+    showTotal: (total, range) => `${range[0]}-${range[1]} of ${total} items`,
+    current: currentPage,
+    pageSize: itemsPerPage,
+    showSizeChanger: false,
+    position: ["bottomCenter"],
+  });
+
+  const handleKegiatan = async (values) => {
+    const kegiatan = values;
+    try {
+      const response = await axios.post("http://localhost:2000/kegiatan", {
+        kegiatan,
+      });
+      console.log("kegiatan berhasil disimpan", response.data);
+    } catch (error) {
+      console.error("gagal menyimpan kegiatan:", error);
     }
   };
-//post data 
-const handleKegiatan = async () => {
-  try {
-    const response = await axios.post("http://localhost:2000/kegiatan", {
-      kegiatan,
+
+  useEffect(() => {
+    axios.get(" http://localhost:2000/kegiatan").then((response) => {
+      setKegiatanTable(response.data);
     });
-    console.log("kegiatan berhasil disimpan", response.data);
-    notification.success({
-      message: "Input ber  hasil",
-      description: "Kegiatan telah berhasil ditambahkan.",
-      type: "success",
-    });
-  } catch (error) {
-    console.error("gagal menyimpan kegiatan:", error);
-     notification.error({
-        message: "Gagal menyimpan",
-        description: "Terjadi kesalahan saat menyimpan input.",
-        type: "error",
-      });
-  }
-};
+  }, []);
 
-
-//KegiatanTable
-
-useEffect(() => {
-  axios.get(" http://localhost:2000/kegiatan").then((response) => {
-    setKegiatanTable(response.data);
-  });
-}, []);
-
-//delete
-const handleDelete = async (itemId) => {
-  try {
-    await axios.delete(`http://localhost:2000/kegiatan/${itemId}`);
-    setKegiatanTable(kegiatanTable.filter((item) => item.id !== itemId));
-  } catch (error) {
-    console.error("error menghapus data", error);
-  }
-};
-
-
-  //untuk delete
-  const handleDeleteKelas = async (itemId) => {
+  //delete
+  const handleDelete = async (itemId) => {
     try {
-      await axios.delete(`http://localhost:2000/kelas/${itemId}`);
-      useKelas(kelas.filter((item) => item.id !== itemId));
+      await axios.delete(`http://localhost:2000/kegiatan/${itemId}`);
+      setKegiatanTable(kegiatanTable.filter((item) => item.id !== itemId));
     } catch (error) {
       console.error("error menghapus data", error);
     }
   };
 
-  //data fatching
   useEffect(() => {
     axios
       .get("http://localhost:2000/kelas")
@@ -90,48 +71,37 @@ const handleDelete = async (itemId) => {
       });
   }, []);
 
-  const handleClick2 = () => {
-    router.push("/data-kelas-kebersihan/[id]");
+  const handleDeleteKelas = async (itemId) => {
+    try {
+      await axios.delete(`http://localhost:2000/kelas/${itemId}`);
+      useKelas(kelas.filter((item) => item.id !== itemId));
+    } catch (error) {
+      console.error("error menghapus data", error);
+    }
   };
 
-
-const columnKegiatan = [
-  {
-    title: "Id",
-    dataIndex: "id",
-    rowScope: "row",
-    width: 8,
-  },
-  {
-    title: "Kegiatan",
-    dataIndex: "kegiatan",
-    fixed: "center",
-    width: 100,
-  },
-  {
-    title: "Action",
-    fixed: "right",
-    width: 30,
-    render: (text, record) => (
-      <a onClick={() => handleDelete(record.id)}>
-        <AiOutlineDelete color={"red"} size={27} />
-      </a>
-    ),
-  },
-];
-
   const state = {
-    handleKegiatan,
+    visible,
+    setVisible,
     kegiatan,
     setKegiatan,
+    handleKegiatan,
     kegiatanTable,
     setKegiatanTable,
-    columnKegiatan,
-    handleClick,
+    handleDelete,
+    currentPage,
+    setCurrentPage,
+    searchText,
+    setSearchText,
+    searchedColumn,
+    setSearchedColumn,
+    searchInput,
+    itemsPerPage,
+    pagination,
+    setPagination,
     kelas,
-    handleClick2,
-    isClicked,
-    handleDeleteKelas
+    useKelas,
+    handleDeleteKelas,
   };
 
   return (
