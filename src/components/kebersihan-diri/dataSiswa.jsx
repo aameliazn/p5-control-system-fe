@@ -1,53 +1,12 @@
-"use client";
-import React, { useEffect, useState } from "react";
+'use client'
+import React from "react";
 import Style from "./style.module.css";
-import Image from "next/image";
-import starWhite from "../../../public/star-white.png";
-import starYellow from "../../../public/star-yellow.png";
-import { useRouter } from "next/navigation";
+import { useKebersihanDiri } from "@/context/KebersihanDiriContext";
 import { AiOutlineDelete } from "react-icons/ai";
-import axios from "axios";
+import Image from "next/image";
 
 export default function dataSiswa() {
-  const router = useRouter();
-  const [kelas, useKelas] = useState([]);
-  const [isClicked, setIsClicked] = useState(starWhite);
-
-  // data icon star
-  const handleClick = () => {
-    if (isClicked == starWhite) {
-      setIsClicked(starYellow);
-    } else {
-      setIsClicked(starWhite);
-    }
-  };
-
-  //data fatching
-  useEffect(() => {
-    axios
-      .get("http://localhost:2000/kelas")
-      .then((response) => {
-        useKelas(response.data);
-      })
-      .catch((error) => {
-        console.error("error mengambil data", error);
-      });
-  }, []);
-
-  //untuk delete
-
-  const handleDelete = async (itemId) => {
-    try {
-      await axios.delete(`http://localhost:2000/kelas/${itemId}`);
-      useKelas(kelas.filter((item) => item.id !== itemId));
-    } catch (error) {
-      console.error("error menghapus data", error);
-    }
-  };
-
-  const handleClick2 = () => {
-    router.push("/data-kelas-kebersihan/[id]");
-  };
+  const {kelas, handleClick, handleClick2, isClicked, handleDeleteKelas} = useKebersihanDiri();
   return (
     <>
       <div className="max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg mt-4 shadow hover:bg-gray-100">
@@ -74,7 +33,7 @@ export default function dataSiswa() {
                         height={23}
                       />
                     </button>
-                    <button onClick={() => handleDelete(kelas.id)}>
+                    <button onClick={() => handleDeleteKelas(kelas.id)}>
                       <AiOutlineDelete color={"red"} size={27} />
                     </button>
                   </div>

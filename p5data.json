@@ -138,39 +138,9 @@
   ],
   "kelas": [
     {
-      "id": 1,
-      "kelas": "PPLG XII-1",
-      "date_time": "2023-10-28 09:00:00"
-    },
-    {
-      "id": 2,
-      "kelas": "PPLG XII-2",
-      "date_time": "2023-10-28 10:00:00"
-    },
-    {
-      "id": 3,
-      "kelas": "DKV XII-1",
-      "date_time": "2023-10-28 11:00:00"
-    },
-    {
-      "id": 4,
-      "kelas": "TJKT XII-2",
-      "date_time": "2023-10-28 12:00:00"
-    },
-    {
-      "id": 5,
-      "kelas": "PPLG XII-1",
-      "date_time": "2023-10-28 13:00:00"
-    },
-    {
       "id": 6,
       "kelas": "PPLG XII-2",
       "date_time": "2023-10-28 14:00:00"
-    },
-    {
-      "id": 7,
-      "kelas": "DKV XII-1",
-      "date_time": "2023-10-28 15:00:00"
     },
     {
       "id": 8,
@@ -188,11 +158,6 @@
       "date_time": "2023-10-28 18:00:00"
     },
     {
-      "id": 11,
-      "kelas": "DKV XII-1",
-      "date_time": "2023-10-28 19:00:00"
-    },
-    {
       "id": 12,
       "kelas": "TJKT XII-2",
       "date_time": "2023-10-28 20:00:00"
@@ -201,11 +166,6 @@
       "id": 13,
       "kelas": "PPLG XII-1",
       "date_time": "2023-10-28 21:00:00"
-    },
-    {
-      "id": 14,
-      "kelas": "PPLG XII-2",
-      "date_time": "2023-10-28 22:00:00"
     },
     {
       "id": 15,
@@ -221,38 +181,16 @@
   ],
   "kegiatan": [
     {
-      "id": 1,
-      "kegiatan": "Makan",
-      "kondisi": "laper",
-      "skor": "3/28"
+      "kegiatan": "ini kegiatan",
+      "kondisi": "jelek",
+      "skor": "4000",
+      "id": 1
     },
     {
-      "kegiatan": "tidur",
-      "kondisi": "bersih",
-      "skor": "100",
+      "kegiatan": "dicoba lagi",
+      "kondisi": "apa aja yg ",
+      "skor": "nyoba nyoba",
       "id": 2
-    },
-    {
-      "kegiatan": "minum",
-      "kondisi": "bagus",
-      "skor": "80",
-      "id": 3
-    },
-    {
-      "kegiatan": "Nonton Gundala di 318",
-      "kondisi": "seneng",
-      "skor": "10",
-      "id": 4
-    },
-    {
-      "kegiatan": "sapu koridor",
-      "kondisi": "makan makan sendiri",
-      "skor": "60",
-      "id": 5
-    },
-    {
-      "kegiatan": "im feeling good like I should",
-      "id": 6
     }
   ],
   "ruangan": [
@@ -381,32 +319,16 @@
       "id": 3
     },
     {
-      "pertanyaan": "test",
-      "id": 4
+      "pertanyaan": "amel",
+      "id": 11
     },
     {
-      "pertanyaan": "test",
-      "id": 5
+      "pertanyaan": "test test test",
+      "id": 14
     },
     {
-      "pertanyaan": "test",
-      "id": 6
-    },
-    {
-      "pertanyaan": "test",
-      "id": 7
-    },
-    {
-      "pertanyaan": "test",
-      "id": 8
-    },
-    {
-      "pertanyaan": "test",
-      "id": 9
-    },
-    {
-      "pertanyaan": "test",
-      "id": 10
+      "pertanyaan": "test lagi",
+      "id": 15
     }
   ]
 }

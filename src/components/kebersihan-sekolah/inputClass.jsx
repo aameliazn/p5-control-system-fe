@@ -1,26 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
+import Style from './style.module.css'
+import { useKebersihanSekolah } from "@/context/KebersihanSekolahContext";
+
 
 export default function inputClass() {
-  const [kegiatan, setKegiatan] = useState("");
-  const [kondisi, setKondisi] = useState("");
-  const [skor, setSkor] = useState("");
+  const {kegiatan, kondisi, skor, setKegiatan, setKondisi, setSkor, handleForm} = useKebersihanSekolah();
 
-  const handleForm = async () => {
-    try {
-      const response = await axios.post("http://localhost:2000/kegiatan", {
-        kegiatan,
-        kondisi,
-        skor,
-      });
-      console.log("Input berhasil ditambahkan", response.data);
-      window.location.reload();
-    } catch (error) {
-      console.error("gagal menyimpan data", error);
-    }
-  };
   return (
     <>
       <div className="-mx-3 md:flex mb-6">

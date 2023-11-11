@@ -1,50 +1,14 @@
 'use client'
 
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import Style from './style.module.css'
 import Image from 'next/image'
-import starWhite from "../../../public/star-white.png"
-import starYellow from "../../../public/star-yellow.png"
 import { AiOutlineDelete } from "react-icons/ai"
-import { useRouter } from "next/navigation"
-import axios from 'axios'
+import { useKebersihanSekolah } from '@/context/KebersihanSekolahContext'
 
 export default function dataClass() {
-  const router = useRouter();
-  const [kelas, useKelas] = useState([]);
-  const [isClicked, setIsClicked] = useState(starWhite);
-
-   // data icon star
-   const handleClick = () => {
-    if (isClicked == starWhite) {
-      setIsClicked(starYellow);
-    } else {
-      setIsClicked(starWhite);
-    }
-  };
+  const {kelas, handleDelete, handleClick, handleClick2, isClicked} = useKebersihanSekolah();
   
-  //get data kelas
-  useEffect(() => {
-    axios.get("http://localhost:2000/kelas").then((response) => {
-      useKelas(response.data);
-    }).catch((error) => {
-      console.error("gagal mengambil data", error);
-    });
-  }, []);
-
-  //delete data kelas
-  const handleDelete = async (itemId) => {
-    try{
-      await axios.delete(`http://localhost:2000/kelas/${itemId}`);
-      useKelas(kelas.filter((item) => item.id !== itemId));
-    } catch (error) {
-      console.error("error menghapus data", error);
-    }
-  };
-
-  const handleClick2 = () => {
-    router.push("/data-kelas-sekolah/[id]");
-  };
   return (
     <>
      <div className={Style.cardWrapper}>

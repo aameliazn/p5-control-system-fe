@@ -2,21 +2,12 @@
 
 import React, { useState } from "react";
 import axios from "axios";
+import {notification} from 'antd';
+import { useKebersihanDiri } from "@/context/KebersihanDiriContext";
 
 export default function inputClass() {
-  const [kegiatan, setKegiatan] = useState("");
-  const handleKegiatan = async () => {
-    try {
-      const response = await axios.post("http://localhost:2000/kegiatan", {
-        kegiatan,
-      });
-      console.log("kegiatan berhasil disimpan", response.data);
-      window.location.reload();
-    } catch (error) {
-      console.error("gagal menyimpan kegiatan:", error);
-    }
-  };
-
+  
+  const {kegiatan, setKegiatan, handleKegiatan} = useKebersihanDiri();
   return (
     <>
       <div className="max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
