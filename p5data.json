@@ -617,10 +617,14 @@
       "id": 66
     },
     {
-      "kegiatan": "Kegiatan 67",
-      "kondisi": "Kondisi 67",
-      "skor": 61,
+      "kegiatan": "amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia ",
+      "kondisi": "amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia ",
+      "skor": "amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia ",
       "id": 67
+    },
+    {
+      "kegiatan": "rahasia",
+      "id": 68
     }
   ],
   "ruangan": [
@@ -635,6 +639,10 @@
     {
       "ruangan": "Pajajaran",
       "id": 3
+    },
+    {
+      "ruangan": "203",
+      "id": 4
     }
   ],
   "pemilahan": [
