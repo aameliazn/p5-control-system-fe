@@ -22,6 +22,8 @@ export default function tableClass() {
     itemsPerPage,
     visible,
     setVisible,
+    searchText,
+    setSearchText,
   } = useTanaman();
 
   const handleSearch = (selectedKeys, confirm, dataIndex) => {

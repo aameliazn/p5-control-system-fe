@@ -14,6 +14,7 @@ export default function TanamanContext({ children }) {
   const [visible, setVisible] = useState(false);
   const [kegiatan, setKegiatan] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
   const [kelas, useKelas] = useState([]);
 
@@ -94,6 +95,9 @@ export default function TanamanContext({ children }) {
     kelas,
     useKelas,
     handleDeleteClass,
+    itemsPerPage,
+    searchText,
+    setSearchText,
   };
 
   return (
