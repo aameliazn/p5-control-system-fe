@@ -1,68 +1,220 @@
-'use client'
-
-import React, {useState, useEffect} from 'react'
-import axios from 'axios'
-import { Table } from 'antd'
-import  Style from './style.module.css'
+"use client";
+import React from "react";
+import Style from "./style.module.css";
+import Highlighter from "react-highlight-words";
 import { AiOutlineDelete } from "react-icons/ai";
+import { SearchOutlined } from "@ant-design/icons";
+import { useDaurUlang } from "@/context/DaurUlangContext";
+import { Table, Typography, Button, Input, Space, Card } from "antd";
+
+const { Title } = Typography;
 
 export default function tableRuangan() {
-    const[ruangan, setRuangan] = useState([]);
-    
-    useEffect(() => {
-      axios.get('http://localhost:2000/ruangan').then((response) => {
-      setRuangan(response.data);  
-    });
-    }, []);
+  const {
+    ruangan,
+    handleDelete,
+    pagination,
+    setPagination,
+    searchInput,
+    searchedColumn,
+    setSearchedColumn,
+    setCurrentPage,
+    itemsPerPage,
+    visible,
+    setVisible,
+    searchText,
+    setSearchText,
+  } = useDaurUlang();
 
-    //delete ruangan
-    const handleDelete = async(itemId) => {
-      try{
-        await axios.delete(`http://localhost:2000/ruangan/${itemId}`);
-        setRuangan(ruangan.filter((item) => item.id !== itemId));
-      } catch (error) {
-        console.error('gagal menghapus ruangan', error);
+  const handleSearch = (selectedKeys, confirm, dataIndex) => {
+    confirm();
+    setSearchText(selectedKeys[0]);
+    setSearchedColumn(dataIndex);
+  };
+
+  const handleReset = (clearFilters) => {
+    clearFilters();
+    setSearchText("");
+  };
+
+  const handleChangePage = (pagination, page, filters, sorter, extra) => {
+    setCurrentPage(page),
+      setPagination({
+        total: filters?.length,
+        pageSize: itemsPerPage,
+        showTotal: (total, range) =>
+          `${range[0]}-${range[1]} of ${total} items`,
+        showSizeChanger: false,
+        position: ["bottomCenter"],
+      });
+  };
+
+  const getColumnSearchProps = (dataIndex) => ({
+    filterDropdown: ({
+      setSelectedKeys,
+      selectedKeys,
+      confirm,
+      clearFilters,
+      close,
+    }) => (
+      <div
+        style={{
+          padding: 8,
+        }}
+        onKeyDown={(e) => e.stopPropagation()}
+      >
+        <Input
+          ref={searchInput}
+          placeholder={`Search ${dataIndex}`}
+          value={selectedKeys[0]}
+          onChange={(e) =>
+            setSelectedKeys(e.target.value ? [e.target.value] : [])
+          }
+          onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
+          style={{
+            marginBottom: 8,
+            display: "block",
+          }}
+        />
+        <Space>
+          <Button
+            type="default"
+            onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
+            icon={<SearchOutlined />}
+            size="small"
+            style={{
+              width: 90,
+            }}
+          >
+            Search
+          </Button>
+          <Button
+            onClick={() => clearFilters && handleReset(clearFilters)}
+            size="small"
+            style={{
+              width: 90,
+            }}
+          >
+            Reset
+          </Button>
+          <Button
+            type="link"
+            size="small"
+            style={{ color: "green" }}
+            onClick={() => {
+              confirm({
+                closeDropdown: false,
+              });
+              setSearchText(selectedKeys[0]);
+              setSearchedColumn(dataIndex);
+            }}
+          >
+            Filter
+          </Button>
+          <Button
+            type="link"
+            size="small"
+            style={{ color: "green" }}
+            onClick={() => {
+              close();
+            }}
+          >
+            close
+          </Button>
+        </Space>
+      </div>
+    ),
+    filterIcon: (filtered) => (
+      <SearchOutlined
+        style={{
+          color: filtered ? "green" : undefined,
+        }}
+      />
+    ),
+    onFilter: (value, record) =>
+      record[dataIndex].toString().toLowerCase().includes(value.toLowerCase()),
+    onFilterDropdownOpenChange: (visible) => {
+      if (visible) {
+        setTimeout(() => searchInput.current?.select(), 100);
       }
-    };
+    },
+    render: (text) =>
+      searchedColumn === dataIndex ? (
+        <Highlighter
+          highlightStyle={{
+            backgroundColor: "#4ade80",
+            padding: 0,
+          }}
+          searchWords={[searchText]}
+          autoEscape
+          textToHighlight={text ? text.toString() : ""}
+        />
+      ) : (
+        text
+      ),
+  });
 
-    const columnRuangan = [
-      {
-        title: "Id",
-        dataIndex: "id",
-        rowScope: "row",
-        width: 8,
+  const columnRuangan = [
+    {
+      title: "No",
+      dataIndex: "id",
+      key: "id",
+      width: "10%",
+      align: "center",
+      sorter: {
+        compare: (a, b) => a.id - b.id,
       },
-      {
-        title: "Ruangan",
-        dataIndex: "ruangan",
-        fixed: "center",
-        width: 100,
+    },
+    {
+      title: "Ruangan",
+      dataIndex: "ruangan",
+      key: "ruangan",
+      sorter: {
+        compare: (a, b) => a.ruangan.localeCompare(b.ruangan),
       },
-      {
-        title: "Action",
-        fixed: "right",
-        width: 30,
-        render: (text, record) => (
-          <a onClick={() => handleDelete(record.id)}>
-            <AiOutlineDelete color={"red"} size={27} />
-          </a>
-        ),
-      },
-    ]
+      ...getColumnSearchProps("ruangan"),
+    },
+    {
+      title: "Action",
+      key: "action",
+      width: "10%",
+      align: "left",
+      render: (text, record) => (
+        <a
+          onClick={() => handleDelete(record?.id)}
+          style={{ cursor: "pointer" }}
+        >
+          <AiOutlineDelete color={"red"} size={24} />
+        </a>
+      ),
+    },
+  ];
 
   return (
-   <>
-   <Table
-        columns={columnRuangan}
-        dataSource={ruangan}
-        pagination={{
-          pageSize: 10,
-        }}
-        scroll={{
-          y: 350,
-        }}
-        className={Style.tableAnt}
-      />
-   </>
-  )
+    <>
+      <div className="mt-5">
+        <div className="flex flex-row justify-between">
+          <Title level={3}>Daur Ulang</Title>
+          <button
+            className={
+              "btn border-2 border-solid text-green-700 border-green-700 w-1/6 hover:bg-emerald-700 hover:border-emerald-700 hover:text-stone-50"
+            }
+            onClick={() => {
+              setVisible(!visible);
+            }}
+          >
+            Tambah Ruangan
+          </button>
+        </div>
+        <Card size="small" className={Style.tableAnt}>
+          <Table
+            columns={columnRuangan}
+            dataSource={ruangan}
+            pagination={pagination}
+            onChange={handleChangePage}
+          />
+        </Card>
+      </div>
+    </>
+  );
 }

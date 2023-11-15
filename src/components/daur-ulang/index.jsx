@@ -1,20 +1,26 @@
-import React from 'react'
-import InputRuangan from './inputRuangan'
-import DataSiswa from './dataSiswa'
-import TableRuangan from './tableRuangan'
+"use client";
+import React from "react";
+import DataSiswa from "./dataSiswa";
+import InputRuangan from "./inputRuangan";
+import TableRuangan from "./tableRuangan";
+import Breadcrumb from "../layouts/breadcrumb";
+import { HomeFilled } from "@ant-design/icons";
+import { useDaurUlang } from "@/context/DaurUlangContext";
 
 export default function index() {
+  const { visible } = useDaurUlang();
+
   return (
-   <>
-   <div className="max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-    <InputRuangan/>
-   </div>
-   <div className="max-w-sm w-full mt-4 lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-    <TableRuangan/>
-   </div>
-   <div className="max-w-sm w-full mt-4 lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-   <DataSiswa/>
-   </div>
-   </>
-  )
+    <>
+      <Breadcrumb
+        breadcrumbs={[
+          { label: <HomeFilled />, url: "/" },
+          { label: "Daur Ulang", url: "/daur-ulang" },
+        ]}
+      />
+      {visible && <InputRuangan />}
+      <TableRuangan />
+      <DataSiswa />
+    </>
+  );
 }

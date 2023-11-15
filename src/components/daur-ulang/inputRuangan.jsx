@@ -1,40 +1,69 @@
 "use client";
+import React from "react";
+import { Form, Input, Modal } from "antd";
+import { useDaurUlang } from "@/context/DaurUlangContext";
 
-import React, { useState } from "react";
-import axios from "axios";
+const CollectionCreateForm = ({ onCreate, onCancel }) => {
+  const { visible } = useDaurUlang();
+  const [form] = Form.useForm();
+
+  return (
+    <Modal
+      open={visible}
+      zIndex={999}
+      title="Tambah Ruangan"
+      okText="Tambah"
+      cancelText="Batal"
+      okType="default"
+      onCancel={onCancel}
+      onOk={() => {
+        form
+          .validateFields()
+          .then((values) => {
+            form.resetFields();
+            onCreate(values);
+          })
+          .catch((info) => {
+            console.log("Validate Failed:", info);
+          });
+      }}
+    >
+      <Form form={form} layout="vertical" name="form_in_modal">
+        <Form.Item
+          name="ruangan"
+          label="Ruangan"
+          rules={[
+            {
+              required: true,
+              message: "Tolong Masukan Ruangan!",
+            },
+          ]}
+        >
+          <Input type="textarea" />
+        </Form.Item>
+      </Form>
+    </Modal>
+  );
+};
 
 export default function inputRuangan() {
-  const [ruangan, setRuangan] = useState("");
+  const { visible, setVisible, handleRuangan } =
+    useDaurUlang();
 
-  const handleRuangan = async () => {
-    try {
-      const response = await axios.post("http://localhost:2000/ruangan", {
-        ruangan,
-      });
-      console.log("ruangan berhasil ditambahkan", response.data);
-      window.location.reload();
-    } catch (error) {
-      console.error("gagal menambah data", error);
-    }
+  const onCreate = (values) => {
+    handleRuangan(values?.ruangan);
+    setVisible(false);
   };
+
   return (
     <>
-          <div>
-        <p className="text-md inline mr-3">
-          <b>Input Ruangan</b>
-        </p>
-      </div>
-      <input
-            class="appearance-none mt-2 block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
-            value={ruangan}
-            onChange={(e) => setRuangan(e.target.value)}
-            type="text"
-          />
-      <div className="flex justify-end mt-1">
-        <button o className="btn btn-primary w-1/6" onClick={handleRuangan}>
-          Submit
-        </button>
-      </div>
+      <CollectionCreateForm
+        open={visible}
+        onCreate={onCreate}
+        onCancel={() => {
+          setVisible(false);
+        }}
+      />
     </>
-    )
+  );
 }
