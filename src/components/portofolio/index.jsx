@@ -1,20 +1,26 @@
+"use client";
 import React from "react";
+import DataSiswa from "./dataSiswa";
 import InputQuest from "./inputQuest";
 import TableQuest from "./tableQuest";
-import DataSiswa from "./dataSiswa";
+import Breadcrumb from "../layouts/breadcrumb";
+import { HomeFilled } from "@ant-design/icons";
+import { usePortofolio } from "@/context/PortofolioContext";
 
 export default function index() {
+  const { visible } = usePortofolio();
+  
   return (
     <>
-      <div className="max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-        <InputQuest />
-      </div>
-      <div className="max-w-sm w-full mt-4 lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-        <TableQuest />
-      </div>
-      <div className="max-w-sm w-full mt-4 lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-        <DataSiswa />
-      </div>
+      <Breadcrumb
+        breadcrumbs={[
+          { label: <HomeFilled />, url: "/" },
+          { label: "Portofolio", url: "/portofolio" },
+        ]}
+      />
+      {visible && <InputQuest />}
+      <TableQuest />
+      <DataSiswa />
     </>
   );
 }

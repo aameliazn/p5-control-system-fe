@@ -1,42 +1,68 @@
-'use client'
+"use client";
+import React from "react";
+import { Form, Input, Modal } from "antd";
+import { usePortofolio } from "@/context/PortofolioContext";
 
-import React, { useState } from 'react'
-import axios from 'axios'
+const CollectionCreateForm = ({ onCreate, onCancel }) => {
+  const { visible } = usePortofolio();
+  const [form] = Form.useForm();
+
+  return (
+    <Modal
+      open={visible}
+      zIndex={999}
+      title="Tambah Pertanyaan"
+      okText="Tambah"
+      cancelText="Batal"
+      okType="default"
+      onCancel={onCancel}
+      onOk={() => {
+        form
+          .validateFields()
+          .then((values) => {
+            form.resetFields();
+            onCreate(values);
+          })
+          .catch((info) => {
+            console.log("Validate Failed:", info);
+          });
+      }}
+    >
+      <Form form={form} layout="vertical" name="form_in_modal">
+        <Form.Item
+          name="pertanyaan"
+          label="Pertanyaan"
+          rules={[
+            {
+              required: true,
+              message: "Tolong Masukan Pertanyaan!",
+            },
+          ]}
+        >
+          <Input type="textarea" />
+        </Form.Item>
+      </Form>
+    </Modal>
+  );
+};
 
 export default function inputQuest() {
-const [pertanyaan, setPertanyaan] = useState('');
+  const { visible, setVisible, handlePertanyaan } = usePortofolio();
 
-//post 
-const handlePertanyaan = async () => {
-    try{
-        const response = await axios.post('http://localhost:2000/pertanyaan', {
-            pertanyaan,
-        });
-        console.log('pertanyaan berhasil ditambahkan', response.data);
-        window.location.reload();
-    } catch (error) {
-        console.error('gagal menambah pertanyaan', error);
-    }
-}
+  const onCreate = (values) => {
+    handlePertanyaan(values?.pertanyaan);
+    setVisible(false);
+  };
 
   return (
     <>
-    <div>
-   <p className="text-md inline mr-3">
-     <b>Input Pertanyaan</b>
-   </p>
- </div>
- <input
-       class="appearance-none mt-2 block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
-       value={pertanyaan}
-       onChange={(e) => setPertanyaan(e.target.value)}
-       type="text"
-     />
- <div className="flex justify-end mt-1">
-   <button o className="btn btn-primary w-1/6" onClick={handlePertanyaan}>
-     Submit
-   </button>
- </div>
-</>
-  )
+      <CollectionCreateForm
+        open={visible}
+        onCreate={onCreate}
+        onCancel={() => {
+          setVisible(false);
+        }}
+      />
+    </>
+  );
 }
