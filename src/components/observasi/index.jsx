@@ -1,20 +1,26 @@
-import React from 'react'
-import InputQuest from './inputQuest'
-import DataClass from './dataClass'
-import DataQuest from './dataQuest'
+"use client";
+import React from "react";
+import DataClass from "./dataClass";
+import InputQuest from "./inputQuest";
+import DataQuest from "./dataQuest";
+import Breadcrumb from "../layouts/breadcrumb";
+import { HomeFilled } from "@ant-design/icons";
+import { useObservasi } from "@/context/ObservasiContext";
 
 export default function index() {
+  const { visible } = useObservasi();
+
   return (
     <>
-    <div className="max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-    <InputQuest/>
-   </div>
-   <div className="max-w-sm w-full mt-4 lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-    <DataQuest/>
-   </div>
-   <div className="max-w-sm w-full mt-4 lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-   <DataClass/>
-   </div>
+      <Breadcrumb
+        breadcrumbs={[
+          { label: <HomeFilled />, url: "/" },
+          { label: "Observasi", url: "/observasi" },
+        ]}
+      />
+      {visible && <InputQuest />}
+      <DataQuest />
+      <DataClass />
     </>
-  )
+  );
 }
