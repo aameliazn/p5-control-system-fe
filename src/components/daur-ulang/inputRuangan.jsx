@@ -47,8 +47,7 @@ const CollectionCreateForm = ({ onCreate, onCancel }) => {
 };
 
 export default function inputRuangan() {
-  const { visible, setVisible, handleRuangan } =
-    useDaurUlang();
+  const { visible, setVisible, handleRuangan } = useDaurUlang();
 
   const onCreate = (values) => {
     handleRuangan(values?.ruangan);

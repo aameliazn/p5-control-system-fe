@@ -9,7 +9,7 @@ export default function dataClass() {
   const router = useRouter();
   const { kelas } = useMateri();
 
-  const handleClick2 = (e, i) => {
+  const handleClick = (e, i) => {
     router.push(`/data-kelas-materi/${i}`);
   };
 
@@ -37,7 +37,7 @@ export default function dataClass() {
               >
                 <Title
                   level={5}
-                  onClick={(e) => handleClick2(e, index)}
+                  onClick={(e) => handleClick(e, index)}
                   style={{ cursor: "pointer" }}
                 >
                   {item?.kelas}

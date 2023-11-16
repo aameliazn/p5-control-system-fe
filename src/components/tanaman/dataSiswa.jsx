@@ -9,7 +9,7 @@ export default function dataSiswa() {
   const router = useRouter();
   const { kelas } = useTanaman();
 
-  const handleClick2 = (e, index) => {
+  const handleClick = (e, index) => {
     router.push(`/data-kelas-tanaman/${index}`);
   };
 
@@ -37,7 +37,7 @@ export default function dataSiswa() {
               >
                 <Title
                   level={5}
-                  onClick={(e) => handleClick2(e, index)}
+                  onClick={(e) => handleClick(e, index)}
                   style={{ cursor: "pointer" }}
                 >
                   {item?.kelas}
