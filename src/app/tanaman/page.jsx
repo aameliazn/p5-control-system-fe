@@ -1,12 +1,15 @@
 import React from "react";
 import Layout from "@/components/layouts";
-import Index from "@/components/budidaya-tanaman";
+import Tanaman from "@/components/tanaman";
+import TanamanProvider from "@/context/TanamanContext";
 
 export default function page() {
   return (
     <>
       <Layout>
-       <Index/>
+        <TanamanProvider>
+          <Tanaman />
+        </TanamanProvider>
       </Layout>
     </>
   );

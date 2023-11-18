@@ -266,6 +266,26 @@
     {
       "ruangan": "Pajajaran",
       "id": 3
+    },
+    {
+      "ruangan": "203",
+      "id": 4
+    },
+    {
+      "ruangan": "coba",
+      "id": 5
+    },
+    {
+      "ruangan": "gatau",
+      "id": 6
+    },
+    {
+      "ruangan": "tambah lagi",
+      "id": 7
+    },
+    {
+      "ruangan": "lagi",
+      "id": 8
     }
   ],
   "pemilahan": [
@@ -400,6 +420,10 @@
       "id": 2
     },
     {
+      "pertanyaan": "test",
+      "id": 2
+    },
+    {
       "pertanyaan": "amel",
       "id": 11
     },
@@ -425,81 +449,16 @@
       "sesi": "1"
     },
     {
-      "nama": "Akira Yamamoto",
-      "kondisi": "apa aja yg kotor ",
-      "skor": "10",
-      "id": 3,
-      "rombel": "A",
-      "rayon": "B",
-      "code": "C",
-      "tempatPiket": "rps",
-      "sesi": "2"
+      "pertanyaan": "test",
+      "id": 8
     },
     {
-      "nama": "Sakura Suzuki",
-      "kondisi": "apa aja yg kotor ",
-      "skor": "10",
-      "id": 4,
-      "rombel": "A",
-      "rayon": "B",
-      "code": "C",
-      "tempatPiket": "mewas",
-      "sesi": "1"
+      "pertanyaan": "test",
+      "id": 9
     },
     {
-      "nama": "Yuki Nakamura",
-      "kondisi": "apa aja yg kotor ",
-      "skor": "10",
-      "id": 5,
-      "rombel": "A",
-      "rayon": "B",
-      "code": "C",
-      "tempatPiket": "boxis",
-      "sesi": "2"
-    },
-    {
-      "nama": "Makoto Kobayashi",
-      "kondisi": "apa aja yg kotor ",
-      "skor": "10",
-      "id": 6,
-      "rombel": "A",
-      "rayon": "B",
-      "code": "C",
-      "tempatPiket": "mewas",
-      "sesi": "1"
-    },
-    {
-      "nama": "Haruka Saito",
-      "kondisi": "apa aja yg kotor",
-      "skor": "10",
-      "id": 7,
-      "rombel": "A",
-      "rayon": "B",
-      "code": "C",
-      "tempatPiket": "rps",
-      "sesi": "2"
-    },
-    {
-      "nama": "Kenji Taniguchi",
-      "kondisi": "apa aja yg kotor",
-      "skor": "10",
-      "id": 8,
-      "rombel": "A",
-      "rayon": "B",
-      "code": "C",
-      "tempatPiket": "padjajaran",
-      "sesi": "1"
-    },
-    {
-      "nama": "Airi Nakajima",
-      "kondisi": "apa aja yg kotor",
-      "skor": "10",
-      "id": 9,
-      "rombel": "A",
-      "rayon": "B",
-      "code": "C",
-      "tempatPiket": "boxis",
-      "sesi": "2"
+      "pertanyaan": "test",
+      "id": 10
     }
   ]
 }

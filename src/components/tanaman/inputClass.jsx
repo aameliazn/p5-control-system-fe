@@ -1,17 +1,17 @@
 "use client";
 import React from "react";
 import { Form, Input, Modal } from "antd";
-import { usePortofolio } from "@/context/PortofolioContext";
+import { useTanaman } from "@/context/TanamanContext";
 
 const CollectionCreateForm = ({ onCreate, onCancel }) => {
-  const { visible } = usePortofolio();
+  const { visible } = useTanaman();
   const [form] = Form.useForm();
 
   return (
     <Modal
       open={visible}
       zIndex={999}
-      title="Tambah Pertanyaan"
+      title="Tambah Kegiatan"
       okText="Tambah"
       cancelText="Batal"
       okType="default"
@@ -30,12 +30,12 @@ const CollectionCreateForm = ({ onCreate, onCancel }) => {
     >
       <Form form={form} layout="vertical" name="form_in_modal">
         <Form.Item
-          name="pertanyaan"
-          label="Pertanyaan"
+          name="kegiatan"
+          label="Kegiatan"
           rules={[
             {
               required: true,
-              message: "Tolong Masukan Pertanyaan!",
+              message: "Tolong Masukan Kegiatan!",
             },
           ]}
         >
@@ -46,11 +46,12 @@ const CollectionCreateForm = ({ onCreate, onCancel }) => {
   );
 };
 
-export default function inputQuest() {
-  const { visible, setVisible, handlePertanyaan } = usePortofolio();
+export default function inputClass() {
+  const { visible, setVisible, handleKegiatan } =
+    useTanaman();
 
   const onCreate = (values) => {
-    handlePertanyaan(values?.pertanyaan);
+    handleKegiatan(values?.kegiatan);
     setVisible(false);
   };
 

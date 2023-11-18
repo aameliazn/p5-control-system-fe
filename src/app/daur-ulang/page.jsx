@@ -1,12 +1,15 @@
 import React from "react";
 import Layout from "@/components/layouts";
-import Index from "@/components/daur-ulang";
+import DaurUlang from "@/components/daur-ulang";
+import DaurUlangProvider from "@/context/DaurUlangContext";
 
 export default function page() {
   return (
     <>
       <Layout>
-        <Index/>
+        <DaurUlangProvider>
+          <DaurUlang />
+        </DaurUlangProvider>
       </Layout>
     </>
   );

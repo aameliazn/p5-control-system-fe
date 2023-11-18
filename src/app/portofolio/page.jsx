@@ -1,12 +1,15 @@
 import React from "react";
 import Layout from "@/components/layouts";
-import Index from "@/components/portofolio"
+import Portofolio from "@/components/portofolio";
+import PortofolioProvider from "@/context/PortofolioContext";
 
 export default function page() {
   return (
     <>
       <Layout>
-        <Index/>
+        <PortofolioProvider>
+          <Portofolio />
+        </PortofolioProvider>
       </Layout>
     </>
   );

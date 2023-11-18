@@ -4,14 +4,14 @@ import Style from "./style.module.css";
 import Highlighter from "react-highlight-words";
 import { AiOutlineDelete } from "react-icons/ai";
 import { SearchOutlined } from "@ant-design/icons";
-import { useDaurUlang } from "@/context/DaurUlangContext";
+import { useTanaman } from "@/context/TanamanContext";
 import { Table, Typography, Button, Input, Space, Card } from "antd";
 
 const { Title } = Typography;
 
-export default function tableRuangan() {
+export default function tableClass() {
   const {
-    ruangan,
+    kegiatan,
     handleDelete,
     pagination,
     setPagination,
@@ -24,7 +24,7 @@ export default function tableRuangan() {
     setVisible,
     searchText,
     setSearchText,
-  } = useDaurUlang();
+  } = useTanaman();
 
   const handleSearch = (selectedKeys, confirm, dataIndex) => {
     confirm();
@@ -154,7 +154,7 @@ export default function tableRuangan() {
       ),
   });
 
-  const columnRuangan = [
+  const columnKegiatan = [
     {
       title: "No",
       dataIndex: "id",
@@ -166,13 +166,13 @@ export default function tableRuangan() {
       },
     },
     {
-      title: "Ruangan",
-      dataIndex: "ruangan",
-      key: "ruangan",
+      title: "Kegiatan",
+      dataIndex: "kegiatan",
+      key: "kegiatan",
       sorter: {
-        compare: (a, b) => a.ruangan.localeCompare(b.ruangan),
+        compare: (a, b) => a.kegiatan.localeCompare(b.kegiatan),
       },
-      ...getColumnSearchProps("ruangan"),
+      ...getColumnSearchProps("kegiatan"),
     },
     {
       title: "Action",
@@ -194,7 +194,7 @@ export default function tableRuangan() {
     <>
       <div className="mt-5">
         <div className="flex flex-row justify-between">
-          <Title level={3}>Daur Ulang</Title>
+          <Title level={3}>Tanaman</Title>
           <button
             className={
               "btn border-2 border-solid text-green-700 border-green-700 w-1/6 hover:bg-emerald-700 hover:border-emerald-700 hover:text-stone-50"
@@ -203,13 +203,13 @@ export default function tableRuangan() {
               setVisible(!visible);
             }}
           >
-            Tambah Ruangan
+            Tambah Kegiatan
           </button>
         </div>
         <Card size="small" className={Style.tableAnt}>
           <Table
-            columns={columnRuangan}
-            dataSource={ruangan}
+            columns={columnKegiatan}
+            dataSource={kegiatan}
             pagination={pagination}
             onChange={handleChangePage}
           />

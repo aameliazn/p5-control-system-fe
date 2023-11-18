@@ -1,25 +1,25 @@
 "use client";
 import React from "react";
 import DataSiswa from "./dataSiswa";
-import InputQuest from "./inputQuest";
-import TableQuest from "./tableQuest";
+import InputClass from "./inputClass";
+import TableClass from "./tableClass";
 import Breadcrumb from "../layouts/breadcrumb";
 import { HomeFilled } from "@ant-design/icons";
-import { usePortofolio } from "@/context/PortofolioContext";
+import { useTanaman } from "@/context/TanamanContext";
 
 export default function index() {
-  const { visible } = usePortofolio();
-  
+  const { visible } = useTanaman();
+
   return (
     <>
       <Breadcrumb
         breadcrumbs={[
           { label: <HomeFilled />, url: "/" },
-          { label: "Portofolio", url: "/portofolio" },
+          { label: "Tanaman", url: "/tanaman" },
         ]}
       />
-      {visible && <InputQuest />}
-      <TableQuest />
+      {visible && <InputClass />}
+      <TableClass />
       <DataSiswa />
     </>
   );

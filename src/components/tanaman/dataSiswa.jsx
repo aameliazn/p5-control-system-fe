@@ -1,16 +1,16 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { Typography, Row, Col } from "antd";
-import { useDaurUlang } from "@/context/DaurUlangContext";
+import { useTanaman } from "@/context/TanamanContext";
 
 const { Title } = Typography;
 
 export default function dataSiswa() {
   const router = useRouter();
-  const { kelas } = useDaurUlang();
+  const { kelas } = useTanaman();
 
   const handleClick = (e, index) => {
-    router.push(`/data-kelas-pemilahan/${index}`);
+    router.push(`/data-kelas-tanaman/${index}`);
   };
 
   return (
