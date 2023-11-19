@@ -10,7 +10,7 @@ export default function dataSiswa() {
   const { kelas } = usePortofolio();
 
   const handleClick = (e, index) => {
-    router.push(`/data-kelas-portofolio/${index}`);
+    router.push(`/portofolio/data/kelas/${index}`);
   };
 
   return (

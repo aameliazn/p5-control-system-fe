@@ -10,7 +10,7 @@ export default function dataClass() {
   const { kelas } = useMateri();
 
   const handleClick = (e, i) => {
-    router.push(`/data-kelas-materi/${i}`);
+    router.push(`/materi/data/kelas/${i}`);
   };
 
   return (
