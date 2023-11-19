@@ -138,39 +138,9 @@
   ],
   "kelas": [
     {
-      "id": 1,
-      "kelas": "PPLG XII-1",
-      "date_time": "2023-10-28 09:00:00"
-    },
-    {
-      "id": 2,
-      "kelas": "PPLG XII-2",
-      "date_time": "2023-10-28 10:00:00"
-    },
-    {
-      "id": 3,
-      "kelas": "DKV XII-1",
-      "date_time": "2023-10-28 11:00:00"
-    },
-    {
-      "id": 4,
-      "kelas": "TJKT XII-2",
-      "date_time": "2023-10-28 12:00:00"
-    },
-    {
-      "id": 5,
-      "kelas": "PPLG XII-1",
-      "date_time": "2023-10-28 13:00:00"
-    },
-    {
       "id": 6,
       "kelas": "PPLG XII-2",
       "date_time": "2023-10-28 14:00:00"
-    },
-    {
-      "id": 7,
-      "kelas": "DKV XII-1",
-      "date_time": "2023-10-28 15:00:00"
     },
     {
       "id": 8,
@@ -188,11 +158,6 @@
       "date_time": "2023-10-28 18:00:00"
     },
     {
-      "id": 11,
-      "kelas": "DKV XII-1",
-      "date_time": "2023-10-28 19:00:00"
-    },
-    {
       "id": 12,
       "kelas": "TJKT XII-2",
       "date_time": "2023-10-28 20:00:00"
@@ -201,11 +166,6 @@
       "id": 13,
       "kelas": "PPLG XII-1",
       "date_time": "2023-10-28 21:00:00"
-    },
-    {
-      "id": 14,
-      "kelas": "PPLG XII-2",
-      "date_time": "2023-10-28 22:00:00"
     },
     {
       "id": 15,
@@ -219,414 +179,81 @@
       "materi": "./contoh.pdf"
     }
   ],
-  "kegiatan": [
-    {
-      "kegiatan": "Kegiatan 1",
-      "kondisi": "Kondisi 1",
-      "skor": 80,
-      "id": 1
-    },
-    {
-      "kegiatan": "Kegiatan 2",
-      "kondisi": "Kondisi 2",
-      "skor": 65,
-      "id": 2
-    },
-    {
-      "kegiatan": "Kegiatan 3",
-      "kondisi": "Kondisi 3",
-      "skor": 90,
-      "id": 3
-    },
-    {
-      "kegiatan": "Kegiatan 4",
-      "kondisi": "Kondisi 4",
-      "skor": 75,
-      "id": 4
-    },
-    {
-      "kegiatan": "Kegiatan 5",
-      "kondisi": "Kondisi 5",
-      "skor": 60,
-      "id": 5
-    },
-    {
-      "kegiatan": "Kegiatan 6",
-      "kondisi": "Kondisi 6",
-      "skor": 85,
-      "id": 6
-    },
-    {
-      "kegiatan": "Kegiatan 7",
-      "kondisi": "Kondisi 7",
-      "skor": 70,
-      "id": 7
-    },
-    {
-      "kegiatan": "Kegiatan 8",
-      "kondisi": "Kondisi 8",
-      "skor": 55,
-      "id": 8
-    },
-    {
-      "kegiatan": "Kegiatan 9",
-      "kondisi": "Kondisi 9",
-      "skor": 95,
-      "id": 9
-    },
-    {
-      "kegiatan": "Kegiatan 10",
-      "kondisi": "Kondisi 10",
-      "skor": 72,
-      "id": 10
-    },
-    {
-      "kegiatan": "Kegiatan 11",
-      "kondisi": "Kondisi 11",
-      "skor": 78,
-      "id": 11
-    },
-    {
-      "kegiatan": "Kegiatan 12",
-      "kondisi": "Kondisi 12",
-      "skor": 68,
-      "id": 12
-    },
-    {
-      "kegiatan": "Kegiatan 13",
-      "kondisi": "Kondisi 13",
-      "skor": 88,
-      "id": 13
-    },
-    {
-      "kegiatan": "Kegiatan 14",
-      "kondisi": "Kondisi 14",
-      "skor": 73,
-      "id": 14
-    },
-    {
-      "kegiatan": "Kegiatan 15",
-      "kondisi": "Kondisi 15",
-      "skor": 62,
-      "id": 15
-    },
-    {
-      "kegiatan": "Kegiatan 16",
-      "kondisi": "Kondisi 16",
-      "skor": 82,
-      "id": 16
-    },
-    {
-      "kegiatan": "Kegiatan 17",
-      "kondisi": "Kondisi 17",
-      "skor": 77,
-      "id": 17
-    },
-    {
-      "kegiatan": "Kegiatan 18",
-      "kondisi": "Kondisi 18",
-      "skor": 63,
-      "id": 18
-    },
-    {
-      "kegiatan": "Kegiatan 19",
-      "kondisi": "Kondisi 19",
-      "skor": 92,
-      "id": 19
-    },
-    {
-      "kegiatan": "Kegiatan 20",
-      "kondisi": "Kondisi 20",
-      "skor": 71,
-      "id": 20
-    },
-    {
-      "kegiatan": "Kegiatan 21",
-      "kondisi": "Kondisi 21",
-      "skor": 84,
-      "id": 21
-    },
-    {
-      "kegiatan": "Kegiatan 22",
-      "kondisi": "Kondisi 22",
-      "skor": 67,
-      "id": 22
-    },
-    {
-      "kegiatan": "Kegiatan 23",
-      "kondisi": "Kondisi 23",
-      "skor": 89,
-      "id": 23
-    },
-    {
-      "kegiatan": "Kegiatan 24",
-      "kondisi": "Kondisi 24",
-      "skor": 76,
-      "id": 24
-    },
-    {
-      "kegiatan": "Kegiatan 25",
-      "kondisi": "Kondisi 25",
-      "skor": 58,
-      "id": 25
-    },
-    {
-      "kegiatan": "Kegiatan 26",
-      "kondisi": "Kondisi 26",
-      "skor": 93,
-      "id": 26
-    },
-    {
-      "kegiatan": "Kegiatan 27",
-      "kondisi": "Kondisi 27",
-      "skor": 79,
-      "id": 27
-    },
-    {
-      "kegiatan": "Kegiatan 28",
-      "kondisi": "Kondisi 28",
-      "skor": 64,
-      "id": 28
-    },
-    {
-      "kegiatan": "Kegiatan 29",
-      "kondisi": "Kondisi 29",
-      "skor": 91,
-      "id": 29
-    },
-    {
-      "kegiatan": "Kegiatan 30",
-      "kondisi": "Kondisi 30",
-      "skor": 74,
-      "id": 30
-    },
-    {
-      "kegiatan": "Kegiatan 31",
-      "kondisi": "Kondisi 31",
-      "skor": 66,
-      "id": 31
-    },
-    {
-      "kegiatan": "Kegiatan 32",
-      "kondisi": "Kondisi 32",
-      "skor": 87,
-      "id": 32
-    },
-    {
-      "kegiatan": "Kegiatan 33",
-      "kondisi": "Kondisi 33",
-      "skor": 81,
-      "id": 33
-    },
-    {
-      "kegiatan": "Kegiatan 34",
-      "kondisi": "Kondisi 34",
-      "skor": 59,
-      "id": 34
-    },
-    {
-      "kegiatan": "Kegiatan 35",
-      "kondisi": "Kondisi 35",
-      "skor": 94,
-      "id": 35
-    },
-    {
-      "kegiatan": "Kegiatan 36",
-      "kondisi": "Kondisi 36",
-      "skor": 69,
-      "id": 36
-    },
-    {
-      "kegiatan": "Kegiatan 37",
-      "kondisi": "Kondisi 37",
-      "skor": 86,
-      "id": 37
-    },
-    {
-      "kegiatan": "Kegiatan 38",
-      "kondisi": "Kondisi 38",
-      "skor": 61,
-      "id": 38
-    },
-    {
-      "kegiatan": "Kegiatan 39",
-      "kondisi": "Kondisi 39",
-      "skor": 83,
-      "id": 39
-    },
-    {
-      "kegiatan": "Kegiatan 40",
-      "kondisi": "Kondisi 40",
-      "skor": 80,
-      "id": 40
-    },
-    {
-      "kegiatan": "Kegiatan 41",
-      "kondisi": "Kondisi 41",
-      "skor": 65,
-      "id": 41
-    },
-    {
-      "kegiatan": "Kegiatan 42",
-      "kondisi": "Kondisi 42",
-      "skor": 90,
-      "id": 42
-    },
-    {
-      "kegiatan": "Kegiatan 43",
-      "kondisi": "Kondisi 43",
-      "skor": 75,
-      "id": 43
-    },
-    {
-      "kegiatan": "Kegiatan 44",
-      "kondisi": "Kondisi 44",
-      "skor": 60,
-      "id": 44
-    },
-    {
-      "kegiatan": "Kegiatan 45",
-      "kondisi": "Kondisi 45",
-      "skor": 85,
-      "id": 45
-    },
-    {
-      "kegiatan": "Kegiatan 46",
-      "kondisi": "Kondisi 46",
-      "skor": 70,
-      "id": 46
-    },
-    {
-      "kegiatan": "Kegiatan 47",
-      "kondisi": "Kondisi 47",
-      "skor": 55,
-      "id": 47
-    },
-    {
-      "kegiatan": "Kegiatan 48",
-      "kondisi": "Kondisi 48",
-      "skor": 95,
-      "id": 48
-    },
-    {
-      "kegiatan": "Kegiatan 49",
-      "kondisi": "Kondisi 49",
-      "skor": 72,
-      "id": 49
-    },
-    {
-      "kegiatan": "Kegiatan 50",
-      "kondisi": "Kondisi 50",
-      "skor": 78,
-      "id": 50
-    },
-    {
-      "kegiatan": "Kegiatan 51",
-      "kondisi": "Kondisi 51",
-      "skor": 68,
-      "id": 51
-    },
-    {
-      "kegiatan": "Kegiatan 52",
-      "kondisi": "Kondisi 52",
-      "skor": 88,
-      "id": 52
-    },
-    {
-      "kegiatan": "Kegiatan 53",
-      "kondisi": "Kondisi 53",
-      "skor": 73,
-      "id": 53
-    },
-    {
-      "kegiatan": "Kegiatan 54",
-      "kondisi": "Kondisi 54",
-      "skor": 62,
-      "id": 54
-    },
-    {
-      "kegiatan": "Kegiatan 55",
-      "kondisi": "Kondisi 55",
-      "skor": 82,
-      "id": 55
-    },
-    {
-      "kegiatan": "Kegiatan 56",
-      "kondisi": "Kondisi 56",
-      "skor": 77,
-      "id": 56
-    },
-    {
-      "kegiatan": "Kegiatan 57",
-      "kondisi": "Kondisi 57",
-      "skor": 63,
-      "id": 57
-    },
-    {
-      "kegiatan": "Kegiatan 58",
-      "kondisi": "Kondisi 58",
-      "skor": 89,
-      "id": 58
-    },
-    {
-      "kegiatan": "Kegiatan 59",
-      "kondisi": "Kondisi 59",
-      "skor": 74,
-      "id": 59
-    },
-    {
-      "kegiatan": "Kegiatan 60",
-      "kondisi": "Kondisi 60",
-      "skor": 66,
-      "id": 60
-    },
-    {
-      "kegiatan": "Kegiatan 61",
-      "kondisi": "Kondisi 61",
-      "skor": 87,
-      "id": 61
-    },
-    {
-      "kegiatan": "Kegiatan 62",
-      "kondisi": "Kondisi 62",
-      "skor": 81,
-      "id": 62
-    },
-    {
-      "kegiatan": "Kegiatan 63",
-      "kondisi": "Kondisi 63",
-      "skor": 59,
-      "id": 63
-    },
-    {
-      "kegiatan": "Kegiatan 64",
-      "kondisi": "Kondisi 64",
-      "skor": 94,
-      "id": 64
-    },
-    {
-      "kegiatan": "Kegiatan 65",
-      "kondisi": "Kondisi 65",
-      "skor": 69,
-      "id": 65
-    },
-    {
-      "kegiatan": "Kegiatan 66",
-      "kondisi": "Kondisi 66",
-      "skor": 86,
-      "id": 66
-    },
-    {
-      "kegiatan": "amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia ",
-      "kondisi": "amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia ",
-      "skor": "amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia amelia ",
-      "id": 67
-    },
-    {
-      "kegiatan": "rahasia",
-      "id": 68
-    }
-  ],
+    "kegiatan": [
+      {
+        "kegiatan": "ini kegiatan",
+        "kondisi": "jelek",
+        "skor": "10",
+        "id": 1,
+        "rombel": "A",
+        "rayon": "B",
+        "code": "C"
+      },
+      {
+        "kegiatan": "bersih-bersih kelas",
+        "kondisi": "kotor",
+        "skor": "10",
+        "id": 3,
+        "rombel": "B",
+        "rayon": "C",
+        "code": "A"
+      },
+      {
+        "kegiatan": "membersihkan halaman sekolah",
+        "kondisi": "sangat kotor",
+        "skor": "10",
+        "id": 4,
+        "rombel": "C",
+        "rayon": "A",
+        "code": "B"
+      },
+      {
+        "kegiatan": "menata perpustakaan",
+        "kondisi": "berantakan",
+        "skor": "10",
+        "id": 5,
+        "rombel": "A",
+        "rayon": "B",
+        "code": "C"
+      },
+      {
+        "kegiatan": "menanam pohon di halaman sekolah",
+        "kondisi": "tanah terbuka",
+        "skor": "10",
+        "id": 6,
+        "rombel": "B",
+        "rayon": "C",
+        "code": "A"
+      },
+      {
+        "kegiatan": "menghias kelas untuk acara",
+        "kondisi": "butuh perbaikan",
+        "skor": "10",
+        "id": 7,
+        "rombel": "C",
+        "rayon": "A",
+        "code": "B"
+      },
+      {
+        "kegiatan": "melakukan kegiatan seni",
+        "kondisi": "siap dilakukan",
+        "skor": "10",
+        "id": 8,
+        "rombel": "A",
+        "rayon": "B",
+        "code": "C"
+      },
+      {
+        "kegiatan": "mengadakan kegiatan olahraga",
+        "kondisi": "siap dilakukan",
+        "skor": "10",
+        "id": 9,
+        "rombel": "B",
+        "rayon": "C",
+        "code": "A"
+      }
+    ],
+  
   "ruangan": [
     {
       "id": 1,
@@ -665,102 +292,122 @@
     {
       "id": 1,
       "bruto": "23,0",
-      "neto": "2.33"
+      "neto": "2.33",
+      "ruangan": "padjajaran"
     },
     {
       "id": 2,
       "bruto": "18,5",
-      "neto": "1.87"
+      "neto": "1.87",
+      "ruangan": "mewas"
     },
     {
       "id": 3,
       "bruto": "30,2",
-      "neto": "3.01"
+      "neto": "3.01",
+      "ruangan": "rps"
     },
     {
       "id": 4,
       "bruto": "15,8",
-      "neto": "1.60"
+      "neto": "1.60",
+      "ruangan": "mewas"
     },
     {
       "id": 5,
       "bruto": "21,4",
-      "neto": "2.17"
+      "neto": "2.17",
+      "ruangan": "boxis"
     },
     {
       "id": 6,
       "bruto": "27,9",
-      "neto": "2.78"
+      "neto": "2.78",
+      "ruangan": "padjajaran"
     },
     {
       "id": 7,
       "bruto": "14,3",
-      "neto": "1.42"
+      "neto": "1.42",
+      "ruangan": "boxis"
     },
     {
       "id": 8,
       "bruto": "33,7",
-      "neto": "3.37"
+      "neto": "3.37",
+      "ruangan": "rps"
     },
     {
       "id": 9,
       "bruto": "19,2",
-      "neto": "1.92"
+      "neto": "1.92",
+      "ruangan": "padjajaran"
     },
     {
       "id": 10,
       "bruto": "25,6",
-      "neto": "2.59"
+      "neto": "2.59",
+      "ruangan": "mewas"
     },
     {
       "id": 11,
       "bruto": "12,7",
-      "neto": "1.24"
+      "neto": "1.24",
+      "ruangan": "padjajaran"
     },
     {
       "id": 12,
       "bruto": "28,4",
-      "neto": "2.85"
+      "neto": "2.85",
+      "ruangan": "rps"
     },
     {
       "id": 13,
       "bruto": "17,1",
-      "neto": "1.69"
+      "neto": "1.69",
+      "ruangan": "boxis"
     },
     {
       "id": 14,
       "bruto": "22,9",
-      "neto": "2.28"
+      "neto": "2.28",
+      "ruangan": "padjajaran"
     },
     {
       "id": 15,
       "bruto": "20,8",
-      "neto": "2.06"
+      "neto": "2.06",
+      "ruangan": "mewas"
     },
     {
       "id": 16,
       "bruto": "13,4",
-      "neto": "1.36"
+      "neto": "1.36",
+      "ruangan": "rps"
     },
     {
       "id": 17,
       "bruto": "31,5",
-      "neto": "3.12"
+      "neto": "3.12",
+      "ruangan": "boxis"
     },
     {
       "id": 18,
       "bruto": "16,6",
-      "neto": "1.65"
+      "neto": "1.65",
+      "ruangan": "padjajaran"
     },
     {
       "id": 19,
       "bruto": "26,1",
-      "neto": "2.62"
+      "neto": "2.62",
+      "ruangan": "rps"
     },
     {
       "id": 20,
       "bruto": "24,3",
-      "neto": "2.44"
+      "neto": "2.44",
+      "ruangan": "mewas"
     }
   ],
   "pertanyaan": [
@@ -774,43 +421,44 @@
     },
     {
       "pertanyaan": "test",
-      "id": 3
+      "id": 2
     },
     {
-      "pertanyaan": "test",
-      "id": 4
-    },
-    {
-      "pertanyaan": "test",
-      "id": 5
-    },
-    {
-      "pertanyaan": "test",
-      "id": 6
-    },
-    {
-      "pertanyaan": "test",
-      "id": 7
-    },
-    {
-      "pertanyaan": "coba aja",
-      "id": 10
-    },
-    {
-      "pertanyaan": "Tambah lagi",
+      "pertanyaan": "amel",
       "id": 11
     },
     {
-      "pertanyaan": "coba aja",
-      "id": 12
-    },
-    {
-      "pertanyaan": "jh",
-      "id": 13
-    },
-    {
-      "pertanyaan": "Tambah lagi",
+      "pertanyaan": "test test test",
       "id": 14
+    },
+    {
+      "pertanyaan": "test lagi",
+      "id": 15
+    }
+  ],
+  "siswaPiket": [
+    {
+      "nama": "Hiroshi Tanaka",
+      "kondisi": "jelek",
+      "skor": "10",
+      "id": 1,
+      "rombel": "A",
+      "rayon": "B",
+      "code": "C",
+      "tempatPiket": "padjajaran",
+      "sesi": "1"
+    },
+    {
+      "pertanyaan": "test",
+      "id": 8
+    },
+    {
+      "pertanyaan": "test",
+      "id": 9
+    },
+    {
+      "pertanyaan": "test",
+      "id": 10
     }
   ]
 }
