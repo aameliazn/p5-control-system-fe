@@ -179,81 +179,81 @@
       "materi": "./contoh.pdf"
     }
   ],
-    "kegiatan": [
-      {
-        "kegiatan": "ini kegiatan",
-        "kondisi": "jelek",
-        "skor": "10",
-        "id": 1,
-        "rombel": "A",
-        "rayon": "B",
-        "code": "C"
-      },
-      {
-        "kegiatan": "bersih-bersih kelas",
-        "kondisi": "kotor",
-        "skor": "10",
-        "id": 3,
-        "rombel": "B",
-        "rayon": "C",
-        "code": "A"
-      },
-      {
-        "kegiatan": "membersihkan halaman sekolah",
-        "kondisi": "sangat kotor",
-        "skor": "10",
-        "id": 4,
-        "rombel": "C",
-        "rayon": "A",
-        "code": "B"
-      },
-      {
-        "kegiatan": "menata perpustakaan",
-        "kondisi": "berantakan",
-        "skor": "10",
-        "id": 5,
-        "rombel": "A",
-        "rayon": "B",
-        "code": "C"
-      },
-      {
-        "kegiatan": "menanam pohon di halaman sekolah",
-        "kondisi": "tanah terbuka",
-        "skor": "10",
-        "id": 6,
-        "rombel": "B",
-        "rayon": "C",
-        "code": "A"
-      },
-      {
-        "kegiatan": "menghias kelas untuk acara",
-        "kondisi": "butuh perbaikan",
-        "skor": "10",
-        "id": 7,
-        "rombel": "C",
-        "rayon": "A",
-        "code": "B"
-      },
-      {
-        "kegiatan": "melakukan kegiatan seni",
-        "kondisi": "siap dilakukan",
-        "skor": "10",
-        "id": 8,
-        "rombel": "A",
-        "rayon": "B",
-        "code": "C"
-      },
-      {
-        "kegiatan": "mengadakan kegiatan olahraga",
-        "kondisi": "siap dilakukan",
-        "skor": "10",
-        "id": 9,
-        "rombel": "B",
-        "rayon": "C",
-        "code": "A"
-      }
-    ],
-  
+  "kegiatan": [
+    {
+      "kegiatan": "ini kegiatan",
+      "kondisi": "jelek",
+      "skor": "10",
+      "id": 1,
+      "rombel": "A",
+      "rayon": "B",
+      "code": "C"
+    },
+    {
+      "kegiatan": "bersih-bersih kelas",
+      "kondisi": "kotor",
+      "skor": "10",
+      "id": 3,
+      "rombel": "B",
+      "rayon": "C",
+      "code": "A"
+    },
+    {
+      "kegiatan": "membersihkan halaman sekolah",
+      "kondisi": "sangat kotor",
+      "skor": "10",
+      "id": 4,
+      "rombel": "C",
+      "rayon": "A",
+      "code": "B"
+    },
+    {
+      "kegiatan": "menata perpustakaan",
+      "kondisi": "berantakan",
+      "skor": "10",
+      "id": 5,
+      "rombel": "A",
+      "rayon": "B",
+      "code": "C"
+    },
+    {
+      "kegiatan": "menanam pohon di halaman sekolah",
+      "kondisi": "tanah terbuka",
+      "skor": "10",
+      "id": 6,
+      "rombel": "B",
+      "rayon": "C",
+      "code": "A"
+    },
+    {
+      "kegiatan": "menghias kelas untuk acara",
+      "kondisi": "butuh perbaikan",
+      "skor": "10",
+      "id": 7,
+      "rombel": "C",
+      "rayon": "A",
+      "code": "B"
+    },
+    {
+      "kegiatan": "melakukan kegiatan seni",
+      "kondisi": "siap dilakukan",
+      "skor": "10",
+      "id": 8,
+      "rombel": "A",
+      "rayon": "B",
+      "code": "C"
+    },
+    {
+      "kegiatan": "mengadakan kegiatan olahraga",
+      "kondisi": "siap dilakukan",
+      "skor": "10",
+      "id": 9,
+      "rombel": "B",
+      "rayon": "C",
+      "code": "A"
+    }
+  ],
+
   "ruangan": [
     {
       "id": 1,

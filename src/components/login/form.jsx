@@ -1,40 +1,49 @@
 "use client";
+import React from "react";
 import axios from "axios";
-import { Image } from "antd";
-import React, { useState } from "react";
+import { Image, Form, Input, Button, message } from "antd";
 import { useRouter } from "next/navigation";
 import { useLogin } from "@/context/LoginContext";
+
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export default function form() {
   const router = useRouter();
 
   // data login
-  const { setDataUser, setTokenUser } = useLogin;
-
-  // data form login
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const { setDataUser, setTokenUser } = useLogin();
 
   // login
-  const onFinish = (e) => {
+  const onFinish = (values) => {
     axios
-      .post(`/api/v1/auth/login`, e)
+      .post(`/api/v1/auth/login`, values)
       .then((res) => {
-        // setTokenUser(res?.data);
-        // setDataUser(res?.data);
-        // axios.defaults.headers.common["Authorization"] = `Bearer ${res?.data}`;
-        // router.push("/dashboard");
-        e.preventDefault()
-        console.log(res)
+        setTokenUser(res?.data?.data?.access_token);
+        axios.defaults.headers.common[
+          "Authorization"
+        ] = `Bearer ${res?.data?.data?.access_token}`;
+        router.push("/dashboard");
+        message.success("Login successfully");
+
+        axios
+          .get(`/api/v1/auth/me`)
+          .then((res) => {
+            setDataUser(res?.data);
+          })
+          .catch((err) => {
+            console.log(err);
+            message.error(err?.response?.data?.message);
+          });
       })
       .catch((err) => {
         console.log(err);
+        message.error(err?.response?.data?.message);
       });
   };
-  
+
   return (
     <>
-      <div class="w-full max-w-3xl h-screen flex items-center justify-center m-auto">
+      {/* <div class="w-full max-w-3xl h-screen flex items-center justify-center m-auto">
         <form
           class="bg-white shadow-2xl rounded-lg p-7  flex gap-10 "
           onSubmit={onFinish}
@@ -105,7 +114,59 @@ export default function form() {
           </div>
           <div></div>
         </form>
-      </div>
+      </div> */}
+      <Form
+        layout="vertical"
+        name="basic"
+        labelCol={{
+          span: 8,
+        }}
+        wrapperCol={{
+          span: 24,
+        }}
+        onFinish={onFinish}
+        autoComplete="off"
+      >
+        <Form.Item
+          label="Email"
+          name="email"
+          rules={[
+            {
+              required: true,
+              message: "Please input your Email!",
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item
+          style={{
+            paddingBottom: "10px",
+          }}
+          label="Password"
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: "Please input your password!",
+            },
+          ]}
+        >
+          <Input.Password />
+        </Form.Item>
+
+        <Form.Item
+          wrapperCol={{
+            offset: 0,
+            span: 24,
+          }}
+        >
+          <Button style={{ width: "100%" }} type="default" htmlType="submit">
+            Login
+          </Button>
+        </Form.Item>
+      </Form>
     </>
   );
 }
