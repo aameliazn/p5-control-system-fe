@@ -8,6 +8,8 @@ import React, {
   useRef,
 } from "react";
 
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+
 const ContextKebersihanDiri = createContext(null);
 
 export default function KebersihanDiriContext({ children }) {
@@ -33,19 +35,20 @@ export default function KebersihanDiriContext({ children }) {
   });
 
   const handleKegiatan = async (values) => {
-    const kegiatan = values;
-    try {
-      const response = await axios.post("http://localhost:2000/kegiatan", {
-        kegiatan,
+    const activity = values;
+
+    axios
+      .post(`/api/v1/hygiene/activity`, { activity })
+      .then((res) => {
+        console.log("kegiatan berhasil disimpan", res.data);
+      })
+      .catch((err) => {
+        console.error("gagal menyimpan kegiatan:", err);
       });
-      console.log("kegiatan berhasil disimpan", response.data);
-    } catch (error) {
-      console.error("gagal menyimpan kegiatan:", error);
-    }
   };
 
   useEffect(() => {
-    axios.get(" http://localhost:2000/kegiatan").then((response) => {
+    axios.get("http://localhost:2000/kegiatan").then((response) => {
       setKegiatanTable(response.data);
     });
   }, []);
