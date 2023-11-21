@@ -26,7 +26,7 @@ export default function dataClass() {
   };
 
   const handleClick2 = (e, i) => {
-    router.push(`/dashboard/data-kelas/${i}`);
+    router.push(`/dashboard/data/kelas/${i}`);
   };
 
   return (

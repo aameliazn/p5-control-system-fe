@@ -10,7 +10,7 @@ export default function dataSiswa() {
   const { kelas } = useKebersihanDiri();
 
   const handleClick = (e, index) => {
-    router.push(`/data-kelas-kebersihan/${index}`);
+    router.push(`/kebersihan-diri/data/kelas/${index}`);
   };
 
   return (

@@ -10,7 +10,7 @@ export default function dataClass() {
   const { kelas } = useKebersihanSekolah();
 
   const handleClick = (e, index) => {
-    router.push(`/data-kelas-sekolah/${index}`);
+    router.push(`/kebersihan-sekolah/data/kelas/${index}`);
   };
 
   return (

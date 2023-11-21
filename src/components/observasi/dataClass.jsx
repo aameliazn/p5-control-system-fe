@@ -10,7 +10,7 @@ export default function dataClass() {
   const { kelas } = useObservasi();
 
   const handleClick = (e, index) => {
-    router.push(`/data-kelas-observasi/${index}`);
+    router.push(`/observasi/data/kelas/${index}`);
   };
 
   return (

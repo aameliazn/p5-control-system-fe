@@ -10,7 +10,7 @@ export default function dataSiswa() {
   const { kelas } = useTanaman();
 
   const handleClick = (e, index) => {
-    router.push(`/data-kelas-tanaman/${index}`);
+    router.push(`/tanaman/data/kelas/${index}`);
   };
 
   return (

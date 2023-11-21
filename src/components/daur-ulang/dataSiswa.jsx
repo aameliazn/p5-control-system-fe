@@ -10,7 +10,7 @@ export default function dataSiswa() {
   const { kelas } = useDaurUlang();
 
   const handleClick = (e, index) => {
-    router.push(`/data-kelas-pemilahan/${index}`);
+    router.push(`/daur-ulang/data/kelas/${index}`);
   };
 
   return (
