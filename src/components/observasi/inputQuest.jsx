@@ -30,7 +30,7 @@ const CollectionCreateForm = ({ onCreate, onCancel }) => {
     >
       <Form form={form} layout="vertical" name="form_in_modal">
         <Form.Item
-          name="pertanyaan"
+          name="activity"
           label="Pertanyaan"
           rules={[
             {
@@ -50,7 +50,7 @@ export default function inputQuest() {
   const { visible, setVisible, handlePertanyaan } = useObservasi();
 
   const onCreate = (values) => {
-    handlePertanyaan(values?.pertanyaan);
+    handlePertanyaan(values);
     setVisible(false);
   };
 

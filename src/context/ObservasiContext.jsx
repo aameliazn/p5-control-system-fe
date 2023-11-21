@@ -8,6 +8,8 @@ import React, {
   useRef,
 } from "react";
 
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+
 const ContextObservasi = createContext(null);
 
 export default function ObservasiContext({ children }) {
@@ -32,16 +34,18 @@ export default function ObservasiContext({ children }) {
   });
 
   const handlePertanyaan = async (values) => {
-    const pertanyaan = values;
-    try {
-      const response = await axios.post("http://localhost:2000/pertanyaan", {
-        pertanyaan,
+    const activity = values?.activity;
+
+    axios
+      .post(`api/v1/observation/activity`, {
+        activity,
+      })
+      .then((res) => {
+        console.log("pertanyaan berhasil ditambahkan", res?.data);
+      })
+      .catch((err) => {
+        console.error("gagal menambah pertanyaan", err);
       });
-      console.log("pertanyaan berhasil ditambahkan", response.data);
-      window.location.reload();
-    } catch (error) {
-      console.error("gagal menambah pertanyaan", error);
-    }
   };
 
   useEffect(() => {
