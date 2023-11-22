@@ -17,6 +17,7 @@ export default function TanamanContext({ children }) {
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
   const [kelas, useKelas] = useState([]);
+  const [siswa, setSiswa] = useState([]);
 
   const searchInput = useRef(null);
 
@@ -78,6 +79,12 @@ export default function TanamanContext({ children }) {
     }
   };
 
+  useEffect(() => {
+    axios.get("http://localhost:2000/siswa").then((response) => {
+      setSiswa(response.data);
+    });
+  }, []);
+
   const state = {
     visible,
     setVisible,
@@ -98,6 +105,8 @@ export default function TanamanContext({ children }) {
     itemsPerPage,
     searchText,
     setSearchText,
+    siswa,
+    setSiswa,
   };
 
   return (
