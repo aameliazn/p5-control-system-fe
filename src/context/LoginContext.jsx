@@ -1,13 +1,13 @@
 "use client";
-import React, { createContext, useContext } from "react";
 import { useLocalStorage } from "react-use";
+import React, { createContext, useContext, useState } from "react";
 
 const ContextLogin = createContext(null);
 
 export default function LoginContext({ children }) {
   // data login
-  const [dataUser, setDataUser] = useLocalStorage("user");
   const [tokenUser, setTokenUser] = useLocalStorage("token");
+  const [dataUser, setDataUser] = useState("user");
 
   const state = {
     // data login
