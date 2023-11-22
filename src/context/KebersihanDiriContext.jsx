@@ -20,6 +20,7 @@ export default function KebersihanDiriContext({ children }) {
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
   const [kelas, useKelas] = useState([]);
+  const [siswa, setSiswa] = useState([]);
 
   const searchInput = useRef(null);
 
@@ -83,6 +84,12 @@ export default function KebersihanDiriContext({ children }) {
     }
   };
 
+  useEffect(() => {
+    axios.get("http://localhost:2000/siswa").then((response) => {
+      setSiswa(response.data);
+    });
+  }, []);
+
   const state = {
     visible,
     setVisible,
@@ -105,6 +112,8 @@ export default function KebersihanDiriContext({ children }) {
     kelas,
     useKelas,
     handleDeleteKelas,
+    siswa,
+    setSiswa,
   };
 
   return (
