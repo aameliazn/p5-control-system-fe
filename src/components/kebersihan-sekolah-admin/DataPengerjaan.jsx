@@ -1,29 +1,23 @@
 'use client'
 import React, {useState, useEffect} from "react";
-import { Pie } from '@ant-design/charts';
 import { Card,  Button, Form, message, Select } from "antd";
 import axios from "axios";
 
-export default function chart() {
-  const [chartData, setChartData] = useState([]);
+export default function DataPengerjaan() {
+   const [input, setInput] = useState([]);
 
-  //data chart
+  //data search input
   useEffect(() => {
     axios.get('').then((response) => {
       const data = response.data;
-      setChartData(data);
+      setInput(data);
     })
     .catch((err) => {
       console.error('gagal mengambil data', err);
     })
   }, []);
 
-  const data = [
-    { type: 'Mengerjakan', value: 25 },
-    { type: 'Tidak Mengerjakan', value: 30 },
-  ];
-
-  //form massege
+   //form massege
   const [form] = Form.useForm();
   const onFinish = () => {
     message.success('Submit success!');
@@ -32,42 +26,10 @@ export default function chart() {
     message.error('Submit failed!');
   };
 
-  //chart
-  const config = {
-    appendPadding: 10,
-    data,
-    angleField: "value",
-    colorField: "type",
-    radius: 0.8,
-    innerRadius: 0.6,
-    label: {
-      type: "inner",
-      offset: "-50%",
-      style: { textAlign: "center" },
-      autoRotate: false,
-      content: "{value}%",
-    },
-    interactions: [{ type: "element-active" }],
-    color: ({ type }) => {
-      if (type === "Tidak Mengerjakan") {
-        return "red"; 
-      }
-      return "#73d802"; 
-    },
-    
-  };
 
   return (
     <>
-      <div className="flex flex-warp justify-around gap-4">
-        <Card 
-          style={{ width: "100%", height: "43vh", alignItems: 'center' }}
-          className="rounded-lg shadow-xl shadow-gray-100"
-        >
-         <Pie {...config} style={{ width: 450, height: 300 }}/>
-        </Card>
-
-        <Card
+    <Card
         title="Lihat Data Pengerjaan Siswa"
           style={{ width: "100%",  height: "43vh" }}
           className=" rounded-lg shadow-xl shadow-gray-100"
@@ -164,7 +126,6 @@ export default function chart() {
           </Button>
           </Form>
         </Card>
-      </div>
     </>
-  );
+  )
 }
