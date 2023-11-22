@@ -19,6 +19,7 @@ export default function KebersihanSekolahContext({ children }) {
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
   const [kelas, setKelas] = useState([]);
+  const [siswa, setSiswa] = useState([]);
 
   const searchInput = useRef(null);
 
@@ -87,6 +88,12 @@ export default function KebersihanSekolahContext({ children }) {
       });
   }, []);
 
+  useEffect(() => {
+    axios.get("http://localhost:2000/siswa").then((response) => {
+      setSiswa(response.data);
+    });
+  }, []);
+
   const state = {
     visible,
     setVisible,
@@ -107,6 +114,8 @@ export default function KebersihanSekolahContext({ children }) {
     kelas,
     setKelas,
     handleDeleteClass,
+    siswa,
+    setSiswa,
   };
 
   return (
