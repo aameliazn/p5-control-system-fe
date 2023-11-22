@@ -30,7 +30,7 @@ const CollectionCreateForm = ({ onCreate, onCancel }) => {
     >
       <Form form={form} layout="vertical" name="form_in_modal">
         <Form.Item
-          name="kegiatan"
+          name="activity"
           label="Kegiatan"
           rules={[
             {
@@ -42,7 +42,7 @@ const CollectionCreateForm = ({ onCreate, onCancel }) => {
           <Input type="textarea" />
         </Form.Item>
         <Form.Item
-          name="kondisi"
+          name="condition"
           label="Kondisi"
           rules={[
             {
@@ -54,7 +54,7 @@ const CollectionCreateForm = ({ onCreate, onCancel }) => {
           <Input type="textarea" />
         </Form.Item>
         <Form.Item
-          name="skor"
+          name="score"
           label="Skor"
           rules={[
             {

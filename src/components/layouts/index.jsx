@@ -1,12 +1,12 @@
 "use client";
 import axios from "axios";
 import Sidebar from "./sidebar";
-import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { useLogin } from "@/context/LoginContext";
 
 export default function index({ children }) {
-const router = useRouter();
+  const router = useRouter;
   const { tokenUser } = useLogin();
 
   useEffect(() => {

@@ -30,7 +30,7 @@ const CollectionCreateForm = ({ onCreate, onCancel }) => {
     >
       <Form form={form} layout="vertical" name="form_in_modal">
         <Form.Item
-          name="kegiatan"
+          name="activity"
           label="Kegiatan"
           rules={[
             {
@@ -50,7 +50,7 @@ export default function inputClass() {
   const { visible, setVisible, handleKegiatan } = useKebersihanDiri();
 
   const onCreate = (values) => {
-    handleKegiatan(values?.kegiatan);
+    handleKegiatan(values?.activity);
     setVisible(false);
   };
 

@@ -10,7 +10,7 @@ export default function MateriContext({ req, res, children }) {
   const [uploadedFile, setUploadedFile] = useState([]);
   const [kelas, setKelas] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-
+  const [siswa, setSiswa] = useState([]);
 
   // if (req.method === "DELETE") {
   //   const itemId = parseInt(req.query.id, 10);
@@ -73,6 +73,12 @@ export default function MateriContext({ req, res, children }) {
     }
   };
 
+  useEffect(() => {
+    axios.get("http://localhost:2000/siswa").then((response) => {
+      setSiswa(response?.data);
+    });
+  }, []);
+
   // //fatching endpoint xlsx
   // useEffect(() => {
   //   const endpointXlsx = '';
@@ -97,6 +103,8 @@ export default function MateriContext({ req, res, children }) {
     handleDelete,
     currentPage,
     setCurrentPage,
+    siswa,
+    setSiswa,
   };
 
   return (

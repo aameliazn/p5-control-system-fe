@@ -8,6 +8,8 @@ import React, {
   useRef,
 } from "react";
 
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+
 const ContextKebersihanDiri = createContext(null);
 
 export default function KebersihanDiriContext({ children }) {
@@ -18,6 +20,7 @@ export default function KebersihanDiriContext({ children }) {
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
   const [kelas, useKelas] = useState([]);
+  const [siswa, setSiswa] = useState([]);
 
   const searchInput = useRef(null);
 
@@ -33,19 +36,20 @@ export default function KebersihanDiriContext({ children }) {
   });
 
   const handleKegiatan = async (values) => {
-    const kegiatan = values;
-    try {
-      const response = await axios.post("http://localhost:2000/kegiatan", {
-        kegiatan,
+    const activity = values;
+
+    axios
+      .post(`/api/v1/hygiene/activity`, { activity })
+      .then((res) => {
+        console.log("kegiatan berhasil disimpan", res.data);
+      })
+      .catch((err) => {
+        console.error("gagal menyimpan kegiatan:", err);
       });
-      console.log("kegiatan berhasil disimpan", response.data);
-    } catch (error) {
-      console.error("gagal menyimpan kegiatan:", error);
-    }
   };
 
   useEffect(() => {
-    axios.get(" http://localhost:2000/kegiatan").then((response) => {
+    axios.get("http://localhost:2000/kegiatan").then((response) => {
       setKegiatanTable(response.data);
     });
   }, []);
@@ -80,6 +84,12 @@ export default function KebersihanDiriContext({ children }) {
     }
   };
 
+  useEffect(() => {
+    axios.get("http://localhost:2000/siswa").then((response) => {
+      setSiswa(response.data);
+    });
+  }, []);
+
   const state = {
     visible,
     setVisible,
@@ -102,6 +112,8 @@ export default function KebersihanDiriContext({ children }) {
     kelas,
     useKelas,
     handleDeleteKelas,
+    siswa,
+    setSiswa,
   };
 
   return (

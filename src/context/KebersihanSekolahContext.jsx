@@ -8,6 +8,8 @@ import React, {
   useRef,
 } from "react";
 
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+
 const ContextKebersihanSekolah = createContext(null);
 
 export default function KebersihanSekolahContext({ children }) {
@@ -17,6 +19,7 @@ export default function KebersihanSekolahContext({ children }) {
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
   const [kelas, setKelas] = useState([]);
+  const [siswa, setSiswa] = useState([]);
 
   const searchInput = useRef(null);
 
@@ -32,21 +35,22 @@ export default function KebersihanSekolahContext({ children }) {
   });
 
   const handleForm = async (values) => {
-    const kegiatan = values?.kegiatan;
-    const kondisi = values?.kondisi;
-    const skor = values?.skor;
+    const activity = values?.activity;
+    const condition = values?.condition;
+    const score = values?.score;
 
-    try {
-      const response = await axios.post("http://localhost:2000/kegiatan", {
-        kegiatan,
-        kondisi,
-        skor,
+    axios
+      .post(`/api/v1/clearlines/activity`, {
+        activity,
+        condition,
+        score,
+      })
+      .then((res) => {
+        console.log("Input berhasil ditambahkan", res?.data);
+      })
+      .catch((err) => {
+        console.error("gagal menyimpan data", err);
       });
-      console.log("Input berhasil ditambahkan", response.data);
-      window.location.reload();
-    } catch (error) {
-      console.error("gagal menyimpan data", error);
-    }
   };
 
   useEffect(() => {
@@ -57,7 +61,7 @@ export default function KebersihanSekolahContext({ children }) {
 
   const handleDelete = async (itemId) => {
     try {
-      await axios.delete(` http://localhost:2000/kegiatan/${itemId}`);
+      await axios.delete(`http://localhost:2000/kegiatan/${itemId}`);
       setTable(table.filter((item) => item.id !== itemId));
     } catch (error) {
       console.error("error menghapus data", error);
@@ -84,6 +88,12 @@ export default function KebersihanSekolahContext({ children }) {
       });
   }, []);
 
+  useEffect(() => {
+    axios.get("http://localhost:2000/siswa").then((response) => {
+      setSiswa(response.data);
+    });
+  }, []);
+
   const state = {
     visible,
     setVisible,
@@ -104,6 +114,8 @@ export default function KebersihanSekolahContext({ children }) {
     kelas,
     setKelas,
     handleDeleteClass,
+    siswa,
+    setSiswa,
   };
 
   return (
