@@ -10,7 +10,7 @@ export default function index() {
         breadcrumbs={[
           { label: <HomeFilled />, url: "/" },
           { label: "Materi", url: "/materi" },
-          { label: "Data Kelas", url: "/materi/data/kelas/{id}" },
+          { label: "Data Kelas", url: "/materi/data/kelas/[id]?" },
         ]}
       />
       <FetchData />
