@@ -6,11 +6,11 @@ import { useRouter } from "next/navigation";
 import { useLogin } from "@/context/LoginContext";
 
 export default function index({ children }) {
-  const router = useRouter;
-  const { tokenUser } = useLogin();
+  const router = useRouter();
+  const { tokenUser, dataUser } = useLogin();
 
   useEffect(() => {
-    if (!tokenUser) {
+    if (!dataUser) {
       router.push("/login");
     }
     if (tokenUser) {

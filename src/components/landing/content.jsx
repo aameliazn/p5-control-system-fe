@@ -1,348 +1,320 @@
 "use client";
-import Aos from "aos";
-import { Image } from "antd";
-import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Image, Button } from "antd";
+import React, { useEffect, useState, useRef } from "react";
+import { useInView } from 'react-intersection-observer';
 import Style from "./landing.module.css";
-import anime from "animejs/lib/anime.es.js";
+import Tour from "./tour";
+import Footer from "./footer";
+import { Divider } from "antd";
+import CountUp from "react-countup";
+import { Statistic } from "antd";
+
+
+const Formatter = (value) => <CountUp end={value} separator="," />;
 
 export default function content() {
-  useEffect(() => {
-    Aos.init();
-  }, []);
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const [ref, inView] = useInView({
+    triggerOnce: false, 
+  });
 
+  useEffect(() => {
+    if (inView) {
+      setIsIntersecting(true);
+    }else {
+      setIsIntersecting(false); 
+    }
+  }, [inView]);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+  const bgNature = "url(./nature.jpg)";
   return (
     <>
-      <section data-aos="fade-down" className={Style.home}>
+      <section className={Style.home}>
         <div className={Style.content}>
-          <div className={Style.contentBx}>
+          <div
+            data-aos="zoom-in-up"
+            data-aos-duration="2000"
+            className={Style.contentBx}
+          >
             <h1>
-              P5 <span className={Style.span}>udah we</span>
+              Tingkatkan <span className={Style.span}>Kemampuanmu </span>
+              dengan P5
             </h1>
             <p>
-              Bakar semangatmu untuk mengikuti P5 Gaya Hidup Berkelanjutan yang
-              diadakan{" "}
+              Bakar semangatmu dengan mengikuti P5 Gaya Hidup Berkelanjutan yang
+              diadakan dari sekolah sebagai ajang bagi dirimu untuk meningkatkan
+              nilai dan sikap bagi para siswa.{" "}
             </p>
-            <a className={Style.btn}>Data Sekarang</a>
+            <a>
+              <Button type="primary" style={{ fontWeight: "500", textAlign: 'center' }}>
+                Data Sekarang
+              </Button>
+            </a>
           </div>
           <div className={Style.imgBx}>
             <img src="./p5-1.png" alt="" />
           </div>
         </div>
-        <div className={Style.infoBx}>
-          <div className={Style.box}>
-            <i className="far fa-user"></i>
-            <div className={Style.info}>
-              <h4>2400+</h4>
-              <p>Plant</p>
+      </section>
+      <section>
+        {/* <div class="container flex flex-col gap-4 mx-8">
+        <label class="text-gray-100 font-semibold tracking-wider text-lg">Last Week</label>
+        <div class="bg-gray-100 rounded-lg w-full h-auto py-4 flex flex-row justify-between divide-x divide-solid divide-gray-400">
+            <div class="relative flex-1 flex flex-col gap-2 px-4">
+                <label class="text-gray-800 text-base font-semibold tracking-wider">Total Visitor</label>
+                <label class="text-green-800 text-4xl font-bold">14K</label>
+                <div class="absolute bg-red-400 rounded-md font-semibold text-xs text-gray-100 p-2 right-4 bottom-0">
+                    - 5%
+                </div>
             </div>
-          </div>
-          <div className={Style.box}>
-            <i className="far fa-user"></i>
-            <div className={Style.info}>
-              <h4>200+</h4>
-              <p>Plant</p>
+            <div class="relative flex-1 flex flex-col gap-2 px-4">
+                <label class="text-gray-800 text-base font-semibold tracking-wider">Total Click</label>
+                <label class="text-green-800 text-4xl font-bold">6K</label>
+                <div class="absolute bg-green-400 rounded-md font-semibold text-xs text-gray-100 p-2 right-4 bottom-0">
+                    + 10%
+                </div>
             </div>
-          </div>
-          <div className={Style.box}>
-            <i className="far fa-user"></i>
-            <div className={Style.info}>
-              <h4>PPLG</h4>
-              <p>Yang Bertugas</p>
+            <div class="relative flex-1 flex flex-col gap-2 px-4">
+                <label class="text-gray-800 text-base font-semibold tracking-wider">Total Profit</label>
+                <label class="text-green-800 text-4xl font-bold">$1.2M</label>
+                <div class="absolute bg-green-400 rounded-md font-semibold text-xs text-gray-100 p-2 right-4 bottom-0">
+                    + 5%
+                </div>
+            </div>
+        </div>
+    </div> */}
+      </section>
+      <section id="statistic" className={Style.section}>
+        <div
+          data-aos="fade-in"
+          data-aos-duration="2000"
+          class="container flex flex-col gap-4 mx-8"
+        >
+          <Divider>
+            <label class="text-gray-800 font-semibold tracking-wider text-lg">
+              Statistic
+            </label>
+          </Divider>
+          <div class="bg-white rounded-lg w-full h-auto py-4 flex flex-row justify-between divide-x divide-solid divide-gray-400 shadow-md">
+            <div class="relative flex-1 flex flex-col gap-2 px-4">
+              <label class="text-gray-800 text-base font-semibold tracking-wider">
+                Tanaman
+              </label>
+              <label class="text-green-800 text-4xl font-bold">
+                {" "}
+               <div ref={ref}>
+        {isIntersecting ? (
+          <Statistic value={2283493} formatter={Formatter} />
+        ) : (
+          <div style={{ height: '100px' }}></div>
+        )}
+      </div>
+              </label>
+            </div>
+            <div class="relative flex-1 flex flex-col gap-2 px-4">
+              <label class="text-gray-800 text-base font-semibold tracking-wider">
+                Tanaman
+              </label>
+              <label class="text-green-800 text-4xl font-bold">
+                {" "}
+               <div ref={ref}>
+        {isIntersecting ? (
+          <Statistic value={2283493} formatter={Formatter} />
+        ) : (
+          <div style={{ height: '100px' }}></div>
+        )}
+      </div>
+              </label>
+            </div>
+            <div class="relative flex-1 flex flex-col gap-2 px-4">
+              <label class="text-gray-800 text-base font-semibold tracking-wider">
+                Yang Bertugas
+              </label>
+              <label class="text-green-800 text-4xl font-bold">PPLG</label>
             </div>
           </div>
         </div>
       </section>
-      <div class={Style.spr}>
+
+      {/* <div class={Style.spr}>
         <img src="./sprout.png" />
-      </div>
-      <section class={Style.section} id="about">
-        <div className={Style.bgicon}>
-          <img src="./handshake.png" alt=""></img>
-        </div>
+      </div> */}
+      <div class="w-full h-full bg-gray-800 justify-center items-center">
+        <section class={Style.section} id="about">
+        <Divider>
+            <label class="text-[var(--main-color)] font-semibold tracking-wider text-3xl">
+              About
+            </label>
+          </Divider>
+          <div data-aos="fade-left" data-aos-duration="2000">
+            <Tour />
+          </div>
+        </section>
+        <section className={Style.section}>
+          <Divider
+            style={{
+              color: "var(--main-color)",
+              fontSize: "20px",
+              fontWeight: "500",
+            }}
+            orientation="left"
+            plain
+          >
+            Tidak hanya itu
+          </Divider>
+          <div
+            class={Style.aboutText}
+            data-aos="fade-right"
+            data-aos-duration="2000"
+          >
+            <p>
+              {" "}
+              P5{" "}
+              <span
+                style={{
+                  color: "var(--main-color)",
+                  textTransform: "uppercasey",
+                }}
+              >
+                {" "}
+                Gaya Hidup Berkelanjutan
+              </span>{" "}
+              juga membuat pengalaman lingkungan hidup yang keren dan
+              berorientasi pada masa depan untuk kehidupan bumi pada masa depan.
+              Berpikir kritis, inovasi, kerja sama, pemecahan masalah,
+              kepedulian, berani, pola hidup, dan rajin.{" "}
+            </p>
+          </div>
+          <section id="galeri" className={Style.section}>
+          <div class="flex min-h-screen flex-wrap content-center justify-center">
+          <Divider>
+            <label class="text-[var(--main-color)] font-semibold tracking-wider text-3xl">
+              Galery
+            </label>
+          </Divider>
+            <div
+              class="grid grid-cols-2 gap-3"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <div class="w-80 shadow-lg bg-white p-3">
+                <Image.PreviewGroup
+                  items={[
+                    "./dokumentasi/IMG_20221104_144256.jpg",
+                    "./dokumentasi/IMG_20221104_144302.jpg",
+                    "./kebersihan/kebersihan1.jpg",
+                    "./kebersihan/kebersihan3.jpg",
+                    "./kebersihan/kebersihan4.jpg"
 
-        <div className={Style.about}>
-          <div className={Style.aboutImg}>
-            <img src="./p5-2.png" />
-          </div>
-          <div class={Style.aboutText}>
-            <div></div>
-
-            <div className={Style.card}>
-              <div className={Style.cards}>
-                <div class="px-3 py-2 ">
-                  <div class={Style.titlecard}>
-                    Kepedulian <br />
-                  </div>
-                  <div className={Style.textcard}>
-                    P5 Melatih kepedulian akan lingkungan hidup dan
-                    mengembangkan sikap kepedulian{" "}
-                  </div>
-                </div>
-              </div>
-              <div className={Style.cards}>
-                <div class="px-3 py-2 ">
-                  <div class={Style.titlecard}>Kerja sama</div>
-                  <div className={Style.textcard}>
-                    P5 Melatih kekeluargaan dan kekompakkan yang begitu erat
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={Style.card}>
-              <div className={Style.cards}>
-                <div class="px-3 py-2 ">
-                  <div class={Style.titlecard}>Kritis</div>
-                  <div className={Style.textcard}>
-                    P5 Melatih Berpikiran kritis dalam menghadapi dan memecahkan
-                    masalah-masalah yang ada
-                  </div>
-                </div>
-              </div>
-              <div className={Style.cards}>
-                <div class="px-3 py-2 ">
-                  <div class={Style.titlecard}>Gaya Hidup</div>
-                  <div className={Style.textcard}>
-                    P5 Melatih kita agar memiliki gaya hidup yang sehat untuk
-                    kehidupan di masa yang akan datang
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={Style.bgicon2}>
-            <img src="./idea.png" alt=""></img>
-          </div>
-        </div>
-      </section>
-      <div className={Style.bgdoc}>
-        <img width={700} src="./dokumentasi.png" alt="" />
-      </div>
-      <section className={Style.section}>
-        <div class={Style.aboutText}>
-          <h2>
-            <span className={Style.span}>
-              ipson dolor amet amet ih jabang bayi
-            </span>
-          </h2>
-
-          <p>
-            {" "}
-            memiliki minat di bidang IT. Saya memiliki beberapa pengalaman
-            membuat project pemograman pembuatan website back-end dan front-end.
-            Saya senang mengupgrade diri, menambah relasi, dan mengeksplor hal
-            baru.{" "}
-          </p>
-        </div>
-      </section>
-      <section>
-        <div className={Style.imgsak}>
-          <img src="./Sakura.png" alt="" />
-        </div>
-        <h1 className={Style.title}>Galeri</h1>
-        <div class="flex min-h-screen flex-wrap content-center justify-center p-9">
-          <div class="grid grid-cols-2 gap-3">
-            <div class="w-80 shadow-lg bg-white p-3">
-              <Image.PreviewGroup
-                items={[
-                  "https://gw.alipayobjects.com/zos/antfincdn/LlvErxo8H9/photo-1503185912284-5271ff81b9a8.webp",
-                  "https://gw.alipayobjects.com/zos/antfincdn/cV16ZqzMjW/photo-1473091540282-9b846e7965e3.webp",
-                  "https://gw.alipayobjects.com/zos/antfincdn/x43I27A55%26/photo-1438109491414-7198515b166b.webp",
-                ]}
-              >
-                <Image
-                  height={190}
-                  src="./dokumentasi/IMG_20220809_114618.jpg"
-                />
-              </Image.PreviewGroup>
-              <ul class="mt-3 flex flex-wrap">
-                <li class="mr-auto">
-                  <a href="#" class="flex text-gray-400 hover:text-gray-600">
-                    Kebersihan
-                  </a>
-                </li>
-                <li class="mr-2">
-                  <a
-                    href="#"
-                    class="flex text-gray-400 hover:text-gray-600"
-                  ></a>
-                </li>
-                <li class="mr-2">
-                  <a
-                    href="#"
-                    class="flex text-gray-400 hover:text-gray-600"
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="flex text-gray-400 hover:text-gray-600"
-                  ></a>
-                </li>
-              </ul>
-            </div>
-            <div class="w-80 shadow-lg bg-white p-3">
-              <Image.PreviewGroup
-                items={[
-                  "https://gw.alipayobjects.com/zos/antfincdn/LlvErxo8H9/photo-1503185912284-5271ff81b9a8.webp",
-                  "https://gw.alipayobjects.com/zos/antfincdn/cV16ZqzMjW/photo-1473091540282-9b846e7965e3.webp",
-                  "https://gw.alipayobjects.com/zos/antfincdn/x43I27A55%26/photo-1438109491414-7198515b166b.webp",
-                ]}
-              >
-                <Image
-                  height={190}
-                  src="./dokumentasi/IMG_20220809_114618.jpg"
-                />
-              </Image.PreviewGroup>
-              <ul class="mt-3 flex flex-wrap">
-                <li class="mr-auto">
-                  <a href="#" class="flex text-gray-400 hover:text-gray-600">
-                    Karya Daur Ulang
-                  </a>
-                </li>
-                <li class="mr-2">
-                  <a
-                    href="#"
-                    class="flex text-gray-400 hover:text-gray-600"
-                  ></a>
-                </li>
-                <li class="mr-2">
-                  <a
-                    href="#"
-                    class="flex text-gray-400 hover:text-gray-600"
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="flex text-gray-400 hover:text-gray-600"
-                  ></a>
-                </li>
-              </ul>
-            </div>
-            <div class="w-80 shadow-lg bg-white p-3">
-              <Image.PreviewGroup
-                items={[
-                  "https://gw.alipayobjects.com/zos/antfincdn/LlvErxo8H9/photo-1503185912284-5271ff81b9a8.webp",
-                  "https://gw.alipayobjects.com/zos/antfincdn/cV16ZqzMjW/photo-1473091540282-9b846e7965e3.webp",
-                  "https://gw.alipayobjects.com/zos/antfincdn/x43I27A55%26/photo-1438109491414-7198515b166b.webp",
-                ]}
-              >
-                <Image
-                  height={190}
-                  src="./dokumentasi/IMG_20220809_114618.jpg"
-                />
-              </Image.PreviewGroup>
-              <ul class="mt-3 flex flex-wrap">
-                <li class="mr-auto">
-                  <a href="#" class="flex text-gray-400 hover:text-gray-600">
-                    Tanaman
-                  </a>
-                </li>
-                <li class="mr-2">
-                  <a
-                    href="#"
-                    class="flex text-gray-400 hover:text-gray-600"
-                  ></a>
-                </li>
-                <li class="mr-2">
-                  <a
-                    href="#"
-                    class="flex text-gray-400 hover:text-gray-600"
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="flex text-gray-400 hover:text-gray-600"
-                  ></a>
-                </li>
-              </ul>
-            </div>
-            <div class="w-80 shadow-lg bg-white p-3">
-              <Image.PreviewGroup
-                items={[
-                  "https://gw.alipayobjects.com/zos/antfincdn/LlvErxo8H9/photo-1503185912284-5271ff81b9a8.webp",
-                  "https://gw.alipayobjects.com/zos/antfincdn/cV16ZqzMjW/photo-1473091540282-9b846e7965e3.webp",
-                  "https://gw.alipayobjects.com/zos/antfincdn/x43I27A55%26/photo-1438109491414-7198515b166b.webp",
-                ]}
-              >
-                <Image
-                  height={190}
-                  src="./dokumentasi/IMG_20220809_114618.jpg"
-                />
-              </Image.PreviewGroup>
-              <ul class="mt-3 flex flex-wrap">
-                <li class="mr-auto">
-                  <a href="#" class="flex text-gray-400 hover:text-gray-600">
-                    Pemilahan Sampah
-                  </a>
-                </li>
-                <li class="mr-2">
-                  <a
-                    href="#"
-                    class="flex text-gray-400 hover:text-gray-600"
-                  ></a>
-                </li>
-                <li class="mr-2">
-                  <a
-                    href="#"
-                    class="flex text-gray-400 hover:text-gray-600"
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="flex text-gray-400 hover:text-gray-600"
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class={Style.sectionquotes}>
-        <div className={Style.bgquote}>
-          <div class={Style.title}>
-            <h1 className={Style.h1}>
-              " <span className={Style.spantext}>Aku ada </span>lingkunganku{" "}
-              <span className={Style.spantext}>bahagia</span> "
-            </h1>
-          </div>
-        </div>
-      </section>
-      <section>
-        <footer>
-          <div class={Style.socialMedia}>
-            <p>Social Media</p>
-            <div class={Style.icon}>
-              <a href="https://www.instagram.com/smkwikrama/">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="#000000"
-                  width="24"
-                  height="24"
+                  ]}
                 >
-                  <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path>
-                  <circle cx="16.806" cy="7.207" r="1.078"></circle>
-                  <path d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"></path>
-                </svg>
-              </a>
-              <a href="https://twitter.com/smkwikrama">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="#000000"
-                  width="24"
-                  height="24"
+                  <Image
+                    height={190}
+                    src="./dokumentasi/IMG_20221104_144256.jpg"
+                  />
+                </Image.PreviewGroup>
+                <ul class="mt-3 flex flex-wrap">
+                  <li class="mr-auto">
+                    <a class="flex text-gray-400 hover:text-gray-600">
+                      Kebersihan
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="w-80 shadow-lg bg-white p-3">
+                <Image.PreviewGroup
+                  items={[
+                    "./dokumentasi/IMG_20221114_142055.jpg",
+                    "./dokumentasi/IMG_20221114_142122.jpg",
+                    "./Daur-ulang/daurulang1.jpg",
+                    "./Daur-ulang/daurulang2.jpg",
+                    "./Daur-ulang/daurulang3.jpg"
+                  ]}
                 >
-                  <path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"></path>
-                </svg>
-              </a>
+                  <Image
+                    height={190}
+                    src=   "./dokumentasi/IMG_20221114_142055.jpg"
+                  />
+                </Image.PreviewGroup>
+                <ul class="mt-3 flex flex-wrap">
+                  <li class="mr-auto">
+                    <a class="flex text-gray-400 hover:text-gray-600">
+                      Karya Daur Ulang
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="w-80 shadow-lg bg-white p-3">
+                <Image.PreviewGroup
+                  items={[
+                   "./tanaman/tanaman1.jpg",
+                    "./tanaman/tanaman2.jpg",
+                    "./tanaman/tanaman3.jpg",
+                    "./tanaman/tanaman4.jpg",
+                    "./dokumentasi/IMG_20220809_114628.jpg"
+                  ]}
+                >
+                  <Image
+                    height={190}
+                    src="./dokumentasi/IMG_20220809_114618.jpg"
+                  />
+                </Image.PreviewGroup>
+                <ul class="mt-3 flex flex-wrap">
+                  <li class="mr-auto">
+                    <a class="flex text-gray-400 hover:text-gray-600">
+                      Tanaman
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="w-80 shadow-lg bg-white p-3">
+                <Image.PreviewGroup
+                  items={[
+                    "./milah-sampah/daur1.jpg",
+                    "./milah-sampah/daur2.jpg",
+                    "./milah-sampah/daur3.jpg",
+                    "./milah-sampah/daur4.jpg",
+                    "./milah-sampah/daur5.jpg"
+                  ]}
+                >
+                  <Image
+                    height={190}
+                    src=  "./milah-sampah/daur1.jpg"
+                  />
+                </Image.PreviewGroup>
+                <ul class="mt-3 flex flex-wrap">
+                  <li class="mr-auto">
+                    <a class="flex text-gray-400 hover:text-gray-600">
+                      Pemilahan Sampah
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </footer>
-      </section>
+        </section>
+        </section>
+      </div>
+      <footer className={Style.bgF} style={{ backgroundImage: bgNature }}>
+        <section  id="contact" class={Style.sectionquotes}>
+          <div className={Style.bgquote}>
+            <div class={Style.title}>
+              <h1 className={Style.h1}>
+                " <span className={Style.spantext}>Aku ada </span>lingkunganku{" "}
+                <span className={Style.spantext}>bahagia</span> "
+              </h1>
+            </div>
+          </div>
+        </section>
+        <section>
+        <Footer />
+        </section>
+      </footer>
     </>
   );
 }

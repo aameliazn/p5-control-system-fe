@@ -1,6 +1,7 @@
 import React from "react";
 import Style from "./landing.module.css";
 import Link from "next/link";
+import {Button} from 'antd'
 
 export default function navbar() {
   return (
@@ -35,21 +36,24 @@ export default function navbar() {
             </button>
           </div>
           <ul className={Style.navlist}>
-            <li>
-              <a href="#">about</a>
+          <li>
+              <a href="#statistic">statistic</a>
             </li>
             <li>
-              <a href="#">about</a>
+              <a href="#about">about</a>
             </li>
             <li>
-              <a href="#">about</a>
+              <a href="#galeri">galery</a>
+            </li>
+            <li>
+              <a href="#contact">contact</a>
             </li>
           </ul>
           <div className=" pb-4 md:pb-0 hidden md:flex md:justify-center md:flex-row">
             <Link href={"/login"}>
-              <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+              <Button type="default">
                 Login
-              </button>
+              </Button>
             </Link>
           </div>
         </div>
