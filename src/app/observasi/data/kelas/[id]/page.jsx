@@ -1,14 +1,16 @@
 import React from "react";
-import Index from "@/components/observasi/data/kelas";
 import Layout from "@/components/layouts";
+import DataKelas from "@/components/observasi/data/kelas";
+import ObservasiProvider from "@/context/ObservasiContext";
 
 export default function page() {
   return (
     <>
       <Layout>
-        <Index />
+        <ObservasiProvider>
+          <DataKelas />
+        </ObservasiProvider>
       </Layout>
     </>
   );
 }
-9

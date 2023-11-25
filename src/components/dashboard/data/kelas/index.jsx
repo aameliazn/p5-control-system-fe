@@ -1,19 +1,19 @@
 import React from "react";
-import FetchData from "./fetchData";
+import DataKelas from "./dataKelas";
 import Breadcrumb from "@/components/layouts/breadcrumb";
 import { HomeFilled } from "@ant-design/icons";
 
-export default function index() {
+export default function index({ props }) {
   return (
     <div>
       <Breadcrumb
         breadcrumbs={[
           { label: <HomeFilled />, url: "/" },
-          { label: "Materi", url: "/materi" },
-          { label: "Data Kelas", url: "/materi/data/kelas/[id]?" },
+          { label: "Dashboard", url: "/dashboard" },
+          { label: "Data Kelas", url: "/dashboard/data/kelas/[id]?" },
         ]}
       />
-      <FetchData />
+      <DataKelas props={props} />
     </div>
   );
 }

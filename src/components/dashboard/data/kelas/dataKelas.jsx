@@ -1,27 +1,26 @@
 "use client";
 import React from "react";
-import Style from "./style.module.css";
 import { useRouter } from "next/navigation";
+import { useDashboard } from "@/context/DashboardContext";
 import { Typography, List, Card } from "antd";
 import { AiOutlineDownload } from "react-icons/ai";
-import { useDaurUlang } from "@/context/DaurUlangContext";
 
 const { Title } = Typography;
 const { Meta } = Card;
 
-export default function fetchKelas() {
+export default function dataKelas({ props }) {
   const router = useRouter();
-  const { siswa } = useDaurUlang();
+  const { siswa } = useDashboard();
 
   const pushRoute = (e, i) => {
-    router.push(`/daur-ulang/data/siswa/${i}`);
+    router.push(`/dashboard/data/siswa/${i}`);
   };
 
   return (
     <>
       <div className="mt-5">
         <div className="flex flex-row gap-3">
-          <Title level={3}>{`PPLG XII 2`}</Title>
+          <Title level={3}>{`PPLG XII ${props?.id}`}</Title>
           <AiOutlineDownload size={27} style={{ marginTop: 3 }} />
         </div>
       </div>
@@ -38,7 +37,7 @@ export default function fetchKelas() {
               style={{ borderBottom: "3px solid green" }}
               className="border border-gray-200 shadow hover:bg-gray-100"
             >
-              <Meta 
+              <Meta
                 onClick={(e) => pushRoute(e, index)}
                 style={{ cursor: "pointer" }}
                 title={item?.nama}

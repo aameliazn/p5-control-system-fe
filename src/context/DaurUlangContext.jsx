@@ -17,6 +17,7 @@ export default function DaurUlangContext({ children }) {
   const [searchedColumn, setSearchedColumn] = useState("");
   const [searchText, setSearchText] = useState("");
   const [kelas, setKelas] = useState([]);
+  const [siswa, setSiswa] = useState([]);
 
   const itemsPerPage = 5;
 
@@ -79,6 +80,12 @@ export default function DaurUlangContext({ children }) {
     }
   };
 
+  useEffect(() => {
+    axios.get("http://localhost:2000/siswa").then((response) => {
+      setSiswa(response.data);
+    });
+  }, []);
+
   const state = {
     visible,
     setVisible,
@@ -99,6 +106,8 @@ export default function DaurUlangContext({ children }) {
     handleDeleteClass,
     kelas,
     setKelas,
+    siswa,
+    setSiswa,
   };
 
   return (
