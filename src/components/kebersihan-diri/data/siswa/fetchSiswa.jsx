@@ -1,33 +1,185 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Table } from "antd";
 import Style from "./style.module.css";
+import React, { useState } from "react";
+import Highlighter from "react-highlight-words";
+import { SearchOutlined } from "@ant-design/icons";
+import { AiOutlineDownload } from "react-icons/ai";
+import { Card, Table, Divider, Input, Space, Button } from "antd";
+import { useKebersihanDiri } from "@/context/KebersihanDiriContext";
 
 export default function fetchSiswa() {
-  const [kegiatan, setKegiatan] = useState([]);
-  useEffect(() => {
-    axios.get(" http://localhost:2000/kegiatan").then((response) => {
-      setKegiatan(response.data);
-    });
-  }, []);
+  const {
+    kegiatanTable,
+    setCurrentPage,
+    searchText,
+    setSearchText,
+    searchedColumn,
+    setSearchedColumn,
+    searchInput,
+    pagination,
+    setPagination,
+    itemsPerPage,
+  } = useKebersihanDiri();
+
+  const [isContentVisible, setIsContentVisible] = useState(true);
+
+  const toggleContentVisibility = () => {
+    setIsContentVisible((prev) => !prev);
+  };
+
+  const handleSearch = (selectedKeys, confirm, dataIndex) => {
+    confirm();
+    setSearchText(selectedKeys[0]);
+    setSearchedColumn(dataIndex);
+  };
+
+  const handleReset = (clearFilters) => {
+    clearFilters();
+    setSearchText("");
+  };
+
+  const handleChangePage = (pagination, page, filters, sorter, extra) => {
+    setCurrentPage(page),
+      setPagination({
+        total: filters?.length,
+        pageSize: itemsPerPage,
+        showTotal: (total, range) =>
+          `${range[0]}-${range[1]} of ${total} items`,
+        showSizeChanger: false,
+        position: ["bottomCenter"],
+      });
+  };
+
+  const getColumnSearchProps = (dataIndex) => ({
+    filterDropdown: ({
+      setSelectedKeys,
+      selectedKeys,
+      confirm,
+      clearFilters,
+      close,
+    }) => (
+      <div
+        style={{
+          padding: 8,
+        }}
+        onKeyDown={(e) => e.stopPropagation()}
+      >
+        <Input
+          ref={searchInput}
+          placeholder={`Search ${dataIndex}`}
+          value={selectedKeys[0]}
+          onChange={(e) =>
+            setSelectedKeys(e.target.value ? [e.target.value] : [])
+          }
+          onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
+          style={{
+            marginBottom: 8,
+            display: "block",
+          }}
+        />
+        <Space>
+          <Button
+            type="default"
+            onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
+            icon={<SearchOutlined />}
+            size="small"
+            style={{
+              width: 90,
+            }}
+          >
+            Search
+          </Button>
+          <Button
+            onClick={() => clearFilters && handleReset(clearFilters)}
+            size="small"
+            style={{
+              width: 90,
+            }}
+          >
+            Reset
+          </Button>
+          <Button
+            type="link"
+            size="small"
+            style={{ color: "green" }}
+            onClick={() => {
+              confirm({
+                closeDropdown: false,
+              });
+              setSearchText(selectedKeys[0]);
+              setSearchedColumn(dataIndex);
+            }}
+          >
+            Filter
+          </Button>
+          <Button
+            type="link"
+            size="small"
+            style={{ color: "green" }}
+            onClick={() => {
+              close();
+            }}
+          >
+            close
+          </Button>
+        </Space>
+      </div>
+    ),
+    filterIcon: (filtered) => (
+      <SearchOutlined
+        style={{
+          color: filtered ? "green" : undefined,
+        }}
+      />
+    ),
+    onFilter: (value, record) =>
+      record[dataIndex].toString().toLowerCase().includes(value.toLowerCase()),
+    onFilterDropdownOpenChange: (visible) => {
+      if (visible) {
+        setTimeout(() => searchInput.current?.select(), 100);
+      }
+    },
+    render: (text) =>
+      searchedColumn === dataIndex ? (
+        <Highlighter
+          highlightStyle={{
+            backgroundColor: "#4ade80",
+            padding: 0,
+          }}
+          searchWords={[searchText]}
+          autoEscape
+          textToHighlight={text ? text.toString() : ""}
+        />
+      ) : (
+        text
+      ),
+  });
 
   const columns = [
     {
-      title: "Id",
+      title: "No",
       dataIndex: "id",
-      rowScope: "row",
-      width: 8,
+      key: "id",
+      width: "10%",
+      align: "center",
+      sorter: {
+        compare: (a, b) => a.id - b.id,
+      },
     },
     {
       title: "Kegiatan",
       dataIndex: "kegiatan",
-      width: 50,
+      key: "kegiatan",
+      sorter: {
+        compare: (a, b) => a.kegiatan.localeCompare(b.kegiatan),
+      },
+      ...getColumnSearchProps("kegiatan"),
     },
     {
       title: "2",
-      fixed: "right",
-      width: 10,
+      key: "2",
+      width: "10%",
+      align: "center",
       render: () => (
         <div ClassName="flex items-center mb-4">
           <input
@@ -41,8 +193,9 @@ export default function fetchSiswa() {
     },
     {
       title: "3",
-      fixed: "right",
-      width: 10,
+      key: "3",
+      width: "10%",
+      align: "center",
       render: () => (
         <div ClassName="flex items-center mb-4">
           <input
@@ -56,8 +209,9 @@ export default function fetchSiswa() {
     },
     {
       title: "4",
-      fixed: "right",
-      width: 10,
+      key: "4",
+      width: "10%",
+      align: "center",
       render: () => (
         <div ClassName="flex items-center mb-4">
           <input
@@ -71,8 +225,9 @@ export default function fetchSiswa() {
     },
     {
       title: "5",
-      fixed: "right",
-      width: 10,
+      key: "5",
+      width: "10%",
+      align: "center",
       render: () => (
         <div ClassName="flex items-center mb-4">
           <input
@@ -86,8 +241,9 @@ export default function fetchSiswa() {
     },
     {
       title: "6",
-      fixed: "right",
-      width: 10,
+      key: "6",
+      width: "10%",
+      align: "center",
       render: () => (
         <div ClassName="flex items-center mb-4">
           <input
@@ -101,8 +257,9 @@ export default function fetchSiswa() {
     },
     {
       title: "7",
-      fixed: "right",
-      width: 10,
+      key: "7",
+      width: "10%",
+      align: "center",
       render: () => (
         <div ClassName="flex items-center mb-4">
           <input
@@ -116,8 +273,9 @@ export default function fetchSiswa() {
     },
     {
       title: "8",
-      fixed: "right",
-      width: 10,
+      key: "8",
+      width: "10%",
+      align: "center",
       render: () => (
         <div ClassName="flex items-center mb-4">
           <input
@@ -130,6 +288,7 @@ export default function fetchSiswa() {
       ),
     },
   ];
+
   const rowSelection = {
     onChange: (selectedRowKeys, selectedRows) => {
       console.log(
@@ -138,49 +297,86 @@ export default function fetchSiswa() {
         selectedRows
       );
     },
+
     onSelect: (record, selected, selectedRows) => {
       console.log(record, selected, selectedRows);
     },
+
     onSelectAll: (selected, selectedRows, changeRows) => {
       console.log(selected, selectedRows, changeRows);
     },
   };
+
   return (
     <>
-      <Table
-        columns={columns}
-        dataSource={kegiatan}
-        pagination={{
-          pageSize: 10,
-        }}
-        title={() => (
-          <div style={{ textAlign: "center", fontWeight: "700" }}>
-            Minggu Pertama
+      <div className="mt-7">
+        <div className="items-center justify-center flex">
+          <div className={Style.cardwarpper}>
+            <div className="w-full">
+              <p className="max-w-full font-bold text-white md:w-[64%] md:leading-[42px] lg:w-[46%] xl:w-[85%] 2xl:w-[75%] 3xl:w-[52%]">
+                <span style={{ fontSize: 40 }}>Kebersihan Diri</span> <br />
+                <span style={{ fontSize: 25, opacity: "80%" }}>
+                  Siti Hajima Maste Iruka
+                </span>
+              </p>
+            </div>
           </div>
-        )}
-        scroll={{
-          y: 380,
-        }}
-        className={Style.tableAnt}
-      />
+        </div>
+      </div>
+      <div className="mt-6">
+        <Card
+          className={isContentVisible ? Style.tableAnt : Style.tableAntVisible}
+        >
+          <div className="flex justify-center gap-2">
+            <p
+              style={{ fontSize: 19, cursor: "pointer", margin: "-7px 0px" }}
+              className="font-bold"
+              onClick={toggleContentVisibility}
+            >
+              Kebersihan Diri Minggu 1
+            </p>
+            <AiOutlineDownload size={25} style={{ marginTop: -5 }} />
+          </div>
 
-      {/* belum dibedain, masih di data yang sama */}
-      <Table
-        columns={columns}
-        dataSource={kegiatan}
-        pagination={{
-          pageSize: 10,
-        }}
-        title={() => (
-          <div style={{ textAlign: "center", fontWeight: "700" }}>
-            Minggu Kedua
+          {isContentVisible && <Divider />}
+
+          {isContentVisible && (
+            <Table
+              columns={columns}
+              dataSource={kegiatanTable}
+              pagination={pagination}
+              onChange={handleChangePage}
+            />
+          )}
+        </Card>
+      </div>
+      <div className="mt-6">
+        <Card
+          className={isContentVisible ? Style.tableAnt : Style.tableAntVisible}
+        >
+          <div className="flex justify-center gap-2">
+            <p
+              style={{ fontSize: 19, cursor: "pointer", margin: "-7px 0px" }}
+              className="font-bold"
+              onClick={toggleContentVisibility}
+            >
+              Kebersihan Diri Minggu 2
+            </p>
+            <AiOutlineDownload size={25} style={{ marginTop: -5 }} />
           </div>
-        )}
-        scroll={{
-          y: 380,
-        }}
-        className={Style.tableAnt}
-      />
+
+          {isContentVisible && <Divider />}
+
+          {isContentVisible && (
+            <Table
+              columns={columns}
+              dataSource={kegiatanTable}
+              pagination={pagination}
+              onChange={handleChangePage}
+            />
+          )}
+        </Card>
+      </div>
     </>
   );
 }

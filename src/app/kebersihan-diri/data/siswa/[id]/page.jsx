@@ -1,12 +1,15 @@
 import React from "react";
 import Layout from "@/components/layouts";
-import Index from "@/components/kebersihan-diri/data/siswa";
+import DataSiswa from "@/components/kebersihan-diri/data/siswa";
+import KebersihanDiriProvider from "@/context/KebersihanDiriContext";
 
 export default function page() {
   return (
     <>
       <Layout>
-        <Index />
+        <KebersihanDiriProvider>
+          <DataSiswa />
+        </KebersihanDiriProvider>
       </Layout>
     </>
   );
