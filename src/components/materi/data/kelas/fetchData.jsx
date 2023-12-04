@@ -29,6 +29,7 @@ export default function fetchData() {
           gutter: 16,
           column: 4,
         }}
+        style={{ marginTop: 15 }}
         dataSource={siswa}
         renderItem={(item, index) => (
           <List.Item>
