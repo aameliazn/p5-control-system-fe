@@ -1,13 +1,16 @@
-import React from 'react'
-import Index from '@/components/tanaman/data/siswa'
-import Layout from '@/components/layouts'
+import React from "react";
+import Layout from "@/components/layouts";
+import DataSiswa from "@/components/tanaman/data/siswa";
+import TanamanProvider from "@/context/TanamanContext";
 
 export default function page() {
   return (
- <>
- <Layout>
-    <Index/>
- </Layout>
- </>
-  )
+    <>
+      <Layout>
+        <TanamanProvider>
+          <DataSiswa />
+        </TanamanProvider>
+      </Layout>
+    </>
+  );
 }

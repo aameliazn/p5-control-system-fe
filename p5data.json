@@ -460,15 +460,6 @@
   ],
   "kegiatan": [
     {
-      "kegiatan": "ini kegiatan",
-      "kondisi": "jelek",
-      "skor": "10",
-      "id": 1,
-      "rombel": "A",
-      "rayon": "B",
-      "code": "C"
-    },
-    {
       "kegiatan": "bersih-bersih kelas",
       "kondisi": "kotor",
       "skor": "10",
@@ -690,28 +681,44 @@
   ],
   "pertanyaan": [
     {
-      "pertanyaan": "test",
+      "pertanyaan": "Bagaimana blablabla Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue blavlavlavlavla safasflas",
+      "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum feugiat massa nisi, vel faucibus dui porttitor eget. Mauris felis quam, convallis ac tincidunt in, tempus non libero. Praesent hendrerit lorem eu lectus sollicitudin, et hendrerit nisl viverra. Sed imperdiet eget nunc convallis tempor. Sed nec placerat augue, et molestie ante.",
       "id": 1
     },
     {
-      "pertanyaan": "test",
+      "pertanyaan": "Apa itu blablabla Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue",
+      "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum feugiat massa nisi, vel faucibus dui porttitor eget. Mauris felis quam, convallis ac tincidunt in, tempus non libero. Praesent hendrerit lorem eu lectus sollicitudin, et hendrerit nisl viverra. Sed imperdiet eget nunc convallis tempor. Sed nec placerat augue, et molestie ante.",
       "id": 2
     },
     {
-      "pertanyaan": "test",
-      "id": 2
+      "pertanyaan": "Siapa blablabla Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue",
+      "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum feugiat massa nisi, vel faucibus dui porttitor eget. Mauris felis quam, convallis ac tincidunt in, tempus non libero. Praesent hendrerit lorem eu lectus sollicitudin, et hendrerit nisl viverra. Sed imperdiet eget nunc convallis tempor. Sed nec placerat augue, et molestie ante.",
+      "id": 3
     },
     {
-      "pertanyaan": "amel",
-      "id": 11
+      "pertanyaan": "Kapan blablabla Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue",
+      "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum feugiat massa nisi, vel faucibus dui porttitor eget. Mauris felis quam, convallis ac tincidunt in, tempus non libero. Praesent hendrerit lorem eu lectus sollicitudin, et hendrerit nisl viverra. Sed imperdiet eget nunc convallis tempor. Sed nec placerat augue, et molestie ante.",
+      "id": 4
     },
     {
-      "pertanyaan": "test test test",
-      "id": 14
+      "pertanyaan": "Dimana blablabla Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue",
+      "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum feugiat massa nisi, vel faucibus dui porttitor eget. Mauris felis quam, convallis ac tincidunt in, tempus non libero. Praesent hendrerit lorem eu lectus sollicitudin, et hendrerit nisl viverra. Sed imperdiet eget nunc convallis tempor. Sed nec placerat augue, et molestie ante.",
+      "id": 5
     },
     {
-      "pertanyaan": "test lagi",
-      "id": 15
+      "pertanyaan": "Kenapa blablabla Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue",
+      "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum feugiat massa nisi, vel faucibus dui porttitor eget. Mauris felis quam, convallis ac tincidunt in, tempus non libero. Praesent hendrerit lorem eu lectus sollicitudin, et hendrerit nisl viverra. Sed imperdiet eget nunc convallis tempor. Sed nec placerat augue, et molestie ante.",
+      "id": 6
+    },
+    {
+      "pertanyaan": "test test test Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue",
+      "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum feugiat massa nisi, vel faucibus dui porttitor eget. Mauris felis quam, convallis ac tincidunt in, tempus non libero. Praesent hendrerit lorem eu lectus sollicitudin, et hendrerit nisl viverra. Sed imperdiet eget nunc convallis tempor. Sed nec placerat augue, et molestie ante.",
+      "id": 7
+    },
+    {
+      "pertanyaan": "test lagi Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue",
+      "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum feugiat massa nisi, vel faucibus dui porttitor eget. Mauris felis quam, convallis ac tincidunt in, tempus non libero. Praesent hendrerit lorem eu lectus sollicitudin, et hendrerit nisl viverra. Sed imperdiet eget nunc convallis tempor. Sed nec placerat augue, et molestie ante.",
+      "id": 8
     }
   ],
   "siswaPiket": [

@@ -30,6 +30,7 @@ export default function fetchKelas() {
           gutter: 16,
           column: 4,
         }}
+        style={{ marginTop: 15 }}
         dataSource={siswa}
         renderItem={(item, index) => (
           <List.Item>
@@ -38,7 +39,7 @@ export default function fetchKelas() {
               style={{ borderBottom: "3px solid green" }}
               className="border border-gray-200 shadow hover:bg-gray-100"
             >
-              <Meta 
+              <Meta
                 onClick={(e) => pushRoute(e, index)}
                 style={{ cursor: "pointer" }}
                 title={item?.nama}

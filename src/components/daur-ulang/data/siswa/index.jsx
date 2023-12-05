@@ -1,13 +1,20 @@
 import React from "react";
 import FetchTable from "./fetchTable";
+import { HomeFilled } from "@ant-design/icons";
+import Breadcrumb from "@/components/layouts/breadcrumb";
 
 export default function index() {
   return (
     <>
-      <div className="max-w-sm w-full lg:max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
-        <div>Data Siswa A</div>
-        <FetchTable/>
-      </div>
+      <Breadcrumb
+        breadcrumbs={[
+          { label: <HomeFilled />, url: "/" },
+          { label: "Daur Ulang", url: "/daur-ulang" },
+          { label: "Data Kelas", url: "/daur-ulang/data/kelas/[id]?" },
+          { label: "Data Siswa", url: "/daur-ulang/data/siswa/[id]?" },
+        ]}
+      />
+      <FetchTable />
     </>
   );
 }
