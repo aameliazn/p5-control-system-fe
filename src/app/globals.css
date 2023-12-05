@@ -28,3 +28,10 @@
 .costum-width{
   width: -webkit-fill-available;
 }
+
+.ant-btn-primary {
+  background-color: #73d802; 
+  border-color: #73d802; 
+  color: #fff; 
+}
+

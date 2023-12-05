@@ -116,37 +116,6 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0, 1);
 }
 
-.infoBx {
-  position: absolute;
-  bottom: 100px;
-  left: 100px;
-  display: flex;
-}
-
-.infoBx .box {
-  margin: 20px 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.infoBx .box i {
-  font-size: 1.6em;
-  color: var(--main-color);
-  margin: 10px;
-}
-
-.infoBx .box h4 {
-  color: var(--font-color);
-  font-size: 1.3em;
-  margin: 5px 0;
-}
-
-.infoBx .box p {
-  color: var(--font-color);
-  font-size: 15px;
-}
-
 .section {
   padding: 120px 10%;
 }
@@ -172,17 +141,29 @@
 }
 
 .aboutText p {
-  text-align: justify;
-  font-size: var(--basic-color);
+  text-align: left;
+  color: white;
   font-weight: 400;
-  max-width: 570px;
+  font-size: 2.4rem;
   line-height: 1.8;
   margin-bottom: 2.5rem;
+}
+.bgF{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
 }
 
 .title {
   text-align: center;
   font-size: 48px;
+}
+
+.titleG {
+  text-align: center;
+  font-size: 48px;
+  color: white;
 }
 
 .socialMedia {
@@ -299,6 +280,12 @@
   border: 3px solid var(--main-color);
 }
 
+.h1{
+  color: white;
+  font-weight: 700;
+text-shadow: 0 0 5px rgba(0, 0, 0, 0.386);
+}
+
 .h1 .spantext {
   transition: 0.5s ease-out;
 }
@@ -317,5 +304,52 @@
 
 .h1:hover .spantext {
   color: var(--main-color);
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+  text-shadow: 0 0 10px var(--second-color), 0 0 20px var(--second-color), 0 0 40px var(--second-color);
+}
+
+.bglayers {
+  -webkit-animation: filter-animation 4s infinite;
+  animation: filter-animation 4s infinite;
+}
+
+.bgscale {
+  -webkit-animation: filter-animation 8s infinite;
+  animation: filter-scale 8s infinite;
+}
+
+@-webkit-keyframes filter-animation {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  50% {
+    -webkit-filter: hue-rotate(45deg);
+  }
+  
+  100% {
+    -webkit-filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes filter-animation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(45deg);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes filter-scale {
+  0% {
+    transform:scale(1);
+  }
+  50% {
+    transform:scale(1.4);
+  }
+  100% {
+      transform:scale(.8);
+  }
 }
