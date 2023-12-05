@@ -1,18 +1,21 @@
 import React from 'react'
-import Header from './header'
-import Chart from './chart'
-
-
+import FetchData from './fetchData'
+import Tanaman from './tanaman'
+import Absensi from './absensi'
 
 export default function index() {
   return (
-    <>
-    <div>
-    <Header/>
-    </div>
-   <div className='mt-4'>
-    <Chart/>
-   </div>
-    </>
+       <>
+       <div>
+       <FetchData/>
+       </div>
+       <div className='mt-4'>
+        <Tanaman/>
+       </div>
+       
+       <div className='mt-4'>
+        <Absensi/>
+       </div>
+   </>
   )
 }

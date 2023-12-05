@@ -20,7 +20,7 @@ export default function chart() {
 
   const data = [
     { type: 'Mengerjakan', value: 25 },
-    { type: 'Tidak Mengerjakan', value: 30 },
+    { type: 'Belum', value: 30 },
   ];
 
   //form massege
@@ -49,7 +49,7 @@ export default function chart() {
     },
     interactions: [{ type: "element-active" }],
     color: ({ type }) => {
-      if (type === "Tidak Mengerjakan") {
+      if (type === "Belum") {
         return "red"; 
       }
       return "#73d802"; 

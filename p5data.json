@@ -2,18 +2,18 @@
   "siswa": [
     {
       "id": 1,
-      "nama": "Anita Setiawan",
+      "nama": "Amelia Z.",
       "rayon": "cisarua 5",
-      "nis": "24680",
+      "status": "tidak hadir",
       "data": "3/5",
       "date_time": "2023-10-28 09:30:00",
-      "deskripsi": "Siswa yang sangat tertarik pada seni dan kreativitas."
+      "deskripsi": "Siswa yang sangat tertarik pada kontol dan kreativitas."
     },
     {
       "id": 2,
       "nama": "Dewi Kusumawati",
       "rayon": "cisarua 6",
-      "nis": "13579",
+      "status": "tidak Hadir",
       "data": "4/6",
       "date_time": "2023-10-28 10:15:00",
       "deskripsi": "Suka berpartisipasi dalam kegiatan sosial."
@@ -22,7 +22,7 @@
       "id": 3,
       "nama": "Budi Pratama",
       "rayon": "cicurug 5",
-      "nis": "97531",
+      "status": "Hadir",
       "data": "7/3",
       "date_time": "2023-10-28 11:00:00",
       "deskripsi": "Pencinta alam dan lingkungan."
@@ -31,7 +31,7 @@
       "id": 4,
       "nama": "Rina Wulandari",
       "rayon": "cibedug 3",
-      "nis": "86420",
+      "status": "Hadir",
       "data": "2/5",
       "date_time": "2023-10-28 11:45:00",
       "deskripsi": "Juara dalam kompetisi matematika tingkat sekolah."
@@ -40,7 +40,7 @@
       "id": 5,
       "nama": "Ahmad Syarif",
       "rayon": "ciawi 5",
-      "nis": "75319",
+      "status": "Hadir",
       "data": "7/8",
       "date_time": "2023-10-28 12:30:00",
       "deskripsi": "Mengikuti klub sastra sekolah."
@@ -49,7 +49,7 @@
       "id": 6,
       "nama": "Siti Mariam",
       "rayon": "cisarua 6",
-      "nis": "64208",
+      "status": "Hadir",
       "data": "3/5",
       "date_time": "2023-10-28 13:15:00",
       "deskripsi": "Suka bermain musik dan bergabung dalam band sekolah."
@@ -58,7 +58,7 @@
       "id": 7,
       "nama": "Hendri Susanto",
       "rayon": "cicurug 5",
-      "nis": "53197",
+      "status": "Hadir",
       "data": "4/6",
       "date_time": "2023-10-28 14:00:00",
       "deskripsi": "Aktif dalam kegiatan sosial dan kepedulian sosial."
@@ -67,7 +67,7 @@
       "id": 8,
       "nama": "Rina Wijayanti",
       "rayon": "cibedug 3",
-      "nis": "42086",
+      "status": "Hadir",
       "data": "7/3",
       "date_time": "2023-10-28 14:45:00",
       "deskripsi": "Siswa berprestasi dengan hobi memasak."
@@ -76,7 +76,7 @@
       "id": 9,
       "nama": "Firman Susanto",
       "rayon": "ciawi 5",
-      "nis": "30975",
+      "status": "Hadir",
       "data": "2/5",
       "date_time": "2023-10-28 15:30:00",
       "deskripsi": "Pemenang kompetisi seni lukis tingkat sekolah."
@@ -85,7 +85,7 @@
       "id": 10,
       "nama": "Nita Hartati",
       "rayon": "cisarua 6",
-      "nis": "19864",
+      "status": "19864",
       "data": "7/8",
       "date_time": "2023-10-28 16:15:00",
       "deskripsi": "Pencinta olahraga dan pemain sepak bola terampil."
@@ -94,7 +94,7 @@
       "id": 11,
       "nama": "Sapta Nugraha",
       "rayon": "cicurug 5",
-      "nis": "08753",
+      "status": "Hadir",
       "data": "3/5",
       "date_time": "2023-10-28 17:00:00",
       "deskripsi": "Siswa berbakat dalam bidang musik klasik."
@@ -103,7 +103,7 @@
       "id": 12,
       "nama": "Ika Rahmawati",
       "rayon": "cibedug 3",
-      "nis": "97642",
+      "status": "Hadir",
       "data": "4/6",
       "date_time": "2023-10-28 17:45:00",
       "deskripsi": "Pecinta ilmu pengetahuan dan inovator muda."
@@ -112,7 +112,7 @@
       "id": 13,
       "nama": "Rudi Pranata",
       "rayon": "ciawi 5",
-      "nis": "76531",
+      "status": "Hadir",
       "data": "7/3",
       "date_time": "2023-10-28 18:30:00",
       "deskripsi": "Pemenang kompetisi tari modern tingkat sekolah."
@@ -121,7 +121,7 @@
       "id": 14,
       "nama": "Desi Sari",
       "rayon": "cisarua 6",
-      "nis": "65420",
+      "status": "65420",
       "data": "2/5",
       "date_time": "2023-10-28 19:15:00",
       "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
@@ -130,10 +130,289 @@
       "id": 15,
       "nama": "Bima Pratama",
       "rayon": "cicurug 5",
-      "nis": "54309",
+      "status": "54309",
       "data": "7/8",
       "date_time": "2023-10-28 20:00:00",
       "deskripsi": "Siswa yang bersemangat dalam kegiatan sosial."
+    },
+    {
+      "id": 16,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 17,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 18,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 19,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 20,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 21,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 22,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 23,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 24,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 25,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 26,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 27,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 28,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 29,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 30,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 31,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 32,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 33,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 34,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 35,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 36,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 37,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 38,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 39,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 40,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "dsjhduasygdasdu",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 41,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 42,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 43,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 44,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "Hadir",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 45,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 46,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
     }
   ],
   "kelas": [
@@ -253,7 +532,6 @@
       "code": "A"
     }
   ],
-
   "ruangan": [
     {
       "id": 1,
