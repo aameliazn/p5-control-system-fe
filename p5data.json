@@ -1,0 +1,749 @@
+{
+  "siswa": [
+    {
+      "id": 1,
+      "nama": "Amelia Z.",
+      "rayon": "cisarua 5",
+      "status": "tidak hadir",
+      "data": "3/5",
+      "date_time": "2023-10-28 09:30:00",
+      "deskripsi": "Siswa yang sangat tertarik pada kontol dan kreativitas."
+    },
+    {
+      "id": 2,
+      "nama": "Dewi Kusumawati",
+      "rayon": "cisarua 6",
+      "status": "tidak Hadir",
+      "data": "4/6",
+      "date_time": "2023-10-28 10:15:00",
+      "deskripsi": "Suka berpartisipasi dalam kegiatan sosial."
+    },
+    {
+      "id": 3,
+      "nama": "Budi Pratama",
+      "rayon": "cicurug 5",
+      "status": "Hadir",
+      "data": "7/3",
+      "date_time": "2023-10-28 11:00:00",
+      "deskripsi": "Pencinta alam dan lingkungan."
+    },
+    {
+      "id": 4,
+      "nama": "Rina Wulandari",
+      "rayon": "cibedug 3",
+      "status": "Hadir",
+      "data": "2/5",
+      "date_time": "2023-10-28 11:45:00",
+      "deskripsi": "Juara dalam kompetisi matematika tingkat sekolah."
+    },
+    {
+      "id": 5,
+      "nama": "Ahmad Syarif",
+      "rayon": "ciawi 5",
+      "status": "Hadir",
+      "data": "7/8",
+      "date_time": "2023-10-28 12:30:00",
+      "deskripsi": "Mengikuti klub sastra sekolah."
+    },
+    {
+      "id": 6,
+      "nama": "Siti Mariam",
+      "rayon": "cisarua 6",
+      "status": "Hadir",
+      "data": "3/5",
+      "date_time": "2023-10-28 13:15:00",
+      "deskripsi": "Suka bermain musik dan bergabung dalam band sekolah."
+    },
+    {
+      "id": 7,
+      "nama": "Hendri Susanto",
+      "rayon": "cicurug 5",
+      "status": "Hadir",
+      "data": "4/6",
+      "date_time": "2023-10-28 14:00:00",
+      "deskripsi": "Aktif dalam kegiatan sosial dan kepedulian sosial."
+    },
+    {
+      "id": 8,
+      "nama": "Rina Wijayanti",
+      "rayon": "cibedug 3",
+      "status": "Hadir",
+      "data": "7/3",
+      "date_time": "2023-10-28 14:45:00",
+      "deskripsi": "Siswa berprestasi dengan hobi memasak."
+    },
+    {
+      "id": 9,
+      "nama": "Firman Susanto",
+      "rayon": "ciawi 5",
+      "status": "Hadir",
+      "data": "2/5",
+      "date_time": "2023-10-28 15:30:00",
+      "deskripsi": "Pemenang kompetisi seni lukis tingkat sekolah."
+    },
+    {
+      "id": 10,
+      "nama": "Nita Hartati",
+      "rayon": "cisarua 6",
+      "status": "19864",
+      "data": "7/8",
+      "date_time": "2023-10-28 16:15:00",
+      "deskripsi": "Pencinta olahraga dan pemain sepak bola terampil."
+    },
+    {
+      "id": 11,
+      "nama": "Sapta Nugraha",
+      "rayon": "cicurug 5",
+      "status": "Hadir",
+      "data": "3/5",
+      "date_time": "2023-10-28 17:00:00",
+      "deskripsi": "Siswa berbakat dalam bidang musik klasik."
+    },
+    {
+      "id": 12,
+      "nama": "Ika Rahmawati",
+      "rayon": "cibedug 3",
+      "status": "Hadir",
+      "data": "4/6",
+      "date_time": "2023-10-28 17:45:00",
+      "deskripsi": "Pecinta ilmu pengetahuan dan inovator muda."
+    },
+    {
+      "id": 13,
+      "nama": "Rudi Pranata",
+      "rayon": "ciawi 5",
+      "status": "Hadir",
+      "data": "7/3",
+      "date_time": "2023-10-28 18:30:00",
+      "deskripsi": "Pemenang kompetisi tari modern tingkat sekolah."
+    },
+    {
+      "id": 14,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 15,
+      "nama": "Bima Pratama",
+      "rayon": "cicurug 5",
+      "status": "54309",
+      "data": "7/8",
+      "date_time": "2023-10-28 20:00:00",
+      "deskripsi": "Siswa yang bersemangat dalam kegiatan sosial."
+    },
+    {
+      "id": 16,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 17,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 18,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 19,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 20,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 21,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 22,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 23,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 24,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 25,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 26,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 27,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 28,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 29,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 30,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 31,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 32,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 33,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 34,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 35,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 36,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 37,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 38,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 39,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 40,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "dsjhduasygdasdu",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 41,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 42,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 43,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 44,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "Hadir",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 45,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    },
+    {
+      "id": 46,
+      "nama": "Desi Sari",
+      "rayon": "cisarua 6",
+      "status": "65420",
+      "data": "2/5",
+      "date_time": "2023-10-28 19:15:00",
+      "deskripsi": "Aktif dalam kegiatan ekstrakurikuler."
+    }
+  ],
+  "kelas": [
+    {
+      "id": 6,
+      "kelas": "PPLG XII-2",
+      "date_time": "2023-10-28 14:00:00"
+    },
+    {
+      "id": 8,
+      "kelas": "TJKT XII-2",
+      "date_time": "2023-10-28 16:00:00"
+    },
+    {
+      "id": 9,
+      "kelas": "PPLG XII-1",
+      "date_time": "2023-10-28 17:00:00"
+    },
+    {
+      "id": 10,
+      "kelas": "PPLG XII-2",
+      "date_time": "2023-10-28 18:00:00"
+    },
+    {
+      "id": 12,
+      "kelas": "TJKT XII-2",
+      "date_time": "2023-10-28 20:00:00"
+    },
+    {
+      "id": 13,
+      "kelas": "PPLG XII-1",
+      "date_time": "2023-10-28 21:00:00"
+    },
+    {
+      "id": 15,
+      "kelas": "DKV XII-1",
+      "date_time": "2023-10-28 23:00:00"
+    }
+  ],
+  "materi": [
+    {
+      "id": 1,
+      "materi": "./contoh.pdf"
+    }
+  ],
+  "kegiatan": [
+    {
+      "kegiatan": "bersih-bersih kelas",
+      "kondisi": "kotor",
+      "skor": "10",
+      "id": 3,
+      "rombel": "B",
+      "rayon": "C",
+      "code": "A"
+    },
+    {
+      "kegiatan": "membersihkan halaman sekolah",
+      "kondisi": "sangat kotor",
+      "skor": "10",
+      "id": 4,
+      "rombel": "C",
+      "rayon": "A",
+      "code": "B"
+    },
+    {
+      "kegiatan": "menata perpustakaan",
+      "kondisi": "berantakan",
+      "skor": "10",
+      "id": 5,
+      "rombel": "A",
+      "rayon": "B",
+      "code": "C"
+    },
+    {
+      "kegiatan": "menanam pohon di halaman sekolah",
+      "kondisi": "tanah terbuka",
+      "skor": "10",
+      "id": 6,
+      "rombel": "B",
+      "rayon": "C",
+      "code": "A"
+    },
+    {
+      "kegiatan": "menghias kelas untuk acara",
+      "kondisi": "butuh perbaikan",
+      "skor": "10",
+      "id": 7,
+      "rombel": "C",
+      "rayon": "A",
+      "code": "B"
+    },
+    {
+      "kegiatan": "melakukan kegiatan seni",
+      "kondisi": "siap dilakukan",
+      "skor": "10",
+      "id": 8,
+      "rombel": "A",
+      "rayon": "B",
+      "code": "C"
+    },
+    {
+      "kegiatan": "mengadakan kegiatan olahraga",
+      "kondisi": "siap dilakukan",
+      "skor": "10",
+      "id": 9,
+      "rombel": "B",
+      "rayon": "C",
+      "code": "A"
+    }
+  ],
+  "ruangan": [
+    {
+      "id": 1,
+      "ruangan": "ruangan dua"
+    },
+    {
+      "ruangan": "RPS Lantai 1",
+      "id": 2
+    },
+    {
+      "ruangan": "Pajajaran",
+      "id": 3
+    },
+    {
+      "ruangan": "203",
+      "id": 4
+    },
+    {
+      "ruangan": "coba",
+      "id": 5
+    },
+    {
+      "ruangan": "gatau",
+      "id": 6
+    },
+    {
+      "ruangan": "tambah lagi",
+      "id": 7
+    },
+    {
+      "ruangan": "lagi",
+      "id": 8
+    }
+  ],
+  "pemilahan": [
+    {
+      "id": 1,
+      "bruto": "23,0",
+      "neto": "2.33",
+      "ruangan": "padjajaran"
+    },
+    {
+      "id": 2,
+      "bruto": "18,5",
+      "neto": "1.87",
+      "ruangan": "mewas"
+    },
+    {
+      "id": 3,
+      "bruto": "30,2",
+      "neto": "3.01",
+      "ruangan": "rps"
+    },
+    {
+      "id": 4,
+      "bruto": "15,8",
+      "neto": "1.60",
+      "ruangan": "mewas"
+    },
+    {
+      "id": 5,
+      "bruto": "21,4",
+      "neto": "2.17",
+      "ruangan": "boxis"
+    },
+    {
+      "id": 6,
+      "bruto": "27,9",
+      "neto": "2.78",
+      "ruangan": "padjajaran"
+    },
+    {
+      "id": 7,
+      "bruto": "14,3",
+      "neto": "1.42",
+      "ruangan": "boxis"
+    },
+    {
+      "id": 8,
+      "bruto": "33,7",
+      "neto": "3.37",
+      "ruangan": "rps"
+    },
+    {
+      "id": 9,
+      "bruto": "19,2",
+      "neto": "1.92",
+      "ruangan": "padjajaran"
+    },
+    {
+      "id": 10,
+      "bruto": "25,6",
+      "neto": "2.59",
+      "ruangan": "mewas"
+    },
+    {
+      "id": 11,
+      "bruto": "12,7",
+      "neto": "1.24",
+      "ruangan": "padjajaran"
+    },
+    {
+      "id": 12,
+      "bruto": "28,4",
+      "neto": "2.85",
+      "ruangan": "rps"
+    },
+    {
+      "id": 13,
+      "bruto": "17,1",
+      "neto": "1.69",
+      "ruangan": "boxis"
+    },
+    {
+      "id": 14,
+      "bruto": "22,9",
+      "neto": "2.28",
+      "ruangan": "padjajaran"
+    },
+    {
+      "id": 15,
+      "bruto": "20,8",
+      "neto": "2.06",
+      "ruangan": "mewas"
+    },
+    {
+      "id": 16,
+      "bruto": "13,4",
+      "neto": "1.36",
+      "ruangan": "rps"
+    },
+    {
+      "id": 17,
+      "bruto": "31,5",
+      "neto": "3.12",
+      "ruangan": "boxis"
+    },
+    {
+      "id": 18,
+      "bruto": "16,6",
+      "neto": "1.65",
+      "ruangan": "padjajaran"
+    },
+    {
+      "id": 19,
+      "bruto": "26,1",
+      "neto": "2.62",
+      "ruangan": "rps"
+    },
+    {
+      "id": 20,
+      "bruto": "24,3",
+      "neto": "2.44",
+      "ruangan": "mewas"
+    }
+  ],
+  "pertanyaan": [
+    {
+      "pertanyaan": "Bagaimana blablabla Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue blavlavlavlavla safasflas",
+      "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum feugiat massa nisi, vel faucibus dui porttitor eget. Mauris felis quam, convallis ac tincidunt in, tempus non libero. Praesent hendrerit lorem eu lectus sollicitudin, et hendrerit nisl viverra. Sed imperdiet eget nunc convallis tempor. Sed nec placerat augue, et molestie ante.",
+      "id": 1
+    },
+    {
+      "pertanyaan": "Apa itu blablabla Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue",
+      "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum feugiat massa nisi, vel faucibus dui porttitor eget. Mauris felis quam, convallis ac tincidunt in, tempus non libero. Praesent hendrerit lorem eu lectus sollicitudin, et hendrerit nisl viverra. Sed imperdiet eget nunc convallis tempor. Sed nec placerat augue, et molestie ante.",
+      "id": 2
+    },
+    {
+      "pertanyaan": "Siapa blablabla Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue",
+      "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum feugiat massa nisi, vel faucibus dui porttitor eget. Mauris felis quam, convallis ac tincidunt in, tempus non libero. Praesent hendrerit lorem eu lectus sollicitudin, et hendrerit nisl viverra. Sed imperdiet eget nunc convallis tempor. Sed nec placerat augue, et molestie ante.",
+      "id": 3
+    },
+    {
+      "pertanyaan": "Kapan blablabla Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue",
+      "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum feugiat massa nisi, vel faucibus dui porttitor eget. Mauris felis quam, convallis ac tincidunt in, tempus non libero. Praesent hendrerit lorem eu lectus sollicitudin, et hendrerit nisl viverra. Sed imperdiet eget nunc convallis tempor. Sed nec placerat augue, et molestie ante.",
+      "id": 4
+    },
+    {
+      "pertanyaan": "Dimana blablabla Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue",
+      "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum feugiat massa nisi, vel faucibus dui porttitor eget. Mauris felis quam, convallis ac tincidunt in, tempus non libero. Praesent hendrerit lorem eu lectus sollicitudin, et hendrerit nisl viverra. Sed imperdiet eget nunc convallis tempor. Sed nec placerat augue, et molestie ante.",
+      "id": 5
+    },
+    {
+      "pertanyaan": "Kenapa blablabla Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue",
+      "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum feugiat massa nisi, vel faucibus dui porttitor eget. Mauris felis quam, convallis ac tincidunt in, tempus non libero. Praesent hendrerit lorem eu lectus sollicitudin, et hendrerit nisl viverra. Sed imperdiet eget nunc convallis tempor. Sed nec placerat augue, et molestie ante.",
+      "id": 6
+    },
+    {
+      "pertanyaan": "test test test Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue",
+      "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum feugiat massa nisi, vel faucibus dui porttitor eget. Mauris felis quam, convallis ac tincidunt in, tempus non libero. Praesent hendrerit lorem eu lectus sollicitudin, et hendrerit nisl viverra. Sed imperdiet eget nunc convallis tempor. Sed nec placerat augue, et molestie ante.",
+      "id": 7
+    },
+    {
+      "pertanyaan": "test lagi Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue",
+      "jawaban": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim ut neque a congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum feugiat massa nisi, vel faucibus dui porttitor eget. Mauris felis quam, convallis ac tincidunt in, tempus non libero. Praesent hendrerit lorem eu lectus sollicitudin, et hendrerit nisl viverra. Sed imperdiet eget nunc convallis tempor. Sed nec placerat augue, et molestie ante.",
+      "id": 8
+    }
+  ],
+  "siswaPiket": [
+    {
+      "nama": "Hiroshi Tanaka",
+      "kondisi": "jelek",
+      "skor": "10",
+      "id": 1,
+      "rombel": "A",
+      "rayon": "B",
+      "code": "C",
+      "tempatPiket": "padjajaran",
+      "sesi": "1"
+    },
+    {
+      "pertanyaan": "test",
+      "id": 8
+    },
+    {
+      "pertanyaan": "test",
+      "id": 9
+    },
+    {
+      "pertanyaan": "test",
+      "id": 10
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --main-color: #73d802;
+  --second-color: #4c8e06;
+  --third-color: #A7D397;
+  --basic-color: #000002;
+  --font-color: #fff;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+*{
+  scroll-behavior: smooth;
+}
+
+.costum-width{
+  width: -webkit-fill-available;
+}
+
+.ant-btn-primary {
+  background-color: #73d802; 
+  border-color: #73d802; 
+  color: #fff; 
+}
+

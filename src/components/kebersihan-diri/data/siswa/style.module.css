@@ -1,0 +1,39 @@
+.cardwarpper {
+  display: flex;
+  width: 100%;
+  background-image: url("/kebersihan_diri_banner.png");
+  flex-direction: column;
+  border-radius: 0.375rem;
+  background-size: cover;
+  padding: 1.875rem 1.875rem;
+  /* max-width: 95%; */
+}
+
+@media (min-width: 768px) {
+  .cardwarpper {
+    padding: 4rem 3.5rem;
+  }
+}
+
+/* @media (min-width: 1280px) {
+  .cardwarpper {
+    max-width: 800px;
+  }
+} */
+
+.tableAnt {
+  border-top: 3px solid green;
+  border-radius: 8px;
+  min-height: 562px;
+}
+
+.tableAntVisible {
+  border-top: 3px solid green;
+  border-radius: 8px;
+}
+
+.ant-table-thead > tr > th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  text-align: center;
+}
