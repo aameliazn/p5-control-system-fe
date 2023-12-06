@@ -7,16 +7,16 @@ import { useLogin } from "@/context/LoginContext";
 
 export default function index({ children }) {
   const router = useRouter();
-  const { tokenUser, dataUser } = useLogin();
+  const { tokenUser } = useLogin();
 
   useEffect(() => {
-    if (!dataUser) {
+    if (!tokenUser) {
       router.push("/login");
     }
     if (tokenUser) {
       axios.defaults.headers.common["Authorization"] = `Bearer ${tokenUser}`;
     }
-  }, []);
+  }, [tokenUser]);
 
   return (
     <>

@@ -1,12 +1,17 @@
 "use client";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import React from "react";
-import { usePathname } from "next/navigation";
+import { useLogin } from "@/context/LoginContext";
+import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { usePathname, useRouter } from "next/navigation";
 import Logo from "../../../public/logo/logo_wikrama.png";
 
 export default function sidebar({ children }) {
   const pathname = usePathname();
+  const router = useRouter();
+
+  const { dataUser } = useLogin();
 
   return (
     <>
@@ -459,16 +464,29 @@ export default function sidebar({ children }) {
                     </div>
 
                     <div className="flex flex-col">
-                      <span>Sandra Marx</span>
+                      <span>
+                        {dataUser?.username.charAt(0).toUpperCase() +
+                          dataUser?.username.slice(1).replace(/\d/g, "")}
+                      </span>
                       <span className="text-xs font-normal text-content2">
-                        sandra
+                        {dataUser?.username}
                       </span>
                     </div>
                   </div>
                 </label>
                 <div className="dropdown-menu-right-top dropdown-menu ml-2">
                   <a className="dropdown-item text-sm">Profile</a>
-                  <a tabIndex="-1" className="dropdown-item text-sm">
+                  <a
+                    className="dropdown-item text-sm"
+                    onClick={() => {
+                      localStorage.removeItem("token");
+                      localStorage.removeItem("user");
+                      router.push("/login");
+                    }}
+                  >
+                    Logout
+                  </a>
+                  {/* <a tabIndex="-1" className="dropdown-item text-sm">
                     Account settings
                   </a>
                   <a tabIndex="-1" className="dropdown-item text-sm">
@@ -485,7 +503,7 @@ export default function sidebar({ children }) {
                   </a>
                   <a tabIndex="-1" className="dropdown-item text-sm">
                     Settings
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </section>
@@ -495,9 +513,9 @@ export default function sidebar({ children }) {
           <div className="w-fit">
             <label
               htmlFor="sidebar-mobile-fixed"
-              className="btn-primary btn sm:hidden"
+              className="sm:hidden cursor-pointer"
             >
-              Open Sidebar
+              <HiOutlineMenuAlt2 size={27} />
             </label>
           </div>
 

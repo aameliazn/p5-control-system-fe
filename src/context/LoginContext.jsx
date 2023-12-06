@@ -7,7 +7,7 @@ const ContextLogin = createContext(null);
 export default function LoginContext({ children }) {
   // data login
   const [tokenUser, setTokenUser] = useLocalStorage("token");
-  const [dataUser, setDataUser] = useState("user");
+  const [dataUser, setDataUser] = useLocalStorage("user");
 
   const state = {
     // data login
