@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { AiOutlineDownload } from "react-icons/ai";
 
 export default function fetchRangkum() {
-  const [isContentVisible, setIsContentVisible] = useState(true);
+  const [isContentVisible, setIsContentVisible] = useState(false);
 
   const toggleContentVisibility = () => {
     setIsContentVisible((prev) => !prev);
@@ -39,8 +39,12 @@ export default function fetchRangkum() {
         >
           <div className="flex justify-center gap-2">
             <p
-              style={{ fontSize: 19, cursor: "pointer", margin: "-7px 0px" }}
-              className="font-bold"
+              style={{
+                fontSize: 19,
+                cursor: "pointer",
+                margin: "-7px 0px",
+                fontWeight: "bold",
+              }}
               onClick={toggleContentVisibility}
             >
               Rangkuman Materi Menanam
@@ -56,6 +60,7 @@ export default function fetchRangkum() {
                 fontSize: 15,
                 textAlign: "justify",
                 padding: "0px 30px",
+                textIndent: "3em",
               }}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -100,8 +105,12 @@ export default function fetchRangkum() {
         >
           <div className="flex justify-center gap-2">
             <p
-              style={{ fontSize: 19, cursor: "pointer", margin: "-7px 0px" }}
-              className="font-bold"
+              style={{
+                fontSize: 19,
+                cursor: "pointer",
+                margin: "-7px 0px",
+                fontWeight: "bold",
+              }}
               onClick={toggleContentVisibility}
             >
               Rangkuman Materi Menanam
@@ -117,6 +126,7 @@ export default function fetchRangkum() {
                 fontSize: 15,
                 textAlign: "justify",
                 padding: "0px 30px",
+                textIndent: "3em",
               }}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -161,8 +171,12 @@ export default function fetchRangkum() {
         >
           <div className="flex justify-center gap-2">
             <p
-              style={{ fontSize: 19, cursor: "pointer", margin: "-7px 0px" }}
-              className="font-bold"
+              style={{
+                fontSize: 19,
+                cursor: "pointer",
+                margin: "-7px 0px",
+                fontWeight: "bold",
+              }}
               onClick={toggleContentVisibility}
             >
               Rangkuman Materi Menanam
@@ -178,6 +192,7 @@ export default function fetchRangkum() {
                 fontSize: 15,
                 textAlign: "justify",
                 padding: "0px 30px",
+                textIndent: "3em",
               }}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -222,8 +237,12 @@ export default function fetchRangkum() {
         >
           <div className="flex justify-center gap-2">
             <p
-              style={{ fontSize: 19, cursor: "pointer", margin: "-7px 0px" }}
-              className="font-bold"
+              style={{
+                fontSize: 19,
+                cursor: "pointer",
+                margin: "-7px 0px",
+                fontWeight: "bold",
+              }}
               onClick={toggleContentVisibility}
             >
               Rangkuman Materi Menanam
@@ -239,6 +258,7 @@ export default function fetchRangkum() {
                 fontSize: 15,
                 textAlign: "justify",
                 padding: "0px 30px",
+                textIndent: "3em",
               }}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

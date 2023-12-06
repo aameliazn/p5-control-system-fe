@@ -21,7 +21,7 @@ export default function fetchSiswa() {
     itemsPerPage,
   } = useKebersihanDiri();
 
-  const [isContentVisible, setIsContentVisible] = useState(true);
+  const [isContentVisible, setIsContentVisible] = useState(false);
 
   const toggleContentVisibility = () => {
     setIsContentVisible((prev) => !prev);
@@ -329,8 +329,12 @@ export default function fetchSiswa() {
         >
           <div className="flex justify-center gap-2">
             <p
-              style={{ fontSize: 19, cursor: "pointer", margin: "-7px 0px" }}
-              className="font-bold"
+              style={{
+                fontSize: 19,
+                cursor: "pointer",
+                margin: "-7px 0px",
+                fontWeight: "bold",
+              }}
               onClick={toggleContentVisibility}
             >
               Kebersihan Diri Minggu 1
@@ -356,8 +360,12 @@ export default function fetchSiswa() {
         >
           <div className="flex justify-center gap-2">
             <p
-              style={{ fontSize: 19, cursor: "pointer", margin: "-7px 0px" }}
-              className="font-bold"
+              style={{
+                fontSize: 19,
+                cursor: "pointer",
+                margin: "-7px 0px",
+                fontWeight: "bold",
+              }}
               onClick={toggleContentVisibility}
             >
               Kebersihan Diri Minggu 2

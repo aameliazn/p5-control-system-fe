@@ -39,10 +39,14 @@ export default function fetchTable() {
 
       <div className="mt-6">
         <Card className={Style.tableAnt}>
-          <div className="flex gap-2">
+          <div className="flex justify-center gap-2">
             <p
-              style={{ fontSize: 19, cursor: "pointer", margin: "-7px 0px" }}
-              className="font-bold"
+              style={{
+                fontSize: 19,
+                cursor: "pointer",
+                margin: "-7px 0px",
+                fontWeight: "bold",
+              }}
               onClick={toggleContentVisibility}
             >
               Observasi Lingkungan Minggu 1
@@ -100,10 +104,14 @@ export default function fetchTable() {
 
       <div className="mt-6">
         <Card className={Style.tableAnt}>
-          <div className="flex gap-2">
+          <div className="flex justify-center gap-2">
             <p
-              style={{ fontSize: 19, cursor: "pointer", margin: "-7px 0px" }}
-              className="font-bold"
+              style={{
+                fontSize: 19,
+                cursor: "pointer",
+                margin: "-7px 0px",
+                fontWeight: "bold",
+              }}
               onClick={toggleContentVisibility}
             >
               Observasi Lingkungan Minggu 2
@@ -161,10 +169,14 @@ export default function fetchTable() {
 
       <div className="mt-6">
         <Card className={Style.tableAnt}>
-          <div className="flex gap-2">
+          <div className="flex justify-center gap-2">
             <p
-              style={{ fontSize: 19, cursor: "pointer", margin: "-7px 0px" }}
-              className="font-bold"
+              style={{
+                fontSize: 19,
+                cursor: "pointer",
+                margin: "-7px 0px",
+                fontWeight: "bold",
+              }}
               onClick={toggleContentVisibility}
             >
               Observasi Lingkungan Minggu 3

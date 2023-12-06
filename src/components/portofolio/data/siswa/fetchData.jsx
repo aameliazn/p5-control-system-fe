@@ -38,8 +38,12 @@ export default function fetchData() {
           <Card className={Style.tableAnt}>
             <div className="flex gap-2">
               <p
-                style={{ fontSize: 19, cursor: "pointer", margin: "-7px 0px" }}
-                className="font-bold"
+                style={{
+                  fontSize: 19,
+                  cursor: "pointer",
+                  margin: "-7px 0px",
+                  fontWeight: "bold",
+                }}
                 onClick={toggleContentVisibility}
               >
                 {item?.pertanyaan}
@@ -54,7 +58,7 @@ export default function fetchData() {
 
             {isContentVisible && (
               <div className="mt-3 justify-center flex">
-              {/* harusnya di map, sesuai dia input berapa image */}
+                {/* harusnya di map, sesuai dia input berapa image */}
                 <Image
                   src={Example}
                   alt={`Pengumpulan Tugas ${item?.pertanyaan}`}
