@@ -8,6 +8,7 @@ import { useDashboard } from "@/context/DashboardContext";
 
 export default function index() {
   const { visible } = useDashboard();
+
   return (
     <>
       <Breadcrumb

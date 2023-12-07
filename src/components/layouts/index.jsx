@@ -10,13 +10,12 @@ export default function index({ children }) {
   const { tokenUser } = useLogin();
 
   useEffect(() => {
-    if (!tokenUser) {
+    if (localStorage.getItem("token") != undefined) {
+      axios.defaults.headers.common["Authorization"] = `Bearer ${tokenUser}`;
+    } else {
       router.push("/login");
     }
-    if (tokenUser) {
-      axios.defaults.headers.common["Authorization"] = `Bearer ${tokenUser}`;
-    }
-  }, [tokenUser]);
+  }, [localStorage.getItem("token")]);
 
   return (
     <>
