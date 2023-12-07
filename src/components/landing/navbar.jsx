@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import Style from "./landing.module.css";
 import Link from "next/link";
-import {Button} from 'antd'
+import { Button } from "antd";
+import { useLogin } from "@/context/LoginContext";
 
 export default function navbar() {
   return (
@@ -36,7 +38,7 @@ export default function navbar() {
             </button>
           </div>
           <ul className={Style.navlist}>
-          <li>
+            <li>
               <a href="#statistic">statistic</a>
             </li>
             <li>
@@ -50,9 +52,17 @@ export default function navbar() {
             </li>
           </ul>
           <div className=" pb-4 md:pb-0 hidden md:flex md:justify-center md:flex-row">
-            <Link href={"/login"}>
+            <Link
+              href={
+                localStorage.getItem("token") != undefined
+                  ? "/dashboard"
+                  : "/login"
+              }
+            >
               <Button type="default">
-                Login
+                {localStorage.getItem("token") != undefined
+                  ? "Dashboard"
+                  : "Login"}
               </Button>
             </Link>
           </div>
