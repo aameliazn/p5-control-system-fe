@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Image, Button } from "antd";
 import React, { useEffect, useState, useRef } from "react";
-import { useInView } from 'react-intersection-observer';
+import { useInView } from "react-intersection-observer";
 import Style from "./landing.module.css";
 import Tour from "./tour";
 import Footer from "./footer";
@@ -11,20 +11,19 @@ import { Divider } from "antd";
 import CountUp from "react-countup";
 import { Statistic } from "antd";
 
-
 const Formatter = (value) => <CountUp end={value} separator="," />;
 
 export default function content() {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const [ref, inView] = useInView({
-    triggerOnce: false, 
+    triggerOnce: false,
   });
 
   useEffect(() => {
     if (inView) {
       setIsIntersecting(true);
-    }else {
-      setIsIntersecting(false); 
+    } else {
+      setIsIntersecting(false);
     }
   }, [inView]);
 
@@ -38,7 +37,7 @@ export default function content() {
         <div className={Style.content}>
           <div
             data-aos="zoom-in-up"
-            data-aos-duration="2000"
+            data-aos-duration="300"
             className={Style.contentBx}
           >
             <h1>
@@ -51,7 +50,10 @@ export default function content() {
               nilai dan sikap bagi para siswa.{" "}
             </p>
             <a>
-              <Button type="primary" style={{ fontWeight: "500", textAlign: 'center' }}>
+              <Button
+                type="primary"
+                style={{ fontWeight: "500", textAlign: "center" }}
+              >
                 Data Sekarang
               </Button>
             </a>
@@ -92,7 +94,7 @@ export default function content() {
       <section id="statistic" className={Style.section}>
         <div
           data-aos="fade-in"
-          data-aos-duration="2000"
+          data-aos-duration="300"
           class="container flex flex-col gap-4 mx-8"
         >
           <Divider>
@@ -107,13 +109,13 @@ export default function content() {
               </label>
               <label class="text-green-800 text-4xl font-bold">
                 {" "}
-               <div ref={ref}>
-        {isIntersecting ? (
-          <Statistic value={2283493} formatter={Formatter} />
-        ) : (
-          <div style={{ height: '100px' }}></div>
-        )}
-      </div>
+                <div ref={ref}>
+                  {isIntersecting ? (
+                    <Statistic value={2283493} formatter={Formatter} />
+                  ) : (
+                    <div style={{ height: "100px" }}></div>
+                  )}
+                </div>
               </label>
             </div>
             <div class="relative flex-1 flex flex-col gap-2 px-4">
@@ -122,13 +124,13 @@ export default function content() {
               </label>
               <label class="text-green-800 text-4xl font-bold">
                 {" "}
-               <div ref={ref}>
-        {isIntersecting ? (
-          <Statistic value={2283493} formatter={Formatter} />
-        ) : (
-          <div style={{ height: '100px' }}></div>
-        )}
-      </div>
+                <div ref={ref}>
+                  {isIntersecting ? (
+                    <Statistic value={2283493} formatter={Formatter} />
+                  ) : (
+                    <div style={{ height: "100px" }}></div>
+                  )}
+                </div>
               </label>
             </div>
             <div class="relative flex-1 flex flex-col gap-2 px-4">
@@ -146,12 +148,12 @@ export default function content() {
       </div> */}
       <div class="w-full h-full bg-gray-800 justify-center items-center">
         <section class={Style.section} id="about">
-        <Divider>
+          <Divider>
             <label class="text-[var(--main-color)] font-semibold tracking-wider text-3xl">
               About
             </label>
           </Divider>
-          <div data-aos="fade-left" data-aos-duration="2000">
+          <div data-aos="fade-left" data-aos-duration="300">
             <Tour />
           </div>
         </section>
@@ -170,7 +172,7 @@ export default function content() {
           <div
             class={Style.aboutText}
             data-aos="fade-right"
-            data-aos-duration="2000"
+            data-aos-duration="300"
           >
             <p>
               {" "}
@@ -191,117 +193,113 @@ export default function content() {
             </p>
           </div>
           <section id="galeri" className={Style.section}>
-          <div class="flex min-h-screen flex-wrap content-center justify-center">
-          <Divider>
-            <label class="text-[var(--main-color)] font-semibold tracking-wider text-3xl">
-              Galery
-            </label>
-          </Divider>
-            <div
-              class="grid grid-cols-2 gap-3"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-            >
-              <div class="w-80 shadow-lg bg-white p-3">
-                <Image.PreviewGroup
-                  items={[
-                    "./dokumentasi/IMG_20221104_144256.jpg",
-                    "./dokumentasi/IMG_20221104_144302.jpg",
-                    "./kebersihan/kebersihan1.jpg",
-                    "./kebersihan/kebersihan3.jpg",
-                    "./kebersihan/kebersihan4.jpg"
-
-                  ]}
-                >
-                  <Image
-                    height={190}
-                    src="./dokumentasi/IMG_20221104_144256.jpg"
-                  />
-                </Image.PreviewGroup>
-                <ul class="mt-3 flex flex-wrap">
-                  <li class="mr-auto">
-                    <a class="flex text-gray-400 hover:text-gray-600">
-                      Kebersihan
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="w-80 shadow-lg bg-white p-3">
-                <Image.PreviewGroup
-                  items={[
-                    "./dokumentasi/IMG_20221114_142055.jpg",
-                    "./dokumentasi/IMG_20221114_142122.jpg",
-                    "./Daur-ulang/daurulang1.jpg",
-                    "./Daur-ulang/daurulang2.jpg",
-                    "./Daur-ulang/daurulang3.jpg"
-                  ]}
-                >
-                  <Image
-                    height={190}
-                    src=   "./dokumentasi/IMG_20221114_142055.jpg"
-                  />
-                </Image.PreviewGroup>
-                <ul class="mt-3 flex flex-wrap">
-                  <li class="mr-auto">
-                    <a class="flex text-gray-400 hover:text-gray-600">
-                      Karya Daur Ulang
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="w-80 shadow-lg bg-white p-3">
-                <Image.PreviewGroup
-                  items={[
-                   "./tanaman/tanaman1.jpg",
-                    "./tanaman/tanaman2.jpg",
-                    "./tanaman/tanaman3.jpg",
-                    "./tanaman/tanaman4.jpg",
-                    "./dokumentasi/IMG_20220809_114628.jpg"
-                  ]}
-                >
-                  <Image
-                    height={190}
-                    src="./dokumentasi/IMG_20220809_114618.jpg"
-                  />
-                </Image.PreviewGroup>
-                <ul class="mt-3 flex flex-wrap">
-                  <li class="mr-auto">
-                    <a class="flex text-gray-400 hover:text-gray-600">
-                      Tanaman
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="w-80 shadow-lg bg-white p-3">
-                <Image.PreviewGroup
-                  items={[
-                    "./milah-sampah/daur1.jpg",
-                    "./milah-sampah/daur2.jpg",
-                    "./milah-sampah/daur3.jpg",
-                    "./milah-sampah/daur4.jpg",
-                    "./milah-sampah/daur5.jpg"
-                  ]}
-                >
-                  <Image
-                    height={190}
-                    src=  "./milah-sampah/daur1.jpg"
-                  />
-                </Image.PreviewGroup>
-                <ul class="mt-3 flex flex-wrap">
-                  <li class="mr-auto">
-                    <a class="flex text-gray-400 hover:text-gray-600">
-                      Pemilahan Sampah
-                    </a>
-                  </li>
-                </ul>
+            <div class="flex min-h-screen flex-wrap content-center justify-center">
+              <Divider>
+                <label class="text-[var(--main-color)] font-semibold tracking-wider text-3xl">
+                  Galery
+                </label>
+              </Divider>
+              <div
+                class="grid grid-cols-2 gap-3"
+                data-aos="fade-up"
+                data-aos-duration="300"
+              >
+                <div class="w-80 shadow-lg bg-white p-3">
+                  <Image.PreviewGroup
+                    items={[
+                      "./dokumentasi/IMG_20221104_144256.jpg",
+                      "./dokumentasi/IMG_20221104_144302.jpg",
+                      "./kebersihan/kebersihan1.jpg",
+                      "./kebersihan/kebersihan3.jpg",
+                      "./kebersihan/kebersihan4.jpg",
+                    ]}
+                  >
+                    <Image
+                      height={190}
+                      src="./dokumentasi/IMG_20221104_144256.jpg"
+                    />
+                  </Image.PreviewGroup>
+                  <ul class="mt-3 flex flex-wrap">
+                    <li class="mr-auto">
+                      <a class="flex text-gray-400 hover:text-gray-600">
+                        Kebersihan
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="w-80 shadow-lg bg-white p-3">
+                  <Image.PreviewGroup
+                    items={[
+                      "./dokumentasi/IMG_20221114_142055.jpg",
+                      "./dokumentasi/IMG_20221114_142122.jpg",
+                      "./Daur-ulang/daurulang1.jpg",
+                      "./Daur-ulang/daurulang2.jpg",
+                      "./Daur-ulang/daurulang3.jpg",
+                    ]}
+                  >
+                    <Image
+                      height={190}
+                      src="./dokumentasi/IMG_20221114_142055.jpg"
+                    />
+                  </Image.PreviewGroup>
+                  <ul class="mt-3 flex flex-wrap">
+                    <li class="mr-auto">
+                      <a class="flex text-gray-400 hover:text-gray-600">
+                        Karya Daur Ulang
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="w-80 shadow-lg bg-white p-3">
+                  <Image.PreviewGroup
+                    items={[
+                      "./tanaman/tanaman1.jpg",
+                      "./tanaman/tanaman2.jpg",
+                      "./tanaman/tanaman3.jpg",
+                      "./tanaman/tanaman4.jpg",
+                      "./dokumentasi/IMG_20220809_114628.jpg",
+                    ]}
+                  >
+                    <Image
+                      height={190}
+                      src="./dokumentasi/IMG_20220809_114618.jpg"
+                    />
+                  </Image.PreviewGroup>
+                  <ul class="mt-3 flex flex-wrap">
+                    <li class="mr-auto">
+                      <a class="flex text-gray-400 hover:text-gray-600">
+                        Tanaman
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="w-80 shadow-lg bg-white p-3">
+                  <Image.PreviewGroup
+                    items={[
+                      "./milah-sampah/daur1.jpg",
+                      "./milah-sampah/daur2.jpg",
+                      "./milah-sampah/daur3.jpg",
+                      "./milah-sampah/daur4.jpg",
+                      "./milah-sampah/daur5.jpg",
+                    ]}
+                  >
+                    <Image height={190} src="./milah-sampah/daur1.jpg" />
+                  </Image.PreviewGroup>
+                  <ul class="mt-3 flex flex-wrap">
+                    <li class="mr-auto">
+                      <a class="flex text-gray-400 hover:text-gray-600">
+                        Pemilahan Sampah
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
         </section>
       </div>
       <footer className={Style.bgF} style={{ backgroundImage: bgNature }}>
-        <section  id="contact" class={Style.sectionquotes}>
+        <section id="contact" class={Style.sectionquotes}>
           <div className={Style.bgquote}>
             <div class={Style.title}>
               <h1 className={Style.h1}>
@@ -312,7 +310,7 @@ export default function content() {
           </div>
         </section>
         <section>
-        <Footer />
+          <Footer />
         </section>
       </footer>
     </>
