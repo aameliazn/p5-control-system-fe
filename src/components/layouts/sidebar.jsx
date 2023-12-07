@@ -538,7 +538,7 @@ export default function sidebar({ children }) {
             </label>
           </div>
 
-          <div className="mr-10 mt-4">{children}</div>
+          <div className="mr-0 mt-4 sm:mr-10">{children}</div>
         </div>
       </div>
     </>
