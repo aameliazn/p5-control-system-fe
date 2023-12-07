@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Tooltip } from "react-tooltip";
 import { TbLogout2 } from "react-icons/tb";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { usePathname, useRouter } from "next/navigation";
@@ -457,19 +458,31 @@ export default function sidebar({ children }) {
                 >
                   <div className="flex flex-row gap-4 p-4">
                     <div className="avatar-square avatar avatar-md">
-                      <img
-                        src='./iconUserOutlined.png'
-                        alt="avatar"
-                      />
+                      <img src="./iconUserOutlined.png" alt="avatar" />
                     </div>
 
                     <div className="flex flex-col">
-                      <span>
+                      <span
+                        style={{
+                          whiteSpace: "nowrap",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          width: "190px",
+                        }}
+                        data-tooltip-id="my-tooltip"
+                        data-tooltip-content={
+                          dataUser?.username
+                            ? dataUser?.username.charAt(0).toUpperCase() +
+                              dataUser?.username.slice(1).replace(/\d/g, "")
+                            : "User"
+                        }
+                      >
                         {dataUser?.username
                           ? dataUser?.username.charAt(0).toUpperCase() +
                             dataUser?.username.slice(1).replace(/\d/g, "")
                           : "User"}
                       </span>
+                      <Tooltip id="my-tooltip" style={{ maxWidth: "300px" }} />
                       <span className="text-xs font-normal text-content2">
                         {dataUser?.username ? dataUser?.username : "User"}
                       </span>
