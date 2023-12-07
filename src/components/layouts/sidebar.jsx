@@ -493,7 +493,7 @@ export default function sidebar({ children }) {
                   {/* <a className="dropdown-item text-sm">Profile</a> */}
                   <a
                     tabIndex="-1"
-                    className="dropdown-item text-[17px]"
+                    className="dropdown-item text-[15px] text-rose-600"
                     onClick={() => {
                       localStorage.removeItem("token");
                       localStorage.removeItem("user");
@@ -501,7 +501,7 @@ export default function sidebar({ children }) {
                     }}
                   >
                     <span className="flex gap-2">
-                      <TbLogout2 size={25} />
+                      <TbLogout2 size={23} />
                       Logout
                     </span>
                   </a>
