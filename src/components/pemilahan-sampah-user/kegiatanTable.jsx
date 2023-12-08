@@ -16,7 +16,7 @@ export default function kegiatanTable() {
     });
   }, []);
   const column = [
-    {
+    { 
       title: "id",
       dataIndex: "id",
       rowScope: "row",
