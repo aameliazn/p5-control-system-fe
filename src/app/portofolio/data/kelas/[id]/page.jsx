@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "@/components/layouts";
-import DataKelas from "@/components/portofolio/data/kelas";
+import DataKelas from "@/components/portofolio/super-admin/data/kelas";
 import PortofolioProvider from "@/context/PortofolioContext";
 
 export default function page() {
