@@ -1,5 +1,5 @@
 import React from "react";
-import DataSiswa from "@/components/materi/data/siswa";
+import DataSiswa from "@/components/materi/super-admin/data/siswa";
 import MateriProvider from "@/context/MateriContext";
 import Layout from "@/components/layouts";
 

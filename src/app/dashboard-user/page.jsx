@@ -5,7 +5,7 @@ import DashboardUser from "@/components/dashboard-user";
 import KebersihanSekolahUser from "@/components/kebersihan-sekolah-user";
 import KebersihanPiket from "@/components/kebersihan-piket";
 import BudidayaTanamanUser from "@/components/budidaya-tanaman-user"
-import PemilahanSampahUser from "@/components/pemilahan-sampah-user"
+import PemilahanSampahUser from "@/components/daur-ulang/user"
 import ObservasiUser from "@/components/observasi-user"
 import PortofolioUser from "@/components/portofolio-user"
 export default function page() {

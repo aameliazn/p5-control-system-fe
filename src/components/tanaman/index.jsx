@@ -1,14 +1,17 @@
 "use client";
 import React from "react";
-import DataSiswa from "./dataSiswa";
-import InputClass from "./inputClass";
-import TableClass from "./tableClass";
+import TableUser from "./user/table";
+import DataSiswa from "./super-admin/dataSiswa";
+import InputClass from "./super-admin/inputClass";
+import TableClass from "./super-admin/tableClass";
 import Breadcrumb from "../layouts/breadcrumb";
 import { HomeFilled } from "@ant-design/icons";
 import { useTanaman } from "@/context/TanamanContext";
 
 export default function index() {
   const { visible } = useTanaman();
+
+  const dataUser = JSON.parse(localStorage.getItem("user"));
 
   return (
     <>
@@ -18,9 +21,17 @@ export default function index() {
           { label: "Tanaman", url: "/tanaman" },
         ]}
       />
+
       {visible && <InputClass />}
-      <TableClass />
-      <DataSiswa />
+
+      {dataUser?.role == "superadmin" && (
+        <div>
+          <TableClass />
+          <DataSiswa />
+        </div>
+      )}
+
+      {dataUser?.role == "user" && <TableUser />}
     </>
   );
 }
