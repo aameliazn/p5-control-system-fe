@@ -1,5 +1,5 @@
 import React from "react";
-import DataSiswa from "@/components/observasi/data/siswa";
+import DataSiswa from "@/components/observasi/super-admin/data/siswa";
 import Layout from "@/components/layouts";
 import ObservasiProvider from "@/context/ObservasiContext";
 
