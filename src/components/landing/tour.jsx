@@ -18,7 +18,8 @@ export default function tour() {
   const steps = [
     {
       title: "Pilar P5",
-      description: "Ini merupakan pilar yang menyandang 4 point yang difokuskan pada kegiatan ini seperti: kepedulian, kerja sama, kritis dan gaya hidup",
+      description:
+        "Ini merupakan pilar yang menyandang 4 point yang difokuskan pada kegiatan ini seperti: kepedulian, kerja sama, kritis dan gaya hidup",
       target: () => ref1.current,
     },
     {
@@ -101,61 +102,37 @@ export default function tour() {
             ref={ref2}
             style={{
               width: 300,
-              borderRadius: '20px 0 0 0',
+              borderRadius: "20px 0 0 0",
             }}
           >
-            <Meta
-              avatar={
-                <Avatar src="./Group 6.png" />
-              }
-              title="Kepedulian"
-              description="This is the description"
-            />
+            <Meta avatar={<Avatar src="./Group 6.png" />} title="Kepedulian"/>
           </Card>
           <Card
             style={{
               width: 300,
-              borderRadius: '0 0 0 0',
+              borderRadius: "0 0 0 0",
             }}
             ref={ref3}
           >
-            <Meta
-              avatar={
-                <Avatar src="./Group 8.png" />
-              }
-              title="Kerja Sama"
-              description="This is the description"
-            />
+            <Meta avatar={<Avatar src="./Group 8.png" />} title="Kerja Sama"/>
           </Card>
           <Card
             ref={ref4}
             style={{
               width: 300,
-              borderRadius: '0 0 0 0',
+              borderRadius: "0 0 0 0",
             }}
           >
-            <Meta
-              avatar={
-                <Avatar src="./Group 13.png" />
-              }
-              title="Kritis"
-              description="This is the description"
-            />
+            <Meta avatar={<Avatar src="./Group 13.png" />} title="Kritis"/>
           </Card>
           <Card
             style={{
               width: 300,
-              borderRadius: '0 0 0 20px',
+              borderRadius: "0 0 0 20px",
             }}
             ref={ref5}
           >
-            <Meta
-              avatar={
-                <Avatar src="./Group 14.png" />
-              }
-              title="Gaya Hidup"
-              description="This is the description"
-            />
+            <Meta avatar={<Avatar src="./Group 14.png" />} title="Gaya Hidup"/>
           </Card>
         </div>
 
@@ -170,13 +147,18 @@ export default function tour() {
       </div>
 
       <div className="mt-5 justify-center flex">
-        <a  onClick={() => setOpen(true)} class="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-sm text-white transition duration-300 ease-out border-2 border-[var(--main-color)] rounded-full shadow-md group">
-<span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[var(--main-color)] group-hover:translate-x-0 ease">
-<FaPlay />
-</span>
-<span class="absolute flex items-center justify-center w-full h-full text-white text-semibold transition-all duration-300 transform group-hover:translate-x-full ease">Jelajahi</span>
-<span class="relative invisible">Click untuk wahana</span>
-</a>
+        <a
+          onClick={() => setOpen(true)}
+          class="relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-sm text-white transition duration-300 ease-out border-2 border-[var(--main-color)] rounded-full shadow-md group"
+        >
+          <span class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-[var(--main-color)] group-hover:translate-x-0 ease">
+            <FaPlay />
+          </span>
+          <span class="absolute flex items-center justify-center w-full h-full text-white text-semibold transition-all duration-300 transform group-hover:translate-x-full ease">
+            Jelajahi
+          </span>
+          <span class="relative invisible">Click untuk wahana</span>
+        </a>
         <Tour open={open} onClose={() => setOpen(false)} steps={steps} />
       </div>
     </>
