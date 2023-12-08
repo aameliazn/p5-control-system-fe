@@ -13,7 +13,7 @@ import { useObservasi } from "@/context/ObservasiContext";
 export default function index() {
   const { visible } = useObservasi();
 
-  const dataUser = JSON.purse(localStorage.getItem("user"));
+  const dataUser = JSON.parse(localStorage.getItem("user"));
 
   return (
     <>
