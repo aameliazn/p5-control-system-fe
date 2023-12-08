@@ -5,8 +5,8 @@ import Style from "./dashboard.module.css";
 import { useRouter } from "next/navigation";
 import { Col, Row, Typography } from "antd";
 import { AiOutlineDelete } from "react-icons/ai";
-import starWhite from "../../../public/star-white.png";
-import starYellow from "../../../public/star-yellow.png";
+import starWhite from "../../../../public/star-white.png";
+import starYellow from "../../../../public/star-yellow.png";
 import { useDashboard } from "@/context/DashboardContext";
 
 const { Title } = Typography;

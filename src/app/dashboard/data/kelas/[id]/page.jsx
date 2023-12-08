@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "@/components/layouts";
-import DataKelasDashboard from "@/components/dashboard/data/kelas";
+import DataKelasDashboard from "@/components/dashboard/super-admin/data/kelas";
 import ContextDashboardProvider from "@/context/DashboardContext";
 
 export default function page({ params }) {

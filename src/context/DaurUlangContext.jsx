@@ -18,6 +18,7 @@ export default function DaurUlangContext({ children }) {
   const [searchText, setSearchText] = useState("");
   const [kelas, setKelas] = useState([]);
   const [siswa, setSiswa] = useState([]);
+  const [dataPemilahan, setDataPemilahan] = useState();
 
   const itemsPerPage = 5;
 
@@ -86,6 +87,12 @@ export default function DaurUlangContext({ children }) {
     });
   }, []);
 
+  useEffect(() => {
+    axios.get("http://localhost:2000/pemilahan").then((res) => {
+      setDataPemilahan(res?.data);
+    });
+  }, []);
+
   const state = {
     visible,
     setVisible,
@@ -108,6 +115,8 @@ export default function DaurUlangContext({ children }) {
     setKelas,
     siswa,
     setSiswa,
+    dataPemilahan,
+    setDataPemilahan,
   };
 
   return (

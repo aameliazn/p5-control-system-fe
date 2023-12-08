@@ -2,7 +2,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useLogin } from "@/context/LoginContext";
+import { Tooltip } from "react-tooltip";
+import { TbLogout2 } from "react-icons/tb";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { usePathname, useRouter } from "next/navigation";
 import Logo from "../../../public/logo/logo_wikrama.png";
@@ -11,7 +12,7 @@ export default function sidebar({ children }) {
   const pathname = usePathname();
   const router = useRouter();
 
-  const { dataUser } = useLogin();
+  const dataUser = JSON.parse(localStorage.getItem("user"));
 
   return (
     <>
@@ -457,34 +458,52 @@ export default function sidebar({ children }) {
                 >
                   <div className="flex flex-row gap-4 p-4">
                     <div className="avatar-square avatar avatar-md">
-                      <img
-                        src="https://i.pravatar.cc/150?img=30"
-                        alt="avatar"
-                      />
+                      <img src="./iconUserOutlined.png" alt="avatar" />
                     </div>
 
                     <div className="flex flex-col">
-                      <span>
-                        {dataUser?.username.charAt(0).toUpperCase() +
-                          dataUser?.username.slice(1).replace(/\d/g, "")}
+                      <span
+                        style={{
+                          whiteSpace: "nowrap",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          width: "190px",
+                        }}
+                        data-tooltip-id="my-tooltip"
+                        data-tooltip-content={
+                          dataUser?.username
+                            ? dataUser?.username.charAt(0).toUpperCase() +
+                              dataUser?.username.slice(1).replace(/\d/g, "")
+                            : "User"
+                        }
+                      >
+                        {dataUser?.username
+                          ? dataUser?.username.charAt(0).toUpperCase() +
+                            dataUser?.username.slice(1).replace(/\d/g, "")
+                          : "User"}
                       </span>
+                      <Tooltip id="my-tooltip" style={{ maxWidth: "300px" }} />
                       <span className="text-xs font-normal text-content2">
-                        {dataUser?.username}
+                        {dataUser?.username ? dataUser?.username : "User"}
                       </span>
                     </div>
                   </div>
                 </label>
-                <div className="dropdown-menu-right-top dropdown-menu ml-2">
-                  <a className="dropdown-item text-sm">Profile</a>
+                <div className="dropdown-menu-right-top dropdown-menu ml-2 mb-5">
+                  {/* <a className="dropdown-item text-sm">Profile</a> */}
                   <a
-                    className="dropdown-item text-sm"
+                    tabIndex="-1"
+                    className="dropdown-item text-[15px] text-rose-600"
                     onClick={() => {
                       localStorage.removeItem("token");
                       localStorage.removeItem("user");
                       router.push("/login");
                     }}
                   >
-                    Logout
+                    <span className="flex gap-2">
+                      <TbLogout2 size={23} />
+                      Logout
+                    </span>
                   </a>
                   {/* <a tabIndex="-1" className="dropdown-item text-sm">
                     Account settings
@@ -519,7 +538,7 @@ export default function sidebar({ children }) {
             </label>
           </div>
 
-          <div className="mr-10 mt-4">{children}</div>
+          <div className="mr-0 mt-4 sm:mr-10">{children}</div>
         </div>
       </div>
     </>
