@@ -102,7 +102,8 @@ export default function sidebar({ children }) {
                       <label
                         className={`justify-between menu-item ${
                           pathname == "/kebersihan-sekolah" ||
-                          pathname == "/kebersihan-diri"
+                          pathname == "/kebersihan-diri" ||
+                          pathname == "/piket-wc"
                             ? "menu-item-disabled"
                             : ""
                         }`}
@@ -145,7 +146,8 @@ export default function sidebar({ children }) {
                       <div
                         className={`${
                           pathname == "/kebersihan-sekolah" ||
-                          pathname == "/kebersihan-diri"
+                          pathname == "/kebersihan-diri" ||
+                          pathname == "/piket-wc"
                             ? "menu-active"
                             : "menu-item-collapse"
                         }`}
@@ -154,17 +156,34 @@ export default function sidebar({ children }) {
                           {/* <label className="menu-item menu-item-disabled ml-6">
                             Change Email
                           </label> */}
-                          <Link href={"/kebersihan-diri"}>
-                            <label
-                              className={`menu-item ${
-                                pathname == "/kebersihan-diri"
-                                  ? "menu-active"
-                                  : ""
-                              }`}
-                            >
-                              Kebersihan Diri
-                            </label>
-                          </Link>
+
+                          {dataUser?.role != "user" && (
+                            <Link href={"/kebersihan-diri"}>
+                              <label
+                                className={`menu-item ${
+                                  pathname == "/kebersihan-diri"
+                                    ? "menu-active"
+                                    : ""
+                                }`}
+                              >
+                                Kebersihan Diri
+                              </label>
+                            </Link>
+                          )}
+
+                          {/* harusnya == "user" */}
+                          {dataUser?.role != "user" && (
+                            <Link href={"/piket-wc"}>
+                              <label
+                                className={`menu-item ${
+                                  pathname == "/piket-wc" ? "menu-active" : ""
+                                }`}
+                              >
+                                Piket WC
+                              </label>
+                            </Link>
+                          )}
+
                           <Link href={"/kebersihan-sekolah"}>
                             <label
                               className={`menu-item ${
