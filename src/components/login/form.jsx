@@ -38,14 +38,10 @@ export default function form() {
             message.success("Login successfully");
             router.push("/dashboard");
           })
-          .catch((err) => {
-            console.log(err);
-            message.error(err?.response?.data?.message);
-          });
       })
       .catch((err) => {
         console.log(err);
-        message.error(err?.response?.data?.message);
+        message.error('Login gagal, coba lagi!', err);
       });
   };
 
