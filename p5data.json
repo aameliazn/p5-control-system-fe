@@ -460,15 +460,6 @@
   ],
   "kegiatan": [
     {
-      "kegiatan": "bersih-bersih kelas",
-      "kondisi": "kotor",
-      "skor": "10",
-      "id": 3,
-      "rombel": "B",
-      "rayon": "C",
-      "code": "A"
-    },
-    {
       "kegiatan": "membersihkan halaman sekolah",
       "kondisi": "sangat kotor",
       "skor": "10",
@@ -733,7 +724,6 @@
       "id": 8
     }
   ],
-    
   "siswaPiket": [
     {
       "nama": "Hiroshi Tanaka",

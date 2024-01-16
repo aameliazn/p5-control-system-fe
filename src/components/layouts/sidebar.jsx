@@ -9,6 +9,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { MdGrass, MdOutlineRecycling } from "react-icons/md";
 import { GiObservatory } from "react-icons/gi";
 import { TbMessage2Question } from "react-icons/tb";
+import Avatar from "../../../public/iconUserOutlined.png";
 import Logo from "../../../public/logo/logo_wikrama.png";
 
 export default function sidebar({ children }) {
@@ -428,7 +429,7 @@ export default function sidebar({ children }) {
                 >
                   <div className="flex flex-row gap-4 p-4">
                     <div className="avatar-square avatar avatar-md">
-                      <img src="./iconUserOutlined.png" alt="avatar" />
+                        <Image src={Avatar} alt="avatar" />
                     </div>
 
                     <div className="flex flex-col">
