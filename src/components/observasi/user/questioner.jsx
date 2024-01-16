@@ -17,7 +17,7 @@ export default function questioner() {
   return (
     <>
     
-      <div className="relative flex flex-col jus items-center overflow-hidden p-2 sm:py-10  ">\
+      <div className="relative flex flex-col jus items-center overflow-hidden p-2 sm:py-10  ">
       {loading ? (
         <Skeleton active />
       ) : (
