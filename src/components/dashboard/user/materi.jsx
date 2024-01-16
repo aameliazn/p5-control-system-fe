@@ -1,5 +1,5 @@
 'use client'
-import React from "react";
+import React, {useState} from "react";
 import { useMateri } from "@/context/MateriContext";
 import { Col, Row, Typography, Card, Pagination } from "antd";
 import {
@@ -12,49 +12,7 @@ const { Meta } = Card;
 const { Title } = Typography;
 
 const dummyData = [
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
+
   { title: "Panen", imageUrl: "./ngelamun.jpeg" },
   { title: "Makan", imageUrl: "./ngelamun.jpeg" },
   { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
@@ -87,8 +45,9 @@ const dummyData = [
 ];
 
 export default function materi() {
-  const { visible, setVisible, handleDeletePDF, currentPage, setCurrentPage } =
-    useMateri();
+  const [currentPage, setCurrentPage] = useState(1);
+  // const { visible, setVisible, handleDeletePDF, currentPage, setCurrentPage } =
+  //   useMateri();
 
   const itemsPerPage = 4;
 
