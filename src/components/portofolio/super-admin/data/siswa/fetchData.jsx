@@ -4,7 +4,7 @@ import { Card, Divider } from "antd";
 import Style from "./style.module.css";
 import React, { useState } from "react";
 import { AiOutlineDownload } from "react-icons/ai";
-import Example from "../../../../../public/ngelamun.jpeg";
+import Example from "../../../../../../public/ngelamun.jpeg";
 import { usePortofolio } from "@/context/PortofolioContext";
 
 export default function fetchData() {

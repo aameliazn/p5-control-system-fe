@@ -10,6 +10,7 @@ import Footer from "./footer";
 import { Divider } from "antd";
 import CountUp from "react-countup";
 import { Statistic } from "antd";
+import Link from "next/link";
 
 const Formatter = (value) => <CountUp end={value} separator="," />;
 
@@ -49,14 +50,22 @@ export default function content() {
               diadakan dari sekolah sebagai ajang bagi dirimu untuk meningkatkan
               nilai dan sikap bagi para siswa.{" "}
             </p>
-            <a>
+            <Link
+              href={
+                localStorage.getItem("token") != undefined
+                  ? "/dashboard"
+                  : "/login"
+              }
+            >
               <Button
                 type="primary"
                 style={{ fontWeight: "500", textAlign: "center" }}
               >
-                Data Sekarang
+                {localStorage.getItem("token") != undefined
+                  ? "Masuk Sekarang"
+                  : "Login Sekarang"}
               </Button>
-            </a>
+            </Link>
           </div>
           <div className={Style.imgBx}>
             <img src="./p5-1.png" alt="" />

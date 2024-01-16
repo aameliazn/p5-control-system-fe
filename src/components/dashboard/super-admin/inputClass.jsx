@@ -9,7 +9,7 @@ const { Dragger } = Upload;
 const props = {
   name: "file",
   multiple: false,
-  action: "https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188",
+  action: "http://p5.wikrama.shop/api/v1/user/students/import",
   onChange(info) {
     const { status } = info.file;
     if (status !== "uploading") {
@@ -75,7 +75,7 @@ export default function inputClass() {
     console.log("Received values of form: ", values);
     setVisible(false);
   };
-  
+
   return (
     <>
       <div>
