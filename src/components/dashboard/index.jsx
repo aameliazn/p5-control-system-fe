@@ -28,6 +28,8 @@ export default function index() {
 
       {visible && <InputClass />}
 
+      {dataUser?.role == "master" && <DataClass />}
+
       {dataUser?.role == "superadmin" && <DataClass />}
 
       {dataUser?.role == "admin" && (
