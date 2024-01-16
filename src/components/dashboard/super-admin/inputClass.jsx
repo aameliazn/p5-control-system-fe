@@ -9,7 +9,7 @@ const { Dragger } = Upload;
 const props = {
   name: "file",
   multiple: false,
-  action: "http://p5.wikrama.shop/api/v1/user/students/import",
+  action: process.env.NEXT_PUBLIC_BASE_URL + `/api/v1/user/students/import`,
   onChange(info) {
     const { status } = info.file;
     if (status !== "uploading") {

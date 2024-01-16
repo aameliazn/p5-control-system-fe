@@ -9,7 +9,7 @@ const { Dragger } = Upload;
 const props = {
   name: "file",
   multiple: false,
-  action: "http://localhost:2000/materi",
+  action: process.env.NEXT_PUBLIC_BASE_URL + `/api/v1/material/import`,
   onDrop(e) {
     console.log("Dropped files", e.dataTransfer.files);
   },

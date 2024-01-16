@@ -7,7 +7,7 @@ const { Title } = Typography;
 
 export default function dataClass() {
   const router = useRouter();
-  const { kelas } = useMateri();
+  const { studentData } = useMateri();
 
   const handleClick = (e, i) => {
     router.push(`/materi/data/kelas/${i}`);
@@ -28,7 +28,7 @@ export default function dataClass() {
           lg: 32,
         }}
       >
-        {kelas.map((item, index) => (
+        {studentData.map((item, index) => (
           <Col key={index} className="gutter-row" span={6}>
             <div style={{ padding: "8px 0" }}>
               <div
@@ -40,7 +40,7 @@ export default function dataClass() {
                   onClick={(e) => handleClick(e, index)}
                   style={{ cursor: "pointer" }}
                 >
-                  {item?.kelas}
+                  {item?.rombel}
                 </Title>
               </div>
             </div>
