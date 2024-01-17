@@ -49,19 +49,26 @@ export default function KebersihanDiriContext({ children }) {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:2000/kegiatan").then((response) => {
-      setKegiatanTable(response.data);
-    });
-  }, []);
+    axios
+      .get(`/api/v1/hygiene/read_all`)
+      .then((response) => {
+        setKegiatanTable(response?.data?.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [kegiatanTable]);
 
   //delete
   const handleDelete = async (itemId) => {
-    try {
-      await axios.delete(`http://localhost:2000/kegiatan/${itemId}`);
-      setKegiatanTable(kegiatanTable.filter((item) => item.id !== itemId));
-    } catch (error) {
-      console.error("error menghapus data", error);
-    }
+    axios
+      .delete(`/api/v1/hygiene/activity/${itemId}`)
+      .then((res) => {
+        console.log("ini res", res);
+      })
+      .catch((err) => {
+        console.log("ini err", err);
+      });
   };
 
   useEffect(() => {
