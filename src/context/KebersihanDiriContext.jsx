@@ -19,8 +19,8 @@ export default function KebersihanDiriContext({ children }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
-  const [kelas, useKelas] = useState([]);
   const [siswa, setSiswa] = useState([]);
+  const [studentData, setStudentData] = useState([]);
 
   const searchInput = useRef(null);
 
@@ -48,18 +48,6 @@ export default function KebersihanDiriContext({ children }) {
       });
   };
 
-  useEffect(() => {
-    axios
-      .get(`/api/v1/hygiene/read_all`)
-      .then((response) => {
-        setKegiatanTable(response?.data?.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [kegiatanTable]);
-
-  //delete
   const handleDelete = async (itemId) => {
     axios
       .delete(`/api/v1/hygiene/activity/${itemId}`)
@@ -73,29 +61,31 @@ export default function KebersihanDiriContext({ children }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:2000/kelas")
-      .then((response) => {
-        useKelas(response.data);
+      .get(`/api/v1/hygiene/read_all`)
+      .then((res) => {
+        setKegiatanTable(res?.data?.data);
       })
-      .catch((error) => {
-        console.error("error mengambil data", error);
+      .catch((err) => {
+        console.log(err);
       });
-  }, []);
-
-  const handleDeleteKelas = async (itemId) => {
-    try {
-      await axios.delete(`http://localhost:2000/kelas/${itemId}`);
-      useKelas(kelas.filter((item) => item.id !== itemId));
-    } catch (error) {
-      console.error("error menghapus data", error);
-    }
-  };
+  }, [kegiatanTable]);
 
   useEffect(() => {
     axios.get("http://localhost:2000/siswa").then((response) => {
       setSiswa(response.data);
     });
   }, []);
+
+  useEffect(() => {
+    axios
+      .get(`/api/v1/user/students`)
+      .then((res) => {
+        setStudentData(res?.data?.data);
+      })
+      .catch((err) => {
+        console.error("error mengambil data", err);
+      });
+  }, [studentData]);
 
   const state = {
     visible,
@@ -116,11 +106,10 @@ export default function KebersihanDiriContext({ children }) {
     itemsPerPage,
     pagination,
     setPagination,
-    kelas,
-    useKelas,
-    handleDeleteKelas,
     siswa,
     setSiswa,
+    studentData,
+    setStudentData,
   };
 
   return (
