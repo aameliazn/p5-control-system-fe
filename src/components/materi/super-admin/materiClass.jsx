@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { useMateri } from "@/context/MateriContext";
 import { Col, Row, Typography, Card, Pagination } from "antd";
-import CoverPdf from "../../../../public/tanaman/tanaman1.jpg";
+import CoverPdf from "../../../../public/cover.png";
 import {
   EyeOutlined,
   DownloadOutlined,
