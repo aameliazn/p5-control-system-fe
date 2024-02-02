@@ -1,6 +1,8 @@
 import React from "react";
+import Image from "next/image";
 import { useMateri } from "@/context/MateriContext";
 import { Col, Row, Typography, Card, Pagination } from "antd";
+import CoverPdf from "../../../../public/cover.png";
 import {
   EyeOutlined,
   DownloadOutlined,
@@ -10,84 +12,16 @@ import {
 const { Meta } = Card;
 const { Title } = Typography;
 
-const dummyData = [
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-  { title: "Tanam", imageUrl: "./ngelamun.jpeg" },
-  { title: "Panen", imageUrl: "./ngelamun.jpeg" },
-  { title: "Makan", imageUrl: "./ngelamun.jpeg" },
-];
-
 export default function materi() {
-  const { visible, setVisible, handleDeletePDF, currentPage, setCurrentPage } =
-    useMateri();
+  const {
+    visible,
+    setVisible,
+    handleDeletePDF,
+    currentPage,
+    setCurrentPage,
+    uploadedFile,
+    exportPDF,
+  } = useMateri();
 
   const itemsPerPage = 4;
 
@@ -119,7 +53,7 @@ export default function materi() {
             lg: 32,
           }}
         >
-          {dummyData
+          {uploadedFile
             .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
             .map((item, index) => (
               <Col key={index} className="gutter-row" span={6}>
@@ -132,9 +66,9 @@ export default function materi() {
                     }}
                     cover={
                       <div style={{ width: "100%", height: "110px" }}>
-                        <img
+                        <Image
                           alt="image"
-                          src={item?.imageUrl}
+                          src={CoverPdf}
                           style={{
                             objectFit: "cover",
                             width: "100%",
@@ -145,7 +79,7 @@ export default function materi() {
                     }
                     actions={[
                       <EyeOutlined key="eye" />,
-                      <DownloadOutlined key="download" />,
+                      <DownloadOutlined key="download" onClick={() => exportPDF(item?._id)}/>,
                       <DeleteOutlined key="delete" />,
                     ]}
                   >
@@ -157,7 +91,7 @@ export default function materi() {
         </Row>
         <Pagination
           current={currentPage}
-          total={dummyData?.length}
+          total={uploadedFile?.length}
           showTotal={(total, range) =>
             `${range[0]}-${range[1]} of ${total} items`
           }

@@ -4,13 +4,15 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 
 const ContextMateri = createContext(null);
 
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+
 export default function MateriContext({ req, res, children }) {
   const [visible, setVisible] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadedFile, setUploadedFile] = useState([]);
-  const [kelas, setKelas] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [siswa, setSiswa] = useState([]);
+  const [studentData, setStudentData] = useState([]);
 
   // if (req.method === "DELETE") {
   //   const itemId = parseInt(req.query.id, 10);
@@ -25,19 +27,7 @@ export default function MateriContext({ req, res, children }) {
   //   res.status(405).end();
   // }
 
-  //get data pdf
-  useEffect(() => {
-    axios
-      .get(" http://localhost:2000/materi")
-      .then((response) => {
-        setUploadedFile(response.data);
-      })
-      .catch((error) => {
-        console.error("error mengambil data", error);
-      });
-  }, []);
-
-  //delete data pdf
+  //delete data materi
   const handleDeletePDF = (fileId) => {
     axios
       .delete(`http://localhost:2000/${fileId}`)
@@ -51,27 +41,40 @@ export default function MateriContext({ req, res, children }) {
       });
   };
 
-  //data fatching
+  //export data materi
+  const exportPDF = (fileId) => {
+    axios.get(`/api/v1/material/export/${fileId}`)
+    .then((res) => {
+      console.log('res', res?.data)
+    })
+    .catch((err) => {
+      console.error("error hapus file", err);
+    });
+  };
+
+  //data materi
   useEffect(() => {
     axios
-      .get("http://localhost:2000/kelas")
+      .get(`/api/v1/material/get-all`)
       .then((response) => {
-        setKelas(response.data);
+        setUploadedFile(response?.data?.data);
       })
       .catch((error) => {
         console.error("error mengambil data", error);
       });
-  }, []);
+  }, [uploadedFile]);
 
-  //untuk delete
-  const handleDelete = async (itemId) => {
-    try {
-      await axios.delete(`http://localhost:2000/kelas/${itemId}`);
-      setKelas(kelas.filter((item) => item.id !== itemId));
-    } catch (error) {
-      console.error("error menghapus data", error);
-    }
-  };
+  //data rombel
+  useEffect(() => {
+    axios
+      .get(`/api/v1/user/students`)
+      .then((response) => {
+        setStudentData(response?.data?.data);
+      })
+      .catch((error) => {
+        console.error("error mengambil data", error);
+      });
+  }, [studentData]);
 
   useEffect(() => {
     axios.get("http://localhost:2000/siswa").then((response) => {
@@ -90,6 +93,7 @@ export default function MateriContext({ req, res, children }) {
   //     console.error('gagal export xlsx',  e);
   //   })
   // })
+
   const state = {
     visible,
     setVisible,
@@ -98,13 +102,13 @@ export default function MateriContext({ req, res, children }) {
     uploadedFile,
     setUploadedFile,
     handleDeletePDF,
-    kelas,
-    setKelas,
-    handleDelete,
     currentPage,
     setCurrentPage,
     siswa,
     setSiswa,
+    studentData,
+    setStudentData,
+    exportPDF
   };
 
   return (

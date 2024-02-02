@@ -157,22 +157,22 @@ export default function kegiatanTable() {
   const columnKegiatan = [
     {
       title: "No",
-      dataIndex: "id",
-      key: "id",
+      dataIndex: "no",
+      key: "no",
       width: "10%",
       align: "center",
       sorter: {
-        compare: (a, b) => a.id - b.id,
+        compare: (a, b) => a.no - b.no,
       },
     },
     {
       title: "Kegiatan",
-      dataIndex: "kegiatan",
-      key: "kegiatan",
+      dataIndex: "activity",
+      key: "activity",
       sorter: {
-        compare: (a, b) => a.kegiatan.localeCompare(b.kegiatan),
+        compare: (a, b) => a.activity.localeCompare(b.activity),
       },
-      ...getColumnSearchProps("kegiatan"),
+      ...getColumnSearchProps("activity"),
     },
     {
       title: "Action",
@@ -181,7 +181,7 @@ export default function kegiatanTable() {
       align: "left",
       render: (text, record) => (
         <a
-          onClick={() => handleDelete(record?.id)}
+          onClick={() => handleDelete(record?._id)}
           style={{ cursor: "pointer" }}
         >
           <AiOutlineDelete color={"red"} size={24} />

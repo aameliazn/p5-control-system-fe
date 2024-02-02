@@ -175,8 +175,7 @@ export default function sidebar({ children }) {
                             </Link>
                           )}
 
-                          {/* harusnya == "user" */}
-                          {dataUser?.role != "user" && (
+                          {dataUser?.role == "user" && (
                             <Link href={"/piket-wc"}>
                               <label
                                 className={`menu-item ${

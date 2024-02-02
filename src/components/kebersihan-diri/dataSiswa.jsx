@@ -7,7 +7,7 @@ const { Title } = Typography;
 
 export default function dataSiswa() {
   const router = useRouter();
-  const { kelas } = useKebersihanDiri();
+  const { studentData } = useKebersihanDiri();
 
   const handleClick = (e, index) => {
     router.push(`/kebersihan-diri/data/kelas/${index}`);
@@ -28,7 +28,7 @@ export default function dataSiswa() {
           lg: 32,
         }}
       >
-        {kelas.map((item, index) => (
+        {studentData.map((item, index) => (
           <Col key={index} className="gutter-row" span={6}>
             <div style={{ padding: "8px 0" }}>
               <div
@@ -40,7 +40,7 @@ export default function dataSiswa() {
                   onClick={(e) => handleClick(e, index)}
                   style={{ cursor: "pointer" }}
                 >
-                  {item?.kelas}
+                  {item?.rombel}
                 </Title>
               </div>
             </div>
