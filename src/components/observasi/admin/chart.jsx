@@ -33,7 +33,7 @@ export default function chart() {
             item.kegiatan.toLowerCase().includes(searchTerm.toLowerCase())
           )
         );
-      })
+      }) 
       .catch((err) => {
         console.error("gagal mengambil data", err);
       });
