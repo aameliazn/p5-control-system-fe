@@ -167,12 +167,12 @@ export default function dataQuest() {
     },
     {
       title: "Pertanyaan",
-      dataIndex: "pertanyaan",
-      key: "pertanyaan",
+      dataIndex: "activity",
+      key: "activity",
       sorter: {
-        compare: (a, b) => a.pertanyaan.localeCompare(b.pertanyaan),
+        compare: (a, b) => a.activity.localeCompare(b.activity),
       },
-      ...getColumnSearchProps("pertanyaan"),
+      ...getColumnSearchProps("activity"),
     },
     {
       title: "Action",
@@ -181,7 +181,7 @@ export default function dataQuest() {
       align: "left",
       render: (text, record) => (
         <a
-          onClick={() => handleDelete(record?.id)}
+          onClick={() => handleDelete(record?._id)}
           style={{ cursor: "pointer" }}
         >
           <AiOutlineDelete color={"red"} size={24} />

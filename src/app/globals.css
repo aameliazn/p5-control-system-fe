@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --main-color: #73d802;
   --second-color: #4c8e06;

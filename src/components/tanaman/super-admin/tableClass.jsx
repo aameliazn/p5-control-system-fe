@@ -167,12 +167,21 @@ export default function tableClass() {
     },
     {
       title: "Kegiatan",
-      dataIndex: "kegiatan",
-      key: "kegiatan",
+      dataIndex: "activity",
+      key: "activity",
       sorter: {
-        compare: (a, b) => a.kegiatan.localeCompare(b.kegiatan),
+        compare: (a, b) => a.activity.localeCompare(b.activity),
       },
-      ...getColumnSearchProps("kegiatan"),
+      ...getColumnSearchProps("activity"),
+    },
+    {
+      title: "Tipe",
+      dataIndex: "type",
+      key: "type",
+      sorter: {
+        compare: (a, b) => a.type.localeCompare(b.type),
+      },
+      ...getColumnSearchProps("type"),
     },
     {
       title: "Action",
@@ -181,7 +190,7 @@ export default function tableClass() {
       align: "left",
       render: (text, record) => (
         <a
-          onClick={() => handleDelete(record?.id)}
+          onClick={() => handleDelete(record?._id)}
           style={{ cursor: "pointer" }}
         >
           <AiOutlineDelete color={"red"} size={24} />

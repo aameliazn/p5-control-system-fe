@@ -8,9 +8,9 @@ import React, {
   useRef,
 } from "react";
 
-// axios.defaults.baseURL = process.env.NEXT_PUBLIC_BASE_URL;
-
 const ContextObservasi = createContext(null);
+
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export default function ObservasiContext({ children }) {
   const [visible, setVisible] = useState(false);
@@ -35,14 +35,14 @@ export default function ObservasiContext({ children }) {
   });
 
   const handlePertanyaan = async (values) => {
-    const activity = values?.activity;
+    const activity = values;
 
     axios
       .post(`api/v1/observation/activity`, {
         activity,
       })
       .then((res) => {
-        console.log("pertanyaan berhasil ditambahkan", res?.data);
+        console.log("pertanyaan berhasil ditambahkan", res.data);
       })
       .catch((err) => {
         console.error("gagal menambah pertanyaan", err);
@@ -50,14 +50,14 @@ export default function ObservasiContext({ children }) {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:2000/pertanyaan").then((response) => {
-      setPertanyaan(response.data);
+    axios.get("/api/v1/observation/read_all").then((response) => {
+      setPertanyaan(response?.data?.data);
     });
-  }, []);
+  }, [pertanyaan]);
 
   const handleDelete = async (itemId) => {
     try {
-      await axios.delete(`http://localhost:2000/pertanyaan/${itemId}`);
+      await axios.delete(`/api/v1/observation/activity/${itemId}`);
       setPertanyaan(pertanyaan.filter((item) => item.id !== itemId));
     } catch (error) {
       console.error("gagal menghapus pertanyaan", error);
@@ -66,29 +66,15 @@ export default function ObservasiContext({ children }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:2000/kelas")
+      .get(`/api/v1/user/students`)
       .then((response) => {
-        setKelas(response.data);
+        setSiswa(response?.data?.data);
       })
-      .catch((error) => {
-        console.error("error mengambil data", error);
+
+      .catch((err) => {
+        console.error("error menampilkan siswa", err);
       });
-  }, []);
-
-  const handleDeleteClass = async (itemId) => {
-    try {
-      await axios.delete(`http://localhost:2000/kelas/${itemId}`);
-      setKelas(kelas.filter((item) => item.id !== itemId));
-    } catch (error) {
-      console.error("error menghapus data", error);
-    }
-  };
-
-  useEffect(() => {
-    axios.get("http://localhost:2000/siswa").then((response) => {
-      setSiswa(response.data);
-    });
-  }, []);
+  }, [siswa]);
 
   const state = {
     visible,
@@ -109,7 +95,6 @@ export default function ObservasiContext({ children }) {
     setSearchText,
     kelas,
     setKelas,
-    handleDeleteClass,
     siswa,
     setSiswa,
   };

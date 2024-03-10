@@ -50,10 +50,10 @@ export default function inputQuest() {
   const { visible, setVisible, handlePertanyaan } = useObservasi();
 
   const onCreate = (values) => {
-    handlePertanyaan(values);
+    const {activity} = values;
+    handlePertanyaan(activity);
     setVisible(false);
   };
-
   return (
     <>
       <CollectionCreateForm

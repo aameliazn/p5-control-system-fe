@@ -35,14 +35,14 @@ export default function PortofolioContext({ children }) {
   });
 
   const handlePertanyaan = async (values) => {
-    const activity = values?.activity;
+    const activity = values;
 
     axios
       .post(`/api/v1/portofolio/activity`, {
         activity,
       })
       .then((res) => {
-        console.log("pertanyaan berhasil ditambahkan", res?.data);
+        console.log("pertanyaan berhasil ditambahkan", res.data);
       })
       .catch((err) => {
         console.error("gagal menambah pertanyaan", err);
@@ -50,45 +50,26 @@ export default function PortofolioContext({ children }) {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:2000/pertanyaan").then((response) => {
-      setTable(response.data);
+    axios.get("/api/v1/portofolio/read_all").then((response) => {
+      setTable(response?.data?.data);
     });
   }, []);
 
   const handleDelete = async (itemId) => {
     try {
-      await axios.delete(`http://localhost:2000/pertanyaan/${itemId}`);
-      setTable(table.filter((item) => item.id !== itemId));
+      await axios.delete(`/api/v1/portofolio/activity/${itemId}`);
+      setTable(table.filter((item) => item._id !== itemId));
     } catch (e) {
       console.error("gagal menghapus pertanyaan", e);
     }
   };
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:2000/kelas")
-      .then((response) => {
-        setKelas(response.data);
-      })
-      .catch((error) => {
-        console.error("error mengambil data", error);
-      });
-  }, []);
-
-  const handleDeleteClass = async (itemId) => {
-    try {
-      await axios.delete(`http://localhost:2000/kelas/${itemId}`);
-      setKelas(kelas.filter((item) => item.id !== itemId));
-    } catch (e) {
-      console.error("error menghapus kelas", e);
-    }
-  };
 
   useEffect(() => {
-    axios.get("http://localhost:2000/siswa").then((response) => {
-      setSiswa(response.data);
+    axios.get(`/api/v1/user/students`).then((response) => {
+      setSiswa(response?.data?.data);
     });
-  }, []);
+  }, [siswa]);
 
   const state = {
     visible,
@@ -109,7 +90,6 @@ export default function PortofolioContext({ children }) {
     setSearchText,
     kelas,
     setKelas,
-    handleDeleteClass,
     siswa,
     setSiswa,
   };

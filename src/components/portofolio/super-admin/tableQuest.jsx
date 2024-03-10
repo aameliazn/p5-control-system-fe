@@ -157,8 +157,8 @@ export default function tableQuest() {
   const columnTable = [
     {
       title: "No",
-      dataIndex: "id",
-      key: "id",
+      dataIndex: "no",
+      key: "no",
       width: "10%",
       align: "center",
       sorter: {
@@ -167,12 +167,12 @@ export default function tableQuest() {
     },
     {
       title: "Pertanyaan",
-      dataIndex: "pertanyaan",
-      key: "pertanyaan",
+      dataIndex: "activity",
+      key: "activity",
       sorter: {
-        compare: (a, b) => a.pertanyaan.localeCompare(b.pertanyaan),
+        compare: (a, b) => a.activity.localeCompare(b.activity),
       },
-      ...getColumnSearchProps("pertanyaan"),
+      ...getColumnSearchProps("activity"),
     },
     {
       title: "Action",
@@ -181,7 +181,7 @@ export default function tableQuest() {
       align: "left",
       render: (text, record) => (
         <a
-          onClick={() => handleDelete(record?.id)}
+          onClick={() => handleDelete(record?._id)}
           style={{ cursor: "pointer" }}
         >
           <AiOutlineDelete color={"red"} size={24} />

@@ -10,6 +10,8 @@ import React, {
 
 const ContextTanaman = createContext(null);
 
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+
 export default function TanamanContext({ children }) {
   const [visible, setVisible] = useState(false);
   const [kegiatan, setKegiatan] = useState([]);
@@ -32,12 +34,10 @@ export default function TanamanContext({ children }) {
     position: ["bottomCenter"],
   });
 
-  const handleKegiatan = async (values) => {
-    const kegiatan = values;
+  const handleKegiatan = async (activity, types) => {
+    const typeString = Array.isArray(types) ? types.join(',') : types;
     try {
-      const response = await axios.post("http://localhost:2000/kegiatan", {
-        kegiatan,
-      });
+      const response = await axios.post(`/api/v1/plant/activity`, { activity, type: typeString });
       console.log("kegiatan berhasil disimpan", response.data);
     } catch (error) {
       console.error("gagal menyimpan kegiatan:", error);
@@ -45,45 +45,40 @@ export default function TanamanContext({ children }) {
   };
 
   useEffect(() => {
-    axios.get(" http://localhost:2000/kegiatan").then((response) => {
-      setKegiatan(response.data);
-    });
-  }, []);
-
-  const handleDelete = async (itemId) => {
-    try {
-      await axios.delete(`http://localhost:2000/kegiatan/${itemId}`);
-      setKegiatan(kegiatan.filter((item) => item.id !== itemId));
-    } catch (error) {
-      console.error("error menghapus data", error);
-    }
-  };
-
-  useEffect(() => {
     axios
-      .get("http://localhost:2000/kelas")
+      .get(`api/v1/plant/read_all`)
       .then((response) => {
-        useKelas(response.data);
+        setKegiatan(response?.data?.data);
       })
       .catch((error) => {
         console.error("error mengambil data", error);
       });
-  }, []);
+  }, [kegiatan]);
 
-  const handleDeleteClass = async (itemId) => {
-    try {
-      await axios.delete(`http://localhost:2000/kelas/${itemId}`);
-      useKelas(kelas.filter((item) => item.id !== itemId));
-    } catch (error) {
-      console.error("error menghapus data", error);
-    }
+  const handleDelete = async (itemId) => {
+    axios
+      .delete(`/api/v1/plant/activity/${itemId}`)
+      .then((res) => {
+        console.log("ini res", res);
+      })
+      .catch((err) => {
+        console.log("ini err", err);
+      });
   };
 
+  
+
   useEffect(() => {
-    axios.get("http://localhost:2000/siswa").then((response) => {
-      setSiswa(response.data);
-    });
-  }, []);
+    axios
+      .get(`/api/v1/user/students`)
+      .then((response) => {
+        setSiswa(response?.data?.data);
+      })
+
+      .catch((err) => {
+        console.error("error menampilkan siswa", err);
+      });
+  }, [siswa]);
 
   const state = {
     visible,
@@ -101,7 +96,6 @@ export default function TanamanContext({ children }) {
     setCurrentPage,
     kelas,
     useKelas,
-    handleDeleteClass,
     itemsPerPage,
     searchText,
     setSearchText,
