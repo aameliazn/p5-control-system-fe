@@ -19,9 +19,7 @@ export default function fetchKelas() {
     router.push(`/observasi/data/siswa/${i}`);
   };
 
-  useEffect(() => {
-    fetchObservasi();
-  });
+
 
   const exportXLSX = () => {
     if (siswa.length > 0) {
@@ -32,13 +30,23 @@ export default function fetchKelas() {
     }
   };
 
-  const fetchObservasi = async () => {
+  useEffect(() => {
+    fetchRombelData();
+  }, []);
+
+  const fetchRombelData = async () => {
     try {
-      axios.get(`api/v1/plant/read_all`).then((response) => {
-        setSiswaId(response?.data?.data);
-      })
+      const currentURL = window.location.href;
+      const rombelName = decodeURIComponent(currentURL.split('/').pop());
+      
+      const response = await axios.get(`/api/v1/observation/rombel/${rombelName}`);
+      if (response.status === 200) {
+        setSiswaId(response?.data?.data); 
+      } else {
+        console.error('Gagal mendapatkan data rombel:', response.statusText);
+      }
     } catch (error) {
-      console.error("gagal menampilkan siswa", error);
+      console.error('Terjadi kesalahan saat fetching data rombel:', error);
     }
   };
 
@@ -46,7 +54,7 @@ export default function fetchKelas() {
     <>
       <div className="mt-5">
         <div className="flex flex-row gap-3">
-          <Title level={3}>{`PPLG XII 2`}</Title>
+          <Title level={3}>{siswa ? siswa.rombel : 'Loading...'}</Title>
           <AiOutlineDownload size={27} style={{ marginTop: 3 }}  onClick={exportXLSX} />
         </div>
       </div>
@@ -56,7 +64,7 @@ export default function fetchKelas() {
           column: 4,
         }}
         style={{ marginTop: 15 }}
-        dataSource={siswa}
+        dataSource={siswa ? siswa.students : []}
         renderItem={(item, index) => (
           <List.Item>
             <Card
@@ -67,11 +75,11 @@ export default function fetchKelas() {
               <Meta
                 onClick={(e) => pushRoute(e, index)}
                 style={{ cursor: "pointer" }}
-                title={item?.nama}
+                title={item?.name}
                 description={
                   <div className="mt-3">
                     <span className="bg-green-100 text-green-700 rounded px-2 py-1">
-                      {`${item?.data} Rangkuman`}
+                    {`${item.activities.length} Rangkuman`}
                     </span>
                   </div>
                 }

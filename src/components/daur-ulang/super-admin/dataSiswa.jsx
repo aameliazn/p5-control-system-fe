@@ -9,8 +9,8 @@ export default function dataSiswa() {
   const router = useRouter();
   const { kelas } = useDaurUlang();
 
-  const handleClick = (e, index) => {
-    router.push(`/daur-ulang/data/kelas/${index}`);
+  const handleClick = (rombelName) => {
+    router.push(`/daur-ulang/data/kelas/${rombelName}`);
   };
 
   return (
@@ -37,10 +37,10 @@ export default function dataSiswa() {
               >
                 <Title
                   level={5}
-                  onClick={(e) => handleClick(e, index)}
+                  onClick={(e) => handleClick(item?.rombel)}
                   style={{ cursor: "pointer" }}
                 >
-                  {item?.kelas}
+                  {item?.rombel}
                 </Title>
               </div>
             </div>

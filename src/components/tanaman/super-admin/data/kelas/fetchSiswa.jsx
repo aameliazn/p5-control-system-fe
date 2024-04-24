@@ -14,7 +14,7 @@ const { Meta } = Card;
 export default function fetchSiswa() {
   const router = useRouter();
   // const { siswa } = useTanaman();
-  const [siswa, setSiswaId] = useState([]);
+  const [siswa, setSiswaId] = useState(null);
 
   const pushRoute = (e, i) => {
     router.push(`/tanaman/data/siswa/${i}`);
@@ -31,41 +31,35 @@ export default function fetchSiswa() {
   };
 
   useEffect(() => {
-    fetchTanaman();
-  });
+    fetchRombelData();
+  }, []);
 
-  const fetchTanaman = async (student_id) => {
+  const fetchRombelData = async () => {
     try {
-      const response = await axios.get(`/api/v1/plant/students/${student_id}`);
-      const siswaId = response?.data?.data;
-      return siswaId;
+      const currentURL = window.location.href;
+      const rombelName = decodeURIComponent(currentURL.split('/').pop());
+      
+      const response = await axios.get(`/api/v1/plant/rombel/${rombelName}`);
+      if (response.status === 200) {
+        setSiswaId(response?.data?.data); 
+      } else {
+        console.error('Gagal mendapatkan data rombel:', response.statusText);
+      }
     } catch (error) {
-      console.error("Gagal menampilkan kelas", error);
-      throw error; 
+      console.error('Terjadi kesalahan saat fetching data rombel:', error);
     }
   };
 
-  // const fetchTanaman = async () => {
-  //   try {
-  //     axios.get(`api/v1/plant/read_all`).then((response) => {
-  //       setSiswaId(response?.data?.data);
-  //     })
-  //   } catch (error) {
-  //     console.error("gagal menampilkan siswa", error);
-  //   }
-  // };
-
   return (
     <>
-      <div className="mt-5">
-        <div className="flex flex-row gap-3">
-          <Title level={3}>{`PPLG XII 2`}</Title>
-          <AiOutlineDownload
-            size={27}
-            style={{ marginTop: 3, cursor: "pointer" }}
-            onClick={exportXLSX}
-          />
-        </div>
+    <div className="mt-5">
+      <div className="flex flex-row gap-3">
+        <h3>{siswa ? siswa.rombel : 'Loading...'}</h3>
+        <AiOutlineDownload
+          size={27}
+          style={{ marginTop: 3, cursor: "pointer" }}
+          onClick={exportXLSX}
+        />
       </div>
       <List
         grid={{
@@ -73,30 +67,27 @@ export default function fetchSiswa() {
           column: 4,
         }}
         style={{ marginTop: 15 }}
-        dataSource={siswa}
+        dataSource={siswa ? siswa.students : []}
         renderItem={(item, index) => (
           <List.Item>
             <Card
-      key={index}
-      style={{ borderBottom: "3px solid green" }}
-      className="border border-gray-200 shadow hover:bg-gray-100"
-    >
-      <Meta
-        onClick={(e) => pushRoute(e, index)}
-        style={{ cursor: "pointer" }}
-        title={siswa?.name || "Nama Siswa"}
-        description={
-          <div className="mt-3">
-            <span className="bg-green-100 text-green-700 rounded px-2 py-1">
-              {siswa ? `${siswa.responses.length} Rangkuman` : "Loading..."}
-            </span>
-          </div>
-        }
-      />
-    </Card>
+              key={index}
+              style={{ borderBottom: "3px solid green" }}
+              className="border border-gray-200 shadow hover:bg-gray-100"
+            >
+              <div onClick={(e) => pushRoute(e, index)} style={{ cursor: "pointer" }}>
+                <h4>{item.name}</h4>
+                <div className="mt-3">
+                  <span className="bg-green-100 text-green-700 rounded px-2 py-1">
+                    {`${item.activities.length} Rangkuman`}
+                  </span>
+                </div>
+              </div>
+            </Card>
           </List.Item>
         )}
       />
+    </div>
     </>
   );
 }

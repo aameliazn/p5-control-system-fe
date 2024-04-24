@@ -13,15 +13,15 @@ const { Meta } = Card;
 export default function fetchKelas() {
   const router = useRouter();
   // const { siswa } = useDaurUlang();
-  const [siswa, setSiswaId] = useState([]);
+  const [siswa, setSiswaId] = useState(null);
 
   const pushRoute = (e, i) => {
     router.push(`/daur-ulang/data/siswa/${i}`);
   };
 
   useEffect(() => {
-    fetchDaurulang();
-  });
+    fetchRombelData();
+  }, []);
 
   const exportXLSX = () => {
     if (siswa.length > 0) {
@@ -31,15 +31,22 @@ export default function fetchKelas() {
       XLSX.writeFile(wb, "data_siswa.xlsx");
     }
   };
-  const fetchDaurulang = async () => {
-    try {
-      axios.get(`api/v1/plant/read_all`).then((response) => {
-        setSiswaId(response?.data?.data);
-      })
-    } catch (error) {
-      console.error("gagal menampilkan siswa", error);
-    }
-  };
+  // const fetchRombelData = async () => {
+  //   try {
+  //     const currentURL = window.location.href;
+  //     const rombelName = decodeURIComponent(currentURL.split('/').pop());
+      
+  //     const response = await axios.get(`/api/v1/observation/rombel/${rombelName}`);
+  //     if (response.status === 200) {
+  //       setSiswaId(response?.data?.data); 
+  //     } else {
+  //       console.error('Gagal mendapatkan data rombel:', response.statusText);
+  //     }
+  //   } catch (error) {
+  //     console.error('Terjadi kesalahan saat fetching data rombel:', error);
+  //   }
+  // };
+
 
   return (
     <>
