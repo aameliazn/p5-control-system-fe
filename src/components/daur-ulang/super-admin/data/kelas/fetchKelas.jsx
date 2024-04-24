@@ -1,20 +1,44 @@
 "use client";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Style from "./style.module.css";
 import { useRouter } from "next/navigation";
 import { Typography, List, Card } from "antd";
 import { AiOutlineDownload } from "react-icons/ai";
 import { useDaurUlang } from "@/context/DaurUlangContext";
+import axios from 'axios';
 
 const { Title } = Typography;
 const { Meta } = Card;
 
 export default function fetchKelas() {
   const router = useRouter();
-  const { siswa } = useDaurUlang();
+  // const { siswa } = useDaurUlang();
+  const [siswa, setSiswaId] = useState([]);
 
   const pushRoute = (e, i) => {
     router.push(`/daur-ulang/data/siswa/${i}`);
+  };
+
+  useEffect(() => {
+    fetchDaurulang();
+  });
+
+  const exportXLSX = () => {
+    if (siswa.length > 0) {
+      const ws = XLSX.utils.json_to_sheet(siswa);
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, "Data siswa");
+      XLSX.writeFile(wb, "data_siswa.xlsx");
+    }
+  };
+  const fetchDaurulang = async () => {
+    try {
+      axios.get(`api/v1/plant/read_all`).then((response) => {
+        setSiswaId(response?.data?.data);
+      })
+    } catch (error) {
+      console.error("gagal menampilkan siswa", error);
+    }
   };
 
   return (
@@ -22,7 +46,7 @@ export default function fetchKelas() {
       <div className="mt-5">
         <div className="flex flex-row gap-3">
           <Title level={3}>{`PPLG XII 2`}</Title>
-          <AiOutlineDownload size={27} style={{ marginTop: 3 }} />
+          <AiOutlineDownload size={27} style={{ marginTop: 3 }}  onClick={exportXLSX} />
         </div>
       </div>
       <List
