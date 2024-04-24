@@ -14,7 +14,7 @@ const { Meta } = Card;
 export default function fetchSiswa() {
   const router = useRouter();
   // const { siswa } = useTanaman();
-  const [siswa, setSiswaId] = useState(null);
+  const [siswa, setSiswaId] = useState([]);
 
   const pushRoute = (e, i) => {
     router.push(`/tanaman/data/siswa/${i}`);
@@ -54,7 +54,7 @@ export default function fetchSiswa() {
     <>
     <div className="mt-5">
       <div className="flex flex-row gap-3">
-        <h3>{siswa ? siswa.rombel : 'Loading...'}</h3>
+      <Title level={3}>{siswa ? siswa.rombel : 'Loading...'}</Title>
         <AiOutlineDownload
           size={27}
           style={{ marginTop: 3, cursor: "pointer" }}
@@ -76,10 +76,10 @@ export default function fetchSiswa() {
               className="border border-gray-200 shadow hover:bg-gray-100"
             >
               <div onClick={(e) => pushRoute(e, index)} style={{ cursor: "pointer" }}>
-                <h4>{item.name}</h4>
+                <h4>{item?.name}</h4>
                 <div className="mt-3">
                   <span className="bg-green-100 text-green-700 rounded px-2 py-1">
-                    {`${item.activities.length} Rangkuman`}
+                    {`${item.responses.length} Rangkuman`}
                   </span>
                 </div>
               </div>
