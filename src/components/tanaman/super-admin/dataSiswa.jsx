@@ -9,8 +9,8 @@ export default function dataSiswa() {
   const router = useRouter();
   const { siswa } = useTanaman();
 
-  const handleClick = (e, index) => {
-    router.push(`/tanaman/data/kelas/${index}`);
+  const handleClick = (rombelName) => {
+    router.push(`/tanaman/data/kelas/${rombelName}`);
   };
 
   return (
@@ -37,7 +37,7 @@ export default function dataSiswa() {
               >
                 <Title
                   level={5}
-                  onClick={(e) => handleClick(e, index)}
+                  onClick={() => handleClick(item?.rombel)}
                   style={{ cursor: "pointer" }}
                 >
                   {item?.rombel}

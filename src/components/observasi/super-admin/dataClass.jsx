@@ -9,8 +9,8 @@ export default function dataClass() {
   const router = useRouter();
   const { siswa } = useObservasi();
 
-  const handleClick = (e, index) => {
-    router.push(`/observasi/data/kelas/${index}`);
+  const handleClick = (rombelName) => {
+    router.push(`/observasi/data/kelas/${rombelName}`);
   };
 
   return (
@@ -37,7 +37,7 @@ export default function dataClass() {
               >
                 <Title
                   level={5}
-                  onClick={(e) => handleClick(e, index)}
+                  onClick={(e) => handleClick(item?.rombel)}
                   style={{ cursor: "pointer" }}
                 >
                   {item?.rombel}
