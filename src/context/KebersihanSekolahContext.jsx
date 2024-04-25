@@ -40,7 +40,7 @@ export default function KebersihanSekolahContext({ children }) {
     const score = values?.score;
 
     axios
-      .post(`/api/v1/clearlines/activity`, {
+      .post(`/api/v1/sanitation/activity`, {
         activity,
         condition,
         score,
@@ -53,24 +53,24 @@ export default function KebersihanSekolahContext({ children }) {
       });
   };
 
-  useEffect(() => {
-    axios.get("http://localhost:2000/kegiatan").then((response) => {
-      setTable(response.data);
-    });
-  }, []);
-
   const handleDelete = async (itemId) => {
     try {
-      await axios.delete(`http://localhost:2000/kegiatan/${itemId}`);
+      await axios.delete(`/api/v1/sanitation/activity/${itemId}`);
       setTable(table.filter((item) => item.id !== itemId));
     } catch (error) {
       console.error("error menghapus data", error);
     }
   };
 
+  useEffect(() => {
+    axios.get(`/api/v1/sanitation/read_all`).then((response) => {
+      setTable(response?.data?.data);
+    });
+  }, [table]);
+
   const handleDeleteClass = async (itemId) => {
     try {
-      await axios.delete(`http://localhost:2000/kelas/${itemId}`);
+      await axios.delete(`/api/v1/user/students`, { rombel: itemId });
       setKelas(kelas.filter((item) => item.id !== itemId));
     } catch (error) {
       console.error("error menghapus data", error);
@@ -79,9 +79,9 @@ export default function KebersihanSekolahContext({ children }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:2000/kelas")
+      .get(`/api/v1/user/students`)
       .then((response) => {
-        setKelas(response.data);
+        setKelas(response.data.data);
       })
       .catch((error) => {
         console.error("gagal mengambil data", error);

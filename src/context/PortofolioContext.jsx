@@ -53,7 +53,7 @@ export default function PortofolioContext({ children }) {
     axios.get("/api/v1/portofolio/read_all").then((response) => {
       setTable(response?.data?.data);
     });
-  }, []);
+  }, [table]);
 
   const handleDelete = async (itemId) => {
     try {
@@ -69,7 +69,7 @@ export default function PortofolioContext({ children }) {
     axios.get(`/api/v1/user/students`).then((response) => {
       setSiswa(response?.data?.data);
     });
-  }, [siswa]);
+  }, []);
 
   const state = {
     visible,

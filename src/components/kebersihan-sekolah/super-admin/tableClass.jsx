@@ -157,41 +157,41 @@ export default function tableClass() {
   const tableKegiatan = [
     {
       title: "No",
-      dataIndex: "id",
-      key: "id",
+      dataIndex: "no",
+      key: "no",
       width: "10%",
       align: "center",
       sorter: {
-        compare: (a, b) => a.id - b.id,
+        compare: (a, b) => a.no - b.no,
       },
     },
     {
       title: "Kegiatan",
-      dataIndex: "kegiatan",
-      key: "kegiatan",
+      dataIndex: "activity",
+      key: "activity",
       sorter: {
-        compare: (a, b) => a.kegiatan.localeCompare(b.kegiatan),
+        compare: (a, b) => a.activity.localeCompare(b.activity),
       },
-      ...getColumnSearchProps("kegiatan"),
+      ...getColumnSearchProps("activity"),
     },
     {
       title: "Kondisi",
-      dataIndex: "kondisi",
-      key: "kondisi",
+      dataIndex: "condition",
+      key: "condition",
       sorter: {
-        compare: (a, b) => a.kondisi.localeCompare(b.kondisi),
+        compare: (a, b) => a.condition.localeCompare(b.condition),
       },
-      ...getColumnSearchProps("kondisi"),
+      ...getColumnSearchProps("condition"),
     },
     {
       title: "Skor",
-      dataIndex: "skor",
-      key: "skor",
+      dataIndex: "score",
+      key: "score",
       align: "center",
       sorter: {
-        compare: (a, b) => a.skor - b.skor,
+        compare: (a, b) => a.score - b.score,
       },
-      ...getColumnSearchProps("skor"),
+      ...getColumnSearchProps("score"),
     },
     {
       title: "Action",
@@ -200,7 +200,7 @@ export default function tableClass() {
       align: "left",
       render: (text, record) => (
         <a
-          onClick={() => handleDelete(record?.id)}
+          onClick={() => handleDelete(record?._id)}
           style={{ cursor: "pointer" }}
         >
           <AiOutlineDelete color={"red"} size={24} />

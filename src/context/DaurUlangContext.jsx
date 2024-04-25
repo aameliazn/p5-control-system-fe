@@ -8,6 +8,8 @@ import React, {
   useRef,
 } from "react";
 
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+
 const ContextDaurUlang = createContext(null);
 
 export default function DaurUlangContext({ children }) {
@@ -34,27 +36,26 @@ export default function DaurUlangContext({ children }) {
   });
 
   const handleRuangan = async (values) => {
-    const ruangan = values;
+    const room = values;
     try {
-      const response = await axios.post("http://localhost:2000/ruangan", {
-        ruangan,
+      const response = await axios.post(`/api/v1/recycle/room`, {
+        room,
       });
       console.log("ruangan berhasil ditambahkan", response.data);
-      window.location.reload();
     } catch (error) {
       console.error("gagal menambah data", error);
     }
   };
 
   useEffect(() => {
-    axios.get("http://localhost:2000/ruangan").then((response) => {
-      setRuangan(response.data);
+    axios.get(`/api/v1/recycle/room`).then((response) => {
+      setRuangan(response.data.data);
     });
-  }, []);
+  }, [ruangan]);
 
   const handleDelete = async (itemId) => {
     try {
-      await axios.delete(`http://localhost:2000/ruangan/${itemId}`);
+      await axios.delete(`/api/v1/recycle/room/${itemId}`);
       setRuangan(ruangan.filter((item) => item.id !== itemId));
     } catch (error) {
       console.error("gagal menghapus ruangan", error);
@@ -63,9 +64,9 @@ export default function DaurUlangContext({ children }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:2000/kelas")
+      .get(`/api/v1/user/students`)
       .then((response) => {
-        setKelas(response.data);
+        setKelas(response.data.data);
       })
       .catch((error) => {
         console.error("error mengambil data", error);
@@ -74,7 +75,7 @@ export default function DaurUlangContext({ children }) {
 
   const handleDeleteClass = async (itemId) => {
     try {
-      await axios.delete(`http://localhost:2000/kelas/${itemId}`);
+      await axios.delete(`/api/v1/user/students`, { rombel: itemId });
       setKelas(kelas.filter((item) => item.id !== itemId));
     } catch (error) {
       console.error("error menghapus data", error);

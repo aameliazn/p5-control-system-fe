@@ -40,7 +40,7 @@ export default function dataSiswa() {
                   onClick={(e) => handleClick(e, index)}
                   style={{ cursor: "pointer" }}
                 >
-                  {item?.kelas}
+                  {item?.rombel}
                 </Title>
               </div>
             </div>

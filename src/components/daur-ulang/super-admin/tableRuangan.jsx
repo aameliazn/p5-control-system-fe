@@ -157,22 +157,22 @@ export default function tableRuangan() {
   const columnRuangan = [
     {
       title: "No",
-      dataIndex: "id",
-      key: "id",
+      dataIndex: "no",
+      key: "no",
       width: "10%",
       align: "center",
       sorter: {
-        compare: (a, b) => a.id - b.id,
+        compare: (a, b) => a.no - b.no,
       },
     },
     {
       title: "Ruangan",
-      dataIndex: "ruangan",
-      key: "ruangan",
+      dataIndex: "room",
+      key: "room",
       sorter: {
-        compare: (a, b) => a.ruangan.localeCompare(b.ruangan),
+        compare: (a, b) => a.room.localeCompare(b.room),
       },
-      ...getColumnSearchProps("ruangan"),
+      ...getColumnSearchProps("room"),
     },
     {
       title: "Action",
@@ -181,7 +181,7 @@ export default function tableRuangan() {
       align: "left",
       render: (text, record) => (
         <a
-          onClick={() => handleDelete(record?.id)}
+          onClick={() => handleDelete(record?._id)}
           style={{ cursor: "pointer" }}
         >
           <AiOutlineDelete color={"red"} size={24} />
