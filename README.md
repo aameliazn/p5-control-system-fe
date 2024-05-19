@@ -1,37 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Panduan Instalasi projek
+1. buka folder yang akan diisi projek
+2. Buka git bash/cmd, lalu ketikan 'git clone  . '
+3. Tunggu hingga downloadnya selesai, lalu ketikan di cmd, 'npm install'
+4. Up nama file dengan 'cd <nama projek>
+5. Lalu run dengan npm run Dev
 
-## Getting Started
+List username dan password :
+- role super admin
+Usn: astiya@smkwikrama.sch.id
+Pwd: asti9121
 
-First, run the development server:
+- Role Admin
+Usn: amelia@smkwikrama.sch.id
+Pwd: amelia80
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Role user
+Usn: syaikhanigiffa@smkwikrama.sch.id
+Pwd: syaikhan86
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Penggunaan penggunaan website P5 Control System
+- Sebagai role user (siswa) 
+1. Halaman menampilkan tampilan landing, user melakukan login
+2. Login sebagai role user dengan memasukan email dan password yang dibagikan ketua penyelenggara P5
+3. User berhasil login dan masuk ke tampilan dashboard
+4. User dapat melihat data diri dan dapat mengisi jurnal kebersihan diri
+5. Jika sudah selesai, user dapat menggunakan fitur logout
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Sebagai role Super User (siswa yang terjadwal P5) 
+1. Halaman menampilkan tampilan landing, user melakukan login
+2. Login sebagai role super user dengan memasukan email dan password yang dibagikan ketua penyelenggara P5
+3. User berhasil login dan masuk ke tampilan dashboard
+4. User dapat melihat data ringkas di halaman dashboard utama dan juga dapat mengisi form jurnal dari setiap tugas.
+5. Jika sudah selesai, super user dapat menggunakan fitur logout
 
-## Learn More
+- Sebagai role Admin (guru yang terjadwal P5) 
+1. Halaman menampilkan tampilan landing, admin melakukan login
+2. Login sebagai role admin dengan memasukan email dan password yang dibagikan ketua penyelenggara P5
+3. Admin berhasil login dan masuk ke tampilan dashboard
+4. User dapat melihat data ringkas di halaman dashboard utama dan juga dapat memantau siswa yang terjadwalnya dalam mengerjakan tugas dan mengkonfirmasi tugas.
+5. Jika sudah selesai, admin dapat menggunakan fitur logout
+- Sebagai role Super Admin (Ketua Penyelenggara P5) 
+1. Halaman menampilkan tampilan landing, super Admin melakukan login
+2. Login sebagai role super admin dengan memasukan email dan password yang diberikan oleh developer
+3. Super Admin berhasil login dan masuk ke tampilan dashboard
+4. User dapat melihat data ringkas di halaman dashboard utama.
+5. Super admin dapat membuat dan menyimpan kegiatan/tugas yang akan diberikan ke super user (siswa terjadwal), jika ada kesalahan dalam pembuatan, bisa edit atau hapus kegiatan/tugas.
+6. Tugas/kegiatan disini disesuai kan dengan kegiatan P5 seperti kebersihan diri, materi, portofolio, dll, dan super admin dapat mengaksesnya perfitur di website. 
+7. Super Admin dapat melihat dan memantau pengerjaan siswa-siswanya di setiap fitur website
+8. Jika sudah selesai, super admin dapat menggunakan fitur logout
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# p5-control-system-fe
+- Sebagai role Master (kurikulum) 
+1. Halaman menampilkan tampilan landing, master melakukan login
+2. Login sebagai role master dengan memasukan email dan password yang dibagikan tim develop
+3. Master berhasil login dan masuk ke tampilan dashboard
+4. Master dapat melihat kegiatan/tugas apa saja yang dibuat oleh guru untuk P5 di sekolah.
+5. Jika sudah selesai, master dapat menggunakan fitur logout

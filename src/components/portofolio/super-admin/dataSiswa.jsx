@@ -37,7 +37,7 @@ export default function dataSiswa() {
               >
                 <Title
                   level={5}
-                  onClick={(e) => handleClick(e, index)}
+                  onClick={(e) => handleClick(e, item?.rombel)}
                   style={{ cursor: "pointer" }}
                 >
                   {item?.rombel}

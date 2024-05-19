@@ -1,23 +1,25 @@
 "use client";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Style from "./style.module.css";
 import { useRouter } from "next/navigation";
 import { Typography, List, Card } from "antd";
 import { AiOutlineDownload } from "react-icons/ai";
 import { usePortofolio } from "@/context/PortofolioContext";
-import axios from 'axios';
+import axios from "axios";
 
 const { Title } = Typography;
 const { Meta } = Card;
 
-export default function fetchKelas() {
+export default function fetchKelas({ slug }) {
   const router = useRouter();
   // const { siswa } = usePortofolio();
-  const [siswa, setSiswaId] = useState([]);
+  const [siswa, setSiswa] = useState([]);
 
   const pushRoute = (e, i) => {
     router.push(`/portofolio/data/siswa/${i}`);
   };
+
+  const params = decodeURIComponent(slug);
 
   useEffect(() => {
     fetchPortofolio();
@@ -31,11 +33,12 @@ export default function fetchKelas() {
       XLSX.writeFile(wb, "data_siswa.xlsx");
     }
   };
+
   const fetchPortofolio = async () => {
     try {
-      axios.get(`api/v1/plant/read_all`).then((response) => {
-        setSiswaId(response?.data?.data);
-      })
+      axios.get(`api/v1/portofolio/rombel/${params}`).then((response) => {
+        setSiswa(response?.data?.data?.students);
+      });
     } catch (error) {
       console.error("gagal menampilkan siswa", error);
     }
@@ -45,8 +48,12 @@ export default function fetchKelas() {
     <>
       <div className="mt-5">
         <div className="flex flex-row gap-3">
-          <Title level={3}>{`PPLG XII 2`}</Title>
-          <AiOutlineDownload size={27} style={{ marginTop: 3 }} onClick={exportXLSX}/>
+          <Title level={3}>{params}</Title>
+          <AiOutlineDownload
+            size={27}
+            style={{ marginTop: 3 }}
+            onClick={exportXLSX}
+          />
         </div>
       </div>
       <List
@@ -64,13 +71,13 @@ export default function fetchKelas() {
               className="border border-gray-200 shadow hover:bg-gray-100"
             >
               <Meta
-                onClick={(e) => pushRoute(e, index)}
+                onClick={(e) => pushRoute(e, item?._id)}
                 style={{ cursor: "pointer" }}
-                title={item?.nama}
+                title={item?.name}
                 description={
                   <div className="mt-3">
                     <span className="bg-green-100 text-green-700 rounded px-2 py-1">
-                      {`${item?.data} Rangkuman`}
+                      {`${item?.responses} Tugas`}
                     </span>
                   </div>
                 }

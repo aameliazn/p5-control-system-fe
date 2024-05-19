@@ -1,23 +1,25 @@
 "use client";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Style from "./style.module.css";
 import { useRouter } from "next/navigation";
 import { Typography, List, Card } from "antd";
 import { AiOutlineDownload } from "react-icons/ai";
 import { useKebersihanDiri } from "@/context/KebersihanDiriContext";
-import axios from 'axios';
+import axios from "axios";
+
 const { Title } = Typography;
 const { Meta } = Card;
 
-export default function fetchKelas() {
+export default function fetchKelas({ slug }) {
   const router = useRouter();
   // const { siswa } = useKebersihanDiri();
-  const [siswa, setSiswaId] = useState([]);
+  const [siswa, setSiswa] = useState([]);
 
   const pushRoute = (e, i) => {
     router.push(`/kebersihan-diri/data/siswa/${i}`);
   };
 
+  const params = decodeURIComponent(slug);
 
   const exportXLSX = () => {
     if (siswa.length > 0) {
@@ -27,7 +29,7 @@ export default function fetchKelas() {
       XLSX.writeFile(wb, "data_siswa.xlsx");
     }
   };
-  
+
   useEffect(() => {
     fetchRombelData();
   }, []);
@@ -35,24 +37,29 @@ export default function fetchKelas() {
   const fetchRombelData = async () => {
     try {
       const currentURL = window.location.href;
-      const rombelName = decodeURIComponent(currentURL.split('/').pop());
-      
+      const rombelName = decodeURIComponent(currentURL.split("/").pop());
+
       const response = await axios.get(`/api/v1/hygiene/rombel/${rombelName}`);
       if (response.status === 200) {
-        setSiswaId(response?.data?.data); 
+        setSiswa(response?.data?.data?.students);
       } else {
-        console.error('Gagal mendapatkan data rombel:', response.statusText);
+        console.error("Gagal mendapatkan data rombel:", response.statusText);
       }
     } catch (error) {
-      console.error('Terjadi kesalahan saat fetching data rombel:', error);
+      console.error("Terjadi kesalahan saat fetching data rombel:", error);
     }
   };
+
   return (
     <>
       <div className="mt-5">
         <div className="flex flex-row gap-3">
-        <Title level={3}>{siswa ? siswa.rombel : 'Loading...'}</Title>
-          <AiOutlineDownload size={27} style={{ marginTop: 3 }}  onClick={exportXLSX}/>
+          <Title level={3}>{params}</Title>
+          <AiOutlineDownload
+            size={27}
+            style={{ marginTop: 3 }}
+            onClick={exportXLSX}
+          />
         </div>
       </div>
       <List
@@ -61,7 +68,7 @@ export default function fetchKelas() {
           column: 4,
         }}
         style={{ marginTop: 15 }}
-        dataSource={siswa ? siswa.students : []}
+        dataSource={siswa}
         renderItem={(item, index) => (
           <List.Item>
             <Card
@@ -70,13 +77,13 @@ export default function fetchKelas() {
               className="border border-gray-200 shadow hover:bg-gray-100"
             >
               <Meta
-                onClick={(e) => pushRoute(e, index)}
+                onClick={(e) => pushRoute(e, item?._id)}
                 style={{ cursor: "pointer" }}
                 title={item?.name}
                 description={
                   <div className="mt-3">
                     <span className="bg-green-100 text-green-700 rounded px-2 py-1">
-                    {`${item.hygiene.length} Rangkuman`}
+                      {`${item.hygiene.length} Tugas`}
                     </span>
                   </div>
                 }

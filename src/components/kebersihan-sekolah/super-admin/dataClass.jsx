@@ -29,23 +29,23 @@ export default function dataClass() {
         }}
       >
         {kelas.map((item, index) => (
-            <Col key={index} className="gutter-row" span={6}>
-              <div style={{ padding: "8px 0" }}>
-                <div
-                  style={{ borderBottom: "3px solid green" }}
-                  className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
+          <Col key={index} className="gutter-row" span={6}>
+            <div style={{ padding: "8px 0" }}>
+              <div
+                style={{ borderBottom: "3px solid green" }}
+                className="flex flex-row justify-between rounded p-4 bg-white border border-gray-200 shadow hover:bg-gray-100"
+              >
+                <Title
+                  level={5}
+                  onClick={(e) => handleClick(e, item?.rombel)}
+                  style={{ cursor: "pointer" }}
                 >
-                  <Title
-                    level={5}
-                    onClick={(e) => handleClick(e, index)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    {item?.rombel}
-                  </Title>
-                </div>
+                  {item?.rombel}
+                </Title>
               </div>
-            </Col>
-          ))}
+            </div>
+          </Col>
+        ))}
       </Row>
     </>
   );

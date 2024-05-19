@@ -85,7 +85,7 @@ export default function KebersihanDiriContext({ children }) {
       .catch((err) => {
         console.error("error mengambil data", err);
       });
-  }, [studentData]);
+  }, []);
 
   const state = {
     visible,

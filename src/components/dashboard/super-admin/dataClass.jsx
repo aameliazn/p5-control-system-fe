@@ -1,34 +1,91 @@
 "use client";
+import React from "react";
 import Image from "next/image";
-import React, { useState } from "react";
 import Style from "./dashboard.module.css";
 import { useRouter } from "next/navigation";
-import { Col, Row, Typography } from "antd";
 import { AiOutlineDelete } from "react-icons/ai";
+import { useDashboard } from "@/context/DashboardContext";
 import starWhite from "../../../../public/star-white.png";
 import starYellow from "../../../../public/star-yellow.png";
-import { useDashboard } from "@/context/DashboardContext";
+import { Col, Row, Typography, Form, Input, Modal } from "antd";
 
 const { Title } = Typography;
+
+const CollectionCreateForm = ({ open, onCreate, onCancel }) => {
+  const [form] = Form.useForm();
+  return (
+    <Modal
+      open={open}
+      title="Tambahkan Fasilitator"
+      okText="Tambah"
+      cancelText="Batal"
+      onCancel={onCancel}
+      onOk={() => {
+        form
+          .validateFields()
+          .then((values) => {
+            form.resetFields();
+            onCreate(values);
+          })
+          .catch((info) => {
+            console.log("Validate Failed:", info);
+          });
+      }}
+    >
+      <Form form={form} layout="vertical" name="form_in_modal">
+        <Form.Item
+          name="rombel"
+          label="Rombel"
+          rules={[
+            {
+              required: true,
+              message: "Please input Rombel!",
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
+          name="facilitator"
+          label="Fasilitator"
+          rules={[
+            {
+              required: true,
+              message: "Please input Fasilitator!",
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+      </Form>
+    </Modal>
+  );
+};
 
 export default function dataClass() {
   const router = useRouter();
 
   const dataUser = JSON.parse(localStorage.getItem("user"));
 
-  const [isClicked, setIsClicked] = useState(starWhite);
-  const { visible, setVisible, studentData, deleteRombel } = useDashboard();
+  const {
+    open,
+    setOpen,
+    visible,
+    setVisible,
+    studentData,
+    deleteRombel,
+    updateSchedule,
+    addSchedule,
+  } = useDashboard();
 
-  const handleClick = () => {
-    if (isClicked == starWhite) {
-      setIsClicked(starYellow);
-    } else {
-      setIsClicked(starWhite);
-    }
+  const handleClick = (e, i) => {
+    router.push(`/dashboard/data/kelas/${i}`);
   };
 
-  const handleClick2 = (e, i) => {
-    router.push(`/dashboard/data/kelas/${i}`);
+  const onCreate = (values) => {
+    console.log("Received values of form: ", values);
+    addSchedule(values);
+    setOpen(false);
   };
 
   return (
@@ -67,7 +124,7 @@ export default function dataClass() {
                 >
                   <Title
                     level={5}
-                    onClick={(e) => handleClick2(e, index)}
+                    onClick={(e) => handleClick(e, index)}
                     style={{ cursor: "pointer" }}
                   >
                     {item?.rombel}
@@ -78,8 +135,14 @@ export default function dataClass() {
                       <div>
                         <button className={Style.button1}>
                           <Image
-                            src={isClicked}
-                            onClick={handleClick}
+                            src={
+                              item?.schedule == false ? starWhite : starYellow
+                            }
+                            onClick={() => {
+                              item?.schedule == false
+                                ? setOpen(true)
+                                : updateSchedule(item?.rombel);
+                            }}
                             alt="Star"
                             width={18}
                             height={18}
@@ -101,6 +164,15 @@ export default function dataClass() {
             </Col>
           ))}
         </Row>
+      </div>
+      <div>
+        <CollectionCreateForm
+          open={open}
+          onCreate={onCreate}
+          onCancel={() => {
+            setOpen(false);
+          }}
+        />
       </div>
     </>
   );
