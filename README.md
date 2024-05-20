@@ -18,6 +18,7 @@ Pwd: amelia80
 Usn: syaikhanigiffa@smkwikrama.sch.id
 Pwd: syaikhan86
 
+![WhatsApp Image 2024-05-20 at 06 57 45_35d18bfd](https://github.com/aameliazn/p5-control-system-fe/assets/146303584/655cf0fd-e3b7-4caa-85f1-63ef7ab4edb6)
 
 Penggunaan penggunaan website P5 Control System
 - Sebagai role user (siswa) 
