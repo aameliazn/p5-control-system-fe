@@ -1,3 +1,9 @@
+![WhatsApp Image 2024-05-20 at 07 24 02_28db1bd5](https://github.com/aameliazn/p5-control-system-fe/assets/146303584/b4b7a9f9-5c03-4b43-8b5c-57910ab03bfa)
+![WhatsApp Image 2024-05-20 at 07 17 25_af68dfba](https://github.com/aameliazn/p5-control-system-fe/assets/146303584/fbb44707-2901-4768-bd59-7f9e72bd5e11)
+![WhatsApp Image 2024-05-20 at 07 17 29_053f324a](https://github.com/aameliazn/p5-control-system-fe/assets/146303584/df5cd4c7-4d32-4efe-8e5f-d60cca821c3e)
+![WhatsApp Image 2024-05-20 at 07 17 22_f43c8b34](https://github.com/aameliazn/p5-control-system-fe/assets/146303584/1fafe3c0-9d5b-4fbb-94c0-dd2fbb72c9b1)
+![WhatsApp Image 2024-05-20 at 07 17 28_b79bee50](https://github.com/aameliazn/p5-control-system-fe/assets/146303584/9be49413-2c64-4ece-8253-2782746be56a)
+
 Panduan Instalasi projek
 1. buka folder yang akan diisi projek
 2. Buka git bash/cmd, lalu ketikan 'git clone  . '
